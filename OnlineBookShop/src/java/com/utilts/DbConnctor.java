@@ -25,7 +25,7 @@ public class DbConnctor {
     private DbConnctor() {
     }
 
-    static public Connection openConnection() throws SQLException {
+    static  synchronized public Connection openConnection() throws SQLException {
         if (dbConnection == null || dbConnection.isClosed()) {
             dbConnection = DriverManager.getConnection(DBurl, userName, password);
 
@@ -34,7 +34,7 @@ public class DbConnctor {
 
     }
 
-    static public void closeConnection() throws SQLException {
+    static synchronized public void closeConnection() throws SQLException {
         dbConnection.close();
     }
 }
