@@ -8,7 +8,7 @@ package com.beans;
 import java.io.Serializable;
 
 import java.util.List;
-
+/////test 
 /**
  *
  * @author Abdalla
