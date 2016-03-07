@@ -94,7 +94,7 @@ public class Book_Dao {
         return false;
     }
 
-    public List<Book> findAll() throws SQLException {
+    public List<Book> readAll() throws SQLException {
         ArrayList<Book> bookList = new ArrayList();
         try {
             DbConnctor.openConnection();
@@ -103,6 +103,16 @@ public class Book_Dao {
             resultSet = ptmt.executeQuery();
             while (resultSet.next()) {
                 book = new Book();
+                book.setBName(resultSet.getString(1));
+                book.setBDescription(resultSet.getString(2));
+                book.setBQuote(resultSet.getString(3));
+                book.setBCount(resultSet.getInt(4));
+                book.setBPrice(resultSet.getDouble(5));
+                book.setBRating(resultSet.getInt(6));
+                book.setBFrontImg(resultSet.getString(7));
+                book.setBBackImg(resultSet.getString(8));
+                book.setBHdr01Img(resultSet.getString(9));
+                book.setBHdr02Img(resultSet.getString(10));
                 bookList.add(book);
             }
         } catch (SQLException e) {
