@@ -70,15 +70,10 @@ public class Book implements Serializable {
         this.cartList = cartList;
     }
     
-    
-
-    
-
-    
-    
     public Book(Integer bIsbn) {
         this.bIsbn = bIsbn;
     }
+
 
     public Integer getBIsbn() {
         return bIsbn;

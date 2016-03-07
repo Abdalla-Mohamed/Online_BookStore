@@ -25,7 +25,7 @@ public class Book_Dao {
     private static final String SQL_DELETE = "DELETE FROM BOOK WHERE B_ISBN=?";
 
     Connection connection = null;
-    PreparedStatement ptmt = null;
+    PreparedStatement statement = null;
     ResultSet resultSet = null;
 
     public Book_Dao() {
@@ -36,19 +36,19 @@ public class Book_Dao {
         try {
 
             DbConnctor.openConnection();
-            ptmt = connection.prepareStatement(SQL_INSERT);
-            ptmt.setInt(1, bookObj.getBIsbn());
-            ptmt.setString(2, bookObj.getBName());
-            ptmt.setString(3, bookObj.getBDescription());
-            ptmt.setString(4, bookObj.getBQuote());
-            ptmt.setInt(5, bookObj.getBCount());
-            ptmt.setDouble(6, bookObj.getBPrice());
-            ptmt.setInt(7, bookObj.getBRating());
-            ptmt.setString(8, bookObj.getBFrontImg());
-            ptmt.setString(9, bookObj.getBBackImg());
-            ptmt.setString(10, bookObj.getBHdr01Img());
-            ptmt.setString(11, bookObj.getBHdr02Img());
-            if (ptmt.executeUpdate() > 0) {
+            statement = connection.prepareStatement(SQL_INSERT);
+            statement.setInt(1, bookObj.getBIsbn());
+            statement.setString(2, bookObj.getBName());
+            statement.setString(3, bookObj.getBDescription());
+            statement.setString(4, bookObj.getBQuote());
+            statement.setInt(5, bookObj.getBCount());
+            statement.setDouble(6, bookObj.getBPrice());
+            statement.setInt(7, bookObj.getBRating());
+            statement.setString(8, bookObj.getBFrontImg());
+            statement.setString(9, bookObj.getBBackImg());
+            statement.setString(10, bookObj.getBHdr01Img());
+            statement.setString(11, bookObj.getBHdr02Img());
+            if (statement.executeUpdate() > 0) {
                 return true;
             }
         } catch (SQLException e) {
@@ -63,10 +63,10 @@ public class Book_Dao {
 
         try {
             DbConnctor.openConnection();
-            ptmt = connection.prepareStatement(SQL_UPDATE);
-            ptmt.setString(1, bookObj.getBName());
-            ptmt.setInt(2, bookObj.getBIsbn());
-            if (ptmt.executeUpdate() > 0) {
+            statement = connection.prepareStatement(SQL_UPDATE);
+            statement.setString(1, bookObj.getBName());
+            statement.setInt(2, bookObj.getBIsbn());
+            if (statement.executeUpdate() > 0) {
                 return true;
             }
         } catch (SQLException e) {
@@ -81,9 +81,9 @@ public class Book_Dao {
 
         try {
             DbConnctor.openConnection();
-            ptmt = connection.prepareStatement(SQL_DELETE);
-            ptmt.setInt(1, bookID);
-            if (ptmt.executeUpdate() > 0) {
+            statement = connection.prepareStatement(SQL_DELETE);
+            statement.setInt(1, bookID);
+            if (statement.executeUpdate() > 0) {
                 return true;
             }
         } catch (SQLException e) {
@@ -94,15 +94,25 @@ public class Book_Dao {
         return false;
     }
 
-    public List<Book> findAll() throws SQLException {
+    public List<Book> readAll() throws SQLException {
         ArrayList<Book> bookList = new ArrayList();
         try {
             DbConnctor.openConnection();
             Book book = null;
-            ptmt = connection.prepareStatement(SQL_READ);
-            resultSet = ptmt.executeQuery();
+            statement = connection.prepareStatement(SQL_READ);
+            resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 book = new Book();
+                book.setBName(resultSet.getString(1));
+                book.setBDescription(resultSet.getString(2));
+                book.setBQuote(resultSet.getString(3));
+                book.setBCount(resultSet.getInt(4));
+                book.setBPrice(resultSet.getDouble(5));
+                book.setBRating(resultSet.getInt(6));
+                book.setBFrontImg(resultSet.getString(7));
+                book.setBBackImg(resultSet.getString(8));
+                book.setBHdr01Img(resultSet.getString(9));
+                book.setBHdr02Img(resultSet.getString(10));
                 bookList.add(book);
             }
         } catch (SQLException e) {
