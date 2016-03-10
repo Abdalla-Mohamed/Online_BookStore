@@ -36,10 +36,11 @@ public class Category_Dao {
     public boolean add(Category categoryObj) throws SQLException {
         try {
 
-            DbConnctor.openConnection();
+            connection = DbConnctor.openConnection();
             statement = connection.prepareStatement(SQL_INSERT);
-            statement.setInt(1, categoryObj .getCatId());
-            statement.setString(2, categoryObj.getCatName());
+           //statement.setInt(1, categoryObj .getCatId());
+            statement.setString(1, categoryObj.getCatName());
+            connection.commit();
             if (statement.executeUpdate() > 0) {
                 return true;
             }
