@@ -13,6 +13,7 @@ import java.util.List;
  *
  * @author Abdalla
  */
+
 public class Category implements Serializable {
     private Integer catId;
     private String catName;
