@@ -24,6 +24,10 @@
         <servlet-name>Logout</servlet-name>
         <servlet-class>com.servlets.Logout</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ChargingCardController</servlet-name>
+        <servlet-class>com.servlets.admin.ChargingCardController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddCategory</servlet-name>
         <url-pattern>/AddCategory</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>Logout</servlet-name>
         <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChargingCardController</servlet-name>
+        <url-pattern>/ChargingCardController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

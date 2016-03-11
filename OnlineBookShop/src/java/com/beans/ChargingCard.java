@@ -17,6 +17,10 @@ public class ChargingCard implements Serializable {
     private String cardNumber;
     private Integer cardAmount;
     private Character cardStatus;
+    
+    public static final char CHARGED = 'T';
+    public static final char NOTCHARGED = 'F';
+    
 
     public ChargingCard() {
     }

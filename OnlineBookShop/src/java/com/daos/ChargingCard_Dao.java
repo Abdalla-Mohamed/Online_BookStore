@@ -26,7 +26,7 @@ public class ChargingCard_Dao {
     ResultSet resultSet = null;
     
     
-    public void addChargingCard(ChargingCard chargingCard, int id)
+    public void addChargingCard(ChargingCard chargingCard) throws SQLException
     {
         try {                
             connection = DbConnctor.openConnection();
@@ -43,6 +43,10 @@ public class ChargingCard_Dao {
                 
             } catch (SQLException ex) {
                 ex.printStackTrace();
+            }
+        finally {
+
+                DbConnctor.closeConnection();
             }
     }
     
