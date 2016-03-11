@@ -38,7 +38,7 @@ public class Cart_Dao {
     public boolean add(Cart cartObj) throws SQLException {
         try {
 
-            DbConnctor.openConnection();
+            connection = DbConnctor.openConnection();
             statement = connection.prepareStatement(SQL_INSERT);
             statement.setInt(1, cartObj.getBookId());
             statement.setInt(2, cartObj.getCustomerId());
@@ -57,7 +57,7 @@ public class Cart_Dao {
     public boolean update(Cart cartObj) throws SQLException {
 
         try {
-            DbConnctor.openConnection();
+            connection = DbConnctor.openConnection();
             statement = connection.prepareStatement(SQL_UPDATE);
             statement.setInt(1, cartObj.getCBCount());
             statement.setInt(2, cartObj.getCustomerId());
@@ -75,7 +75,7 @@ public class Cart_Dao {
     public boolean delete(Book bookID, Customer customerID) throws SQLException {
 
         try {
-            DbConnctor.openConnection();
+            connection = DbConnctor.openConnection();
             statement = connection.prepareStatement(SQL_DELETE);
             statement.setInt(1, bookID.getBIsbn());
             statement.setInt(2, customerID.getCId());
@@ -93,7 +93,7 @@ public class Cart_Dao {
 //    public List<Cart> readAll(int customerID) throws SQLException {
 //        ArrayList<Cart> cartList = new ArrayList();
 //        try {
-//            DbConnctor.openConnection();
+//            connection = DbConnctor.openConnection();
 //            Cart cart = null;
 //            statement = connection.prepareStatement(SQL_READ);
 //            resultSet = statement.executeQuery();

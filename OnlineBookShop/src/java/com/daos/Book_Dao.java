@@ -35,7 +35,7 @@ public class Book_Dao {
     public boolean add(Book bookObj) throws SQLException {
         try {
 
-            DbConnctor.openConnection();
+            connection = DbConnctor.openConnection();
             statement = connection.prepareStatement(SQL_INSERT);
             statement.setInt(1, bookObj.getBIsbn());
             statement.setString(2, bookObj.getBName());
@@ -62,7 +62,7 @@ public class Book_Dao {
     public boolean update(Book bookObj) throws SQLException {
 
         try {
-            DbConnctor.openConnection();
+            connection = DbConnctor.openConnection();
             statement = connection.prepareStatement(SQL_UPDATE);
             statement.setString(1, bookObj.getBName());
             statement.setInt(2, bookObj.getBIsbn());
@@ -80,7 +80,7 @@ public class Book_Dao {
     public boolean delete(int bookID) throws SQLException {
 
         try {
-            DbConnctor.openConnection();
+            connection = DbConnctor.openConnection();
             statement = connection.prepareStatement(SQL_DELETE);
             statement.setInt(1, bookID);
             if (statement.executeUpdate() > 0) {
@@ -97,7 +97,7 @@ public class Book_Dao {
     public List<Book> readAll() throws SQLException {
         ArrayList<Book> bookList = new ArrayList();
         try {
-            DbConnctor.openConnection();
+            connection = DbConnctor.openConnection();
             Book book = null;
             statement = connection.prepareStatement(SQL_READ);
             resultSet = statement.executeQuery();

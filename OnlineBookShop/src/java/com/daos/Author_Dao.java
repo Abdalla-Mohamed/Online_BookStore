@@ -37,7 +37,7 @@ public class Author_Dao {
     public boolean add(Author authorObj) throws SQLException {
         try {
 
-            DbConnctor.openConnection();
+            connection = DbConnctor.openConnection();
             statement = connection.prepareStatement(SQL_INSERT);
             statement.setInt(1, authorObj.getAuthId());
             statement.setString(2, authorObj.getAuthName());
@@ -57,7 +57,7 @@ public class Author_Dao {
     public boolean update(Author authorObj) throws SQLException {
 
         try {
-            DbConnctor.openConnection();
+            connection = DbConnctor.openConnection();
             statement = connection.prepareStatement(SQL_UPDATE);
             statement.setString(1, authorObj.getAuthName());
             statement.setInt(2, authorObj.getAuthId());
@@ -75,7 +75,7 @@ public class Author_Dao {
     public boolean delete(int authorID) throws SQLException {
 
         try {
-            DbConnctor.openConnection();
+            connection = DbConnctor.openConnection();
             statement = connection.prepareStatement(SQL_DELETE);
             statement.setInt(1, authorID);
             if (statement.executeUpdate() > 0) {
@@ -92,7 +92,7 @@ public class Author_Dao {
     public List<Author> readAll() throws SQLException {
         ArrayList<Author> authorList = new ArrayList();
         try {
-            DbConnctor.openConnection();
+            connection = DbConnctor.openConnection();
             Author author = null;
             statement = connection.prepareStatement(SQL_READ);
             resultSet = statement.executeQuery();
