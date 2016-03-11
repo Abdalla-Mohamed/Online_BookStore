@@ -314,7 +314,7 @@
                             <!-- Horizontal Form -->
                             <div >
 
-                                <form class="form-horizontal col-sm-8 switch-right-grid" style="padding: 15px;padding-left:  0">
+                                <form method="POST" action='../ChargingCardController' class="form-horizontal col-sm-8 switch-right-grid" style="padding: 15px;padding-left:  0">
                                     <div class="box-body col-sm-12 " >
                                         <div class="form-group col-sm-12 " style="padding: 0px" >
                                             
@@ -325,7 +325,7 @@
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-usd"></i>
                                                     </span>
-                                                    <input id="email" class="form-control1"  type="text" placeholder="Card Value">
+                                                    <input name="cardValue" class="form-control1"  type="text" placeholder="Card Value">
                                                 </div>
                                             </div>
                                           
@@ -341,7 +341,7 @@
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-clone"></i>
                                                     </span>
-                                                    <input id="email" class="form-control1"  type="text" placeholder="Card Count ">
+                                                    <input name="cardCount" class="form-control1"  type="text" placeholder="Card Count ">
                                                 </div>
                                             </div>
                                           
