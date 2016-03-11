@@ -55,7 +55,7 @@ public class Category_Dao {
     public boolean update(Category categoryObj) throws SQLException {
 
         try {
-            DbConnctor.openConnection();
+            connection = DbConnctor.openConnection();
             statement = connection.prepareStatement(SQL_UPDATE);
             statement.setString(1, categoryObj.getCatName());
             statement.setInt(2, categoryObj.getCatId());
@@ -73,7 +73,7 @@ public class Category_Dao {
     public boolean delete(int authorID) throws SQLException {
 
         try {
-            DbConnctor.openConnection();
+            connection = DbConnctor.openConnection();
             statement = connection.prepareStatement(SQL_DELETE);
             statement.setInt(1, authorID);
             if (statement.executeUpdate() > 0) {
@@ -90,7 +90,7 @@ public class Category_Dao {
     public List<Category> readAll() throws SQLException {
         ArrayList<Category> catgList = new ArrayList();
         try {
-            DbConnctor.openConnection();
+            connection = DbConnctor.openConnection();
             Category category = null;
             statement = connection.prepareStatement(SQL_READ);
             resultSet = statement.executeQuery();
