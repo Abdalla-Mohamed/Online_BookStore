@@ -1,43 +1,44 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+<%-- 
+    Document   : categorymanage
+    Created on : Mar 8, 2016, 7:15:20 AM
+    Author     : Abdalla
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Easy Admin Panel an Admin Panel Category Flat Bootstrap Responsive Website Template | Blank Page :: w3layouts</title>
+<title>Easy Admin Panel an Admin Panel Category Flat Bootstrap Responsive Website Template | Compose Mail :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Easy Admin Panel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
  <!-- Bootstrap Core CSS -->
-<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 <!-- Custom CSS -->
-<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="../css/style.css" rel='stylesheet' type='text/css' />
 <!-- Graph CSS -->
-<link href="css/font-awesome.css" rel="stylesheet"> 
+<link href="../css/font-awesome.css" rel="stylesheet"> 
 <!-- jQuery -->
 <!-- lined-icons -->
-<link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
+<link rel="stylesheet" href="../css/icon-font.min.css" type='text/css' />
 <!-- //lined-icons -->
 <!-- chart -->
-<script src="js/Chart.js"></script>
+<script src="../js/Chart.js"></script>
 <!-- //chart -->
 <!--animate-->
-<link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
-<script src="js/wow.min.js"></script>
+<link href="../css/animate.css" rel="stylesheet" type="text/css" media="all">
+<script src="../js/wow.min.js"></script>
 	<script>
 		 new WOW().init();
 	</script>
 <!--//end-animate-->
 <!----webfonts--->
-<!--<link href='//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>-->
+<link href='//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
 <!---//webfonts---> 
  <!-- Meters graphs -->
-<script src="js/jquery-1.10.2.min.js"></script>
+<script src="../js/jquery-1.10.2.min.js"></script>
 <!-- Placed js at the end of the document so the pages load faster -->
 
 </head> 
@@ -71,7 +72,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</li>
 						<li><a href="forms.jsp"><i class="lnr lnr-spell-check"></i> <span>Forms</span></a></li>
 						<li><a href="tables.jsp"><i class="lnr lnr-menu"></i> <span>Tables</span></a></li>              
-						<li class="menu-list"><a href="#"><i class="lnr lnr-envelope"></i> <span>MailBox</span></a>
+						<li class="menu-list act"><a href="#"><i class="lnr lnr-envelope"></i> <span>MailBox</span></a>
 							<ul class="sub-menu-list">
 								<li><a href="inbox.jsp">Inbox</a> </li>
 								<li><a href="compose-mail.jsp">Compose Mail</a></li>
@@ -84,7 +85,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</li>
 						<li><a href="codes.jsp"><i class="lnr lnr-pencil"></i> <span>Typography</span></a></li>
 						<li><a href="media.jsp"><i class="lnr lnr-select"></i> <span>Media Css</span></a></li>
-						<li class="menu-list act"><a href="#"><i class="lnr lnr-book"></i>  <span>Pages</span></a> 
+						<li class="menu-list"><a href="#"><i class="lnr lnr-book"></i>  <span>Pages</span></a> 
 							<ul class="sub-menu-list">
 								<li><a href="sign-in.jsp">Sign In</a> </li>
 								<li><a href="sign-up.jsp">Sign Up</a></li>
@@ -98,7 +99,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- left side end-->
     
     <!-- main content start-->
-		<div class="main-content main-content2 main-content2copy">
+		<div class="main-content main-content3 main-content3copy">
 			<!-- header-starts -->
 			<div class="header-section">
 			 
@@ -121,7 +122,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												</div>
 											</li>
 											<li><a href="#">
-											   <div class="user_img"><img src="images/1.png" alt=""></div>
+											   <div class="user_img"><img src="../images1.png" alt=""></div>
 											   <div class="notification_desc">
 												<p>Lorem ipsum dolor sit amet</p>
 												<p><span>1 hour ago</span></p>
@@ -129,7 +130,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											   <div class="clearfix"></div>	
 											 </a></li>
 											 <li class="odd"><a href="#">
-												<div class="user_img"><img src="images/1.png" alt=""></div>
+												<div class="user_img"><img src="../images1.png" alt=""></div>
 											   <div class="notification_desc">
 												<p>Lorem ipsum dolor sit amet </p>
 												<p><span>1 hour ago</span></p>
@@ -137,7 +138,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											  <div class="clearfix"></div>	
 											 </a></li>
 											<li><a href="#">
-											   <div class="user_img"><img src="images/1.png" alt=""></div>
+											   <div class="user_img"><img src="../images1.png" alt=""></div>
 											   <div class="notification_desc">
 												<p>Lorem ipsum dolor sit amet </p>
 												<p><span>1 hour ago</span></p>
@@ -162,8 +163,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										</div>
 									</div>
 										<!-- search-scripts -->
-										<script src="js/classie.js"></script>
-										<script src="js/uisearch.js"></script>
+										<script src="../js/classie.js"></script>
+										<script src="../js/uisearch.js"></script>
 											<script>
 												new UISearch( document.getElementById( 'sb-search' ) );
 											</script>
@@ -178,7 +179,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											</div>
 										</li>
 										<li><a href="#">
-											<div class="user_img"><img src="images/1.png" alt=""></div>
+											<div class="user_img"><img src="../images1.png" alt=""></div>
 										   <div class="notification_desc">
 											<p>Lorem ipsum dolor sit amet</p>
 											<p><span>1 hour ago</span></p>
@@ -186,7 +187,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										  <div class="clearfix"></div>	
 										 </a></li>
 										 <li class="odd"><a href="#">
-											<div class="user_img"><img src="images/1.png" alt=""></div>
+											<div class="user_img"><img src="../images1.png" alt=""></div>
 										   <div class="notification_desc">
 											<p>Lorem ipsum dolor sit amet </p>
 											<p><span>1 hour ago</span></p>
@@ -194,7 +195,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										   <div class="clearfix"></div>	
 										 </a></li>
 										 <li><a href="#">
-											<div class="user_img"><img src="images/1.png" alt=""></div>
+											<div class="user_img"><img src="../images1.png" alt=""></div>
 										   <div class="notification_desc">
 											<p>Lorem ipsum dolor sit amet </p>
 											<p><span>1 hour ago</span></p>
@@ -268,7 +269,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li class="dropdown profile_details_drop">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 									<div class="profile_img">	
-										<span style="background:url(images/1.jpg) no-repeat center"> </span> 
+										<span style="background:url(../images1.jpg) no-repeat center"> </span> 
 										 <div class="user-name">
 											<p>Michael<span>Administrator</span></p>
 										 </div>
@@ -306,19 +307,129 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- //header-ends -->
 			<div id="page-wrapper">
 				<div class="graphs">
-					<div class="error-main">
-						<h3><i class="fa fa-exclamation-triangle"></i> <span>404</span></h3>
-					<div class="col-xs-7 error-main-left">
-						<span>Oops!</span>
-						<p>The page you're looking for could not be found.</p>
-						<div class="error-btn">
-							<a href="index.jsp">Go back?</a>
+					<h3 class="blank1">Compose Mail</h3>
+					<div class="xs">
+						<div class="col-md-4 email-list1">
+							<ul class="collection">
+								<li class="collection-item avatar email-unread">
+								  <i class="fa fa-users icon_1"></i>
+								  <div class="avatar_left">
+									<span class="email-title">Social</span>
+									<p class="truncate grey-text ultra-small">Lorem Ipsum is simply dummy text of.</p>
+								  </div>
+								  <a href="#!" class="secondary-content"><span class="new badge1 blue">4</span></a>
+								  <div class="clearfix"> </div>
+								</li>
+								<li class="collection-item avatar email-unread">
+								  <i class="fa fa-exclamation-circle icon_2"></i>
+								  <div class="avatar_left">
+									<span class="email-title">Updates</span>
+									<p class="truncate grey-text ultra-small">It is a long established fact that a reader.</p>
+								  </div>
+								  <a href="#!" class="secondary-content"><span class="new badge1 red">4</span></a>
+								  <div class="clearfix"> </div>
+								</li>
+								<li class="collection-item avatar email-unread">
+								  <i class="fa fa-tag icon_3"></i>
+								  <div class="avatar_left">
+									<span class="email-title">Promotions</span>
+									<p class="truncate grey-text ultra-small">There are many variations of passages.</p>
+								  </div>
+								  <a href="#!" class="secondary-content"><span class="new badge1 blue1">4</span></a>
+								  <div class="clearfix"> </div>
+								</li>
+								<li class="collection-item avatar email-unread">
+								  <i class="icon_4">G</i>
+								  <div class="avatar_left">
+									<span class="email-title">Gmail</span>
+									<p class="truncate grey-text ultra-small">Sed ut perspiciatis unde omnis iste.</p>
+								  </div>
+								  <a href="#!" class="secondary-content"><span class="blue-text ultra-small">2:15 pm</span></a>
+								  <div class="clearfix"> </div>
+								</li>
+								<li class="collection-item avatar email-unread">
+								  <i class="icon_4 icon_5">F</i>
+								  <div class="avatar_left">
+									<span class="email-title">Facebook</span>
+									<p class="truncate grey-text ultra-small">But I must explain to you how.</p>
+								  </div>
+								  <a href="#!" class="secondary-content"><span class="blue-text ultra-small">2:15 pm</span></a>
+								  <div class="clearfix"> </div>
+								</li>
+								<li class="collection-item avatar email-unread email_last">
+								  <i class="icon_4 icon_6">T</i>
+								  <div class="avatar_left">
+									<span class="email-title">Twitter</span>
+									<p class="truncate grey-text ultra-small">At vero eos et accusamus et iusto odio.</p>
+								  </div>
+								  <a href="#!" class="secondary-content"><span class="blue-text ultra-small">2:15 pm</span></a>
+								  <div class="clearfix"> </div>
+								</li>
+							</ul>
+							<div class="content-box  mrg15B">
+							  <div class="content-box-wrapper text-center">
+								<h4 class="content-box-header">
+								Chat
+								<small>(Online friends)</small>
+								</h4>
+								<div class="status-badge mrg10A">
+									<img class="img-circle" width="40" src="../images1.png" alt="">
+									<div class="small-badge bg-red"></div>
+								</div>
+								<div class="status-badge mrg10A">
+									<img class="img-circle" width="40" src="../images3.png" alt="">
+									<div class="small-badge bg-red"></div>
+								</div>
+								<div class="status-badge mrg10A">
+									<img class="img-circle" width="40" src="../images4.png" alt="">
+									<div class="small-badge bg-green1"></div>
+								</div>
+								<div class="status-badge mrg10A">
+									<img class="img-circle" width="40" src="../images5.png" alt="">
+									<div class="small-badge bg-orange"></div>
+								</div>
+								<div class="status-badge mrg10A">
+									<img class="img-circle" width="40" src="../images1.png" alt="">
+									<div class="small-badge bg-red"></div>
+								</div>
+								<div class="status-badge mrg10A">
+									<img class="img-circle" width="40" src="../images4.png" alt="">
+									<div class="small-badge bg-green1"></div>
+								</div>
+								<div class="status-badge mrg10A">
+									<img class="img-circle" width="40" src="../images3.png" alt="">
+									<div class="small-badge bg-orange"></div>
+								</div>
+							  </div>
+							</div>
 						</div>
+						<div class="col-md-8 inbox_right">
+							<div class="Compose-Message">               
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										Compose New Message 
+									</div>
+									<div class="panel-body panel-body-com-m">
+										<div class="alert alert-info">
+											Please fill details to send a new message
+										</div>
+										<form class="com-mail">
+											<hr>
+												<label>Enter Recipient Name : </label>
+												<input type="text" class="form-control1 control3">
+												<label>Enter Subject :  </label>
+												<input type="text" class="form-control1 control3">
+												<label>Enter Message : </label>
+												<textarea rows="6" class="form-control1 control2"></textarea>
+											<hr>
+											<input type="submit" value="Send Message">
+										</form>
+									</div>
+								 </div>
+							  </div>
+						</div>
+						<div class="clearfix"> </div>
 					</div>
-					<div class="col-xs-5 error-main-right">
-						<img src="images/7.png" alt=" " class="img-responsive" />
-					</div>
-					<div class="clearfix"> </div>
 				</div>
 			</div>
 		</div>
@@ -329,9 +440,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!--footer section end-->
 	</section>
 	
-<script src="js/jquery.nicescroll.js"></script>
-<script src="js/scripts.js"></script>
+<script src="../js/jquery.nicescroll.js"></script>
+<script src="../js/scripts.js"></script>
 <!-- Bootstrap Core JavaScript -->
-   <script src="js/bootstrap.min.js"></script>
+   <script src="../js/bootstrap.min.js"></script>
 </body>
 </html>

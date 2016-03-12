@@ -15,21 +15,21 @@
     Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <link href="../css/style.css" rel='stylesheet' type='text/css' />
     <!-- Graph CSS -->
-    <link href="css/font-awesome.css" rel="stylesheet"> 
+    <link href="../css/font-awesome.css" rel="stylesheet"> 
     <!-- jQuery -->
     <!-- lined-icons -->
-    <link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
+    <link rel="stylesheet" href="../css/icon-font.min.css" type='text/css' />
     <!-- //lined-icons -->
     <!-- chart -->
-    <script src="js/Chart.js"></script>
+    <script src="../js/Chart.js"></script>
     <!-- //chart -->
     <!--animate-->
-    <link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
-    <script src="js/wow.min.js"></script>
+    <link href="../css/animate.css" rel="stylesheet" type="text/css" media="all">
+    <script src="../js/wow.min.js"></script>
     <script>
         new WOW().init();
     </script>
@@ -38,7 +38,7 @@
         <link href='//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
         <!---//webfonts---> 
         <!-- Meters graphs -->
-        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="../js/jquery-1.10.2.min.js"></script>
         <!-- Placed js at the end of the document so the pages load faster -->
 
     </head> 
@@ -122,7 +122,7 @@
                                                     </div>
                                                 </li>
                                                 <li><a href="#">
-                                                    <div class="user_img"><img src="images/1.png" alt=""></div>
+                                                    <div class="user_img"><img src="../images1.png" alt=""></div>
                                                     <div class="notification_desc">
                                                         <p>Lorem ipsum dolor sit amet</p>
                                                         <p><span>1 hour ago</span></p>
@@ -130,7 +130,7 @@
                                                     <div class="clearfix"></div>	
                                                 </a></li>
                                                 <li class="odd"><a href="#">
-                                                    <div class="user_img"><img src="images/1.png" alt=""></div>
+                                                    <div class="user_img"><img src="../images1.png" alt=""></div>
                                                     <div class="notification_desc">
                                                         <p>Lorem ipsum dolor sit amet </p>
                                                         <p><span>1 hour ago</span></p>
@@ -138,7 +138,7 @@
                                                     <div class="clearfix"></div>	
                                                 </a></li>
                                                 <li><a href="#">
-                                                    <div class="user_img"><img src="images/1.png" alt=""></div>
+                                                    <div class="user_img"><img src="../images1.png" alt=""></div>
                                                     <div class="notification_desc">
                                                         <p>Lorem ipsum dolor sit amet </p>
                                                         <p><span>1 hour ago</span></p>
@@ -163,8 +163,8 @@
                                                 </div>
                                             </div>
                                             <!-- search-scripts -->
-                                            <script src="js/classie.js"></script>
-                                            <script src="js/uisearch.js"></script>
+                                            <script src="../js/classie.js"></script>
+                                            <script src="../js/uisearch.js"></script>
                                             <script>
                                                 new UISearch(document.getElementById('sb-search'));
                                             </script>
@@ -179,7 +179,7 @@
                                                     </div>
                                                 </li>
                                                 <li><a href="#">
-                                                    <div class="user_img"><img src="images/1.png" alt=""></div>
+                                                    <div class="user_img"><img src="../images1.png" alt=""></div>
                                                     <div class="notification_desc">
                                                         <p>Lorem ipsum dolor sit amet</p>
                                                         <p><span>1 hour ago</span></p>
@@ -187,7 +187,7 @@
                                                     <div class="clearfix"></div>	
                                                 </a></li>
                                                 <li class="odd"><a href="#">
-                                                    <div class="user_img"><img src="images/1.png" alt=""></div>
+                                                    <div class="user_img"><img src="../images1.png" alt=""></div>
                                                     <div class="notification_desc">
                                                         <p>Lorem ipsum dolor sit amet </p>
                                                         <p><span>1 hour ago</span></p>
@@ -195,7 +195,7 @@
                                                     <div class="clearfix"></div>	
                                                 </a></li>
                                                 <li><a href="#">
-                                                    <div class="user_img"><img src="images/1.png" alt=""></div>
+                                                    <div class="user_img"><img src="../images1.png" alt=""></div>
                                                     <div class="notification_desc">
                                                         <p>Lorem ipsum dolor sit amet </p>
                                                         <p><span>1 hour ago</span></p>
@@ -269,7 +269,7 @@
                                         <li class="dropdown profile_details_drop">
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                 <div class="profile_img">	
-                                                    <span style="background:url(images/1.jpg) no-repeat center"> </span> 
+                                                    <span style="background:url(../images1.jpg) no-repeat center"> </span> 
                                                     <div class="user-name">
                                                         <p>Michael<span>Administrator</span></p>
                                                     </div>
@@ -447,9 +447,9 @@
                 <!--footer section end-->
             </section>
 
-            <script src="js/jquery.nicescroll.js"></script>
-            <script src="js/scripts.js"></script>
+            <script src="../js/jquery.nicescroll.js"></script>
+            <script src="../js/scripts.js"></script>
             <!-- Bootstrap Core JavaScript -->
-            <script src="js/bootstrap.min.js"></script>
+            <script src="../js/bootstrap.min.js"></script>
         </body>
         </html>

@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -15,21 +16,21 @@
 	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<!-- Bootstrap Core CSS -->
-	<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+	<link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 	<!-- Custom CSS -->
-	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<link href="../css/style.css" rel='stylesheet' type='text/css' />
 	<!-- Graph CSS -->
-	<link href="css/font-awesome.css" rel="stylesheet"> 
+	<link href="../css/font-awesome.css" rel="stylesheet"> 
 	<!-- jQuery -->
 	<!-- lined-icons -->
-	<link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
+	<link rel="stylesheet" href="../css/icon-font.min.css" type='text/css' />
 	<!-- //lined-icons -->
 	<!-- chart -->
-	<script src="js/Chart.js"></script>
+	<script src="../js/Chart.js"></script>
 	<!-- //chart -->
 	<!--animate-->
-	<link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
-	<script src="js/wow.min.js"></script>
+	<link href="../css/animate.css" rel="stylesheet" type="text/css" media="all">
+	<script src="../js/wow.min.js"></script>
 	<script>
 		new WOW().init();
 	</script>
@@ -38,7 +39,7 @@
 <link href='//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
 <!---//webfonts---> 
 <!-- Meters graphs -->
-<script src="js/jquery-1.10.2.min.js"></script>
+<script src="../js/jquery-1.10.2.min.js"></script>
 <!-- Placed js at the end of the document so the pages load faster -->
 
 </head> 
@@ -122,7 +123,7 @@
 												</div>
 											</li>
 											<li><a href="#">
-												<div class="user_img"><img src="images/1.png" alt=""></div>
+												<div class="user_img"><img src="../images1.png" alt=""></div>
 												<div class="notification_desc">
 													<p>Lorem ipsum dolor sit amet</p>
 													<p><span>1 hour ago</span></p>
@@ -130,7 +131,7 @@
 												<div class="clearfix"></div>	
 											</a></li>
 											<li class="odd"><a href="#">
-												<div class="user_img"><img src="images/1.png" alt=""></div>
+												<div class="user_img"><img src="../images1.png" alt=""></div>
 												<div class="notification_desc">
 													<p>Lorem ipsum dolor sit amet </p>
 													<p><span>1 hour ago</span></p>
@@ -138,7 +139,7 @@
 												<div class="clearfix"></div>	
 											</a></li>
 											<li><a href="#">
-												<div class="user_img"><img src="images/1.png" alt=""></div>
+												<div class="user_img"><img src="../images1.png" alt=""></div>
 												<div class="notification_desc">
 													<p>Lorem ipsum dolor sit amet </p>
 													<p><span>1 hour ago</span></p>
@@ -163,8 +164,8 @@
 											</div>
 										</div>
 										<!-- search-scripts -->
-										<script src="js/classie.js"></script>
-										<script src="js/uisearch.js"></script>
+										<script src="../js/classie.js"></script>
+										<script src="../js/uisearch.js"></script>
 										<script>
 											new UISearch( document.getElementById( 'sb-search' ) );
 										</script>
@@ -179,7 +180,7 @@
 												</div>
 											</li>
 											<li><a href="#">
-												<div class="user_img"><img src="images/1.png" alt=""></div>
+												<div class="user_img"><img src="../images1.png" alt=""></div>
 												<div class="notification_desc">
 													<p>Lorem ipsum dolor sit amet</p>
 													<p><span>1 hour ago</span></p>
@@ -187,7 +188,7 @@
 												<div class="clearfix"></div>	
 											</a></li>
 											<li class="odd"><a href="#">
-												<div class="user_img"><img src="images/1.png" alt=""></div>
+												<div class="user_img"><img src="../images1.png" alt=""></div>
 												<div class="notification_desc">
 													<p>Lorem ipsum dolor sit amet </p>
 													<p><span>1 hour ago</span></p>
@@ -195,7 +196,7 @@
 												<div class="clearfix"></div>	
 											</a></li>
 											<li><a href="#">
-												<div class="user_img"><img src="images/1.png" alt=""></div>
+												<div class="user_img"><img src="../images1.png" alt=""></div>
 												<div class="notification_desc">
 													<p>Lorem ipsum dolor sit amet </p>
 													<p><span>1 hour ago</span></p>
@@ -269,7 +270,7 @@
 									<li class="dropdown profile_details_drop">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 											<div class="profile_img">	
-												<span style="background:url(images/1.jpg) no-repeat center"> </span> 
+												<span style="background:url(../images1.jpg) no-repeat center"> </span> 
 												<div class="user-name">
 													<p>Michael<span>Administrator</span></p>
 												</div>
@@ -307,7 +308,7 @@
 				<!-- //header-ends -->
 				<div id="page-wrapper">
 					<div class="graphs">
-						<h3 class="blank1">Basic Tables</h3>
+						<h3 class="blank1">Customer Table</h3>
 						<div class="xs tabls">
 							<div class="bs-example4" data-example-id="contextual-table">
 								<div class="form-group">
@@ -326,11 +327,11 @@
 									<thead>
 										<tr>
 											<th>#</th>
-											<th>Title</th>
-											<th>price</th> 
-											<th>Count</th>
-											<th>Edit</th>
-											<th>Delete</th>							
+											<th>id</th>
+											<th>name</th> 
+											<th>email</th>
+											<th>mobile</th>
+											<th>credit</th>							
 										</tr>
 									</thead>
 									<tbody>
@@ -364,8 +365,8 @@
 											<td>Column content</td>
 											<td>Column content</td>
 
-											<td><a href="#"><img src="images/user_edit.png" alt="" title="" border="0" /></a></td>
-											<td><a href="#" class="ask"><img src="images/trash.png" alt="" title="" border="0" /></a></td>
+											<td><a href="#"><i class="fa fa-edit"/></a></td>
+											<td><a href="#" class="ask"><img src="../imagestrash.png" alt="" title="" border="0" /></a></td>
 										</tr>
 										<tr class="info">
 											<th scope="row">5</th>
@@ -380,239 +381,43 @@
 											<td>Column content</td>
 											<td>Column content</td>
 											<td>Column content</td>
-											<td><a href="#"><img src="images/user_edit.png" alt="" title="" border="0" /></a></td>
-											<td><a href="#" class="ask"><img src="images/trash.png" alt="" title="" border="0" /></a></td>							  
+											<td><a href="#"><i class="fa fa-edit"/></a></td>
+											<td><a href="#" class="ask"><img src="../imagestrash.png" alt="" title="" border="0" /></a></td>							  
 										</tr>
 										<tr class="warning">
 											<th scope="row">7</th>
 											<td>Column content</td>
 											<td>Column content</td>
 											<td>Column content</td>
-											<td><a href="#"><img src="images/user_edit.png" alt="" title="" border="0" /></a></td>
-											<td><a href="#" class="ask"><img src="images/trash.png" alt="" title="" border="0" /></a></td>							  
+											<td><a href="#"><i class="fa fa-edit"/></a></td>
+											<td><a href="#" class="ask"><img src="../imagestrash.png" alt="" title="" border="0" /></a></td>							  
 										</tr>
 										<tr>
 											<th scope="row">8</th>
 											<td>Column content</td>
 											<td>Column content</td>
 											<td>Column content</td>
-											<td><a href="#"><img src="images/user_edit.png" alt="" title="" border="0" /></a></td>
-											<td><a href="#" class="ask"><img src="images/trash.png" alt="" title="" border="0" /></a></td>							  
+											<td><a href="#"><i class="fa fa-edit"/></a></td>
+											<td><a href="#" class="ask"><img src="../imagestrash.png" alt="" title="" border="0" /></a></td>							  
 										</tr>
 										<tr class="danger">
 											<th scope="row">9</th>
 											<td>Column content</td>
 											<td>Column content</td>
 											<td>Column content</td>
-											<td><a href="#"><img src="images/user_edit.png" alt="" title="" border="0" /></a></td>
-											<td><a href="#" class="ask"><img src="images/trash.png" alt="" title="" border="0" /></a></td>							  
+											<td><a href="#"><i class="fa fa-edit"/></a></td>
+											<td><a href="#" class="ask"><img src="../imagestrash.png" alt="" title="" border="0" /></a></td>							  
 										</tr>
 									</tbody>
 								</table>
-								<button class="btn-success btn centerBtn">Add new Book</button>
+								<!--<button class="btn-success btn centerBtn">Add new Book</button>-->
 								<!-- <a href="#" class="bt_green"><span class="bt_green_lft"></span><strong>Add new item</strong><span class="bt_green_r"></span></a> -->
 							</div>
-							<div class="panel-body1">
-								<table class="table">
-									<thead>
-										<tr>
-											<th>#</th>
-											<th>First Name</th>
-											<th>Last Name</th>
-											<th>Username</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<th scope="row">1</th>
-											<td>Mark</td>
-											<td>Otto</td>
-											<td>@mdo</td>
-										</tr>
-										<tr>
-											<th scope="row">2</th>
-											<td>Jacob</td>
-											<td>Thornton</td>
-											<td>@fat</td>
-										</tr>
-										<tr>
-											<th scope="row">3</th>
-											<td>Larry</td>
-											<td>the Bird</td>
-											<td>@twitter</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-
-
-
-							<div class="panel panel-warning" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
-								<div class="panel-body no-padding">
-									<table class="table table-striped">
-										<thead>
-											<tr class="warning">
-												<th>#</th>
-												<th>First Name</th>
-												<th>Last Name</th>
-												<th>Username</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>1</td>
-												<td>Mark</td>
-												<td>Otto</td>
-												<td>@mdo</td>
-											</tr>
-											<tr>
-												<td>2</td>
-												<td>Jacob</td>
-												<td>Thornton</td>
-												<td>@fat</td>
-											</tr>
-											<tr>
-												<td>3</td>
-												<td>Larry</td>
-												<td>the Bird</td>
-												<td>@twitter</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-							<div class="panel panel-warning" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
-								<div class="panel-heading">
-									<h2>Warning Table</h2>
-									<div class="panel-ctrls" data-actions-container="" data-action-collapse="{&quot;target&quot;: &quot;.panel-body&quot;}"><span class="button-icon has-bg"><i class="ti ti-angle-down"></i></span></div>
-								</div>
-								<div class="panel-body no-padding" style="display: block;">
-									<table class="table table-striped">
-										<thead>
-											<tr class="warning">
-												<th>#</th>
-												<th>First Name</th>
-												<th>Last Name</th>
-												<th>Username</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>1</td>
-												<td>Mark</td>
-												<td>Otto</td>
-												<td>@mdo</td>
-											</tr>
-											<tr>
-												<td>2</td>
-												<td>Jacob</td>
-												<td>Thornton</td>
-												<td>@fat</td>
-											</tr>
-											<tr>
-												<td>3</td>
-												<td>Larry</td>
-												<td>the Bird</td>
-												<td>@twitter</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-							<div class="bs-example4" data-example-id="simple-responsive-table">
-								<div class="table-responsive">
-									<table class="table">
-										<thead>
-											<tr>
-												<th>#</th>
-												<th>Table heading</th>
-												<th>Table heading</th>
-												<th>Table heading</th>
-												<th>Table heading</th>
-												<th>Table heading</th>
-												<th>Table heading</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<th scope="row">1</th>
-												<td>Table cell</td>
-												<td>Table cell</td>
-												<td>Table cell</td>
-												<td>Table cell</td>
-												<td>Table cell</td>
-												<td>Table cell</td>
-											</tr>
-											<tr>
-												<th scope="row">2</th>
-												<td>Table cell</td>
-												<td>Table cell</td>
-												<td>Table cell</td>
-												<td>Table cell</td>
-												<td>Table cell</td>
-												<td>Table cell</td>
-											</tr>
-											<tr>
-												<th scope="row">3</th>
-												<td>Table cell</td>
-												<td>Table cell</td>
-												<td>Table cell</td>
-												<td>Table cell</td>
-												<td>Table cell</td>
-												<td>Table cell</td>
-											</tr>
-										</tbody>
-									</table>
-								</div><!-- /.table-responsive -->
-								<div class="table-responsive">
-									<table class="table table-bordered">
-										<thead>
-											<tr>
-												<th>#</th>
-												<th>Table heading</th>
-												<th>Table heading</th>
-												<th>Table heading</th>
-												<th>Table heading</th>
-												<th>Table heading</th>
-												<th>Table heading</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<th scope="row">1</th>
-												<td>Table cell</td>
-												<td>Table cell</td>
-												<td>Table cell</td>
-												<td>Table cell</td>
-												<td>Table cell</td>
-												<td>Table cell</td>
-											</tr>
-											<tr>
-												<th scope="row">2</th>
-												<td>Table cell</td>
-												<td>Table cell</td>
-												<td>Table cell</td>
-												<td>Table cell</td>
-												<td>Table cell</td>
-												<td>Table cell</td>
-											</tr>
-											<tr>
-												<th scope="row">3</th>
-												<td>Table cell</td>
-												<td>Table cell</td>
-												<td>Table cell</td>
-												<td>Table cell</td>
-												<td>Table cell</td>
-												<td>Table cell</td>
-											</tr>
-										</tbody>
-									</table>
-								</div><!-- /.table-responsive -->
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+		
 			<!--footer section start-->
 			<footer>
 				<p>&copy 2015 Easy Admin Panel. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts.</a></p>
@@ -620,9 +425,9 @@
 			<!--footer section end-->
 		</section>
 
-		<script src="js/jquery.nicescroll.js"></script>
-		<script src="js/scripts.js"></script>
+		<script src="../js/jquery.nicescroll.js"></script>
+		<script src="../js/scripts.js"></script>
 		<!-- Bootstrap Core JavaScript -->
-		<script src="js/bootstrap.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
 	</body>
 	</html>

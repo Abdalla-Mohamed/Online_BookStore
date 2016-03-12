@@ -4,7 +4,7 @@
     Author     : Abdalla
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" session="false"%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -15,21 +15,21 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
  <!-- Bootstrap Core CSS -->
-<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 <!-- Custom CSS -->
-<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="../css/style.css" rel='stylesheet' type='text/css' />
 <!-- Graph CSS -->
-<link href="css/font-awesome.css" rel="stylesheet"> 
+<link href="../css/font-awesome.css" rel="stylesheet"> 
 <!-- jQuery -->
 <!-- lined-icons -->
-<link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
+<link rel="stylesheet" href="../css/icon-font.min.css" type='text/css' />
 <!-- //lined-icons -->
 <!-- chart -->
-<script src="js/Chart.js"></script>
+<script src="../js/Chart.js"></script>
 <!-- //chart -->
 <!--animate-->
-<link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
-<script src="js/wow.min.js"></script>
+<link href="../css/animate.css" rel="stylesheet" type="text/css" media="all">
+<script src="../js/wow.min.js"></script>
 	<script>
 		 new WOW().init();
 	</script>
@@ -38,7 +38,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
 <!---//webfonts---> 
  <!-- Meters graphs -->
-<script src="js/jquery-1.10.2.min.js"></script>
+<script src="../js/jquery-1.10.2.min.js"></script>
 <!-- Placed js at the end of the document so the pages load faster -->
 
 </head> 
@@ -59,23 +59,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<p><a href="#">Click Here</a> </p>
 								<div class="clearfix"> </div>
 							</div>
-							<form>
+							<form action="j_security_check" method="post" >
 							<div class="log-input">
 								<div class="log-input-left">
-								   <input type="text" class="user" value="Yourname" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email address:';}"/>
+                                                                    <input type="text" class="user" name="j_username" placeholder="Yourname" />
 								</div>
-								<span class="checkbox2">
+<!--								<span class="checkbox2">
 									 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i></label>
-								</span>
+								</span>-->
 								<div class="clearfix"> </div>
 							</div>
 							<div class="log-input">
 								<div class="log-input-left">
-								   <input type="password" class="lock" value="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email address:';}"/>
+								   <input type="password" name="j_password" class="lock"  />
 								</div>
-								<span class="checkbox2">
+<!--								<span class="checkbox2">
 									 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i></label>
-								</span>
+								</span>-->
 								<div class="clearfix"> </div>
 							</div>
 							<input type="submit" value="Login to your account">
@@ -97,9 +97,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!--footer section end-->
 	</section>
 	
-<script src="js/jquery.nicescroll.js"></script>
-<script src="js/scripts.js"></script>
+<script src="../js/jquery.nicescroll.js"></script>
+<script src="../js/scripts.js"></script>
 <!-- Bootstrap Core JavaScript -->
-   <script src="js/bootstrap.min.js"></script>
+   <script src="../js/bootstrap.min.js"></script>
 </body>
 </html>

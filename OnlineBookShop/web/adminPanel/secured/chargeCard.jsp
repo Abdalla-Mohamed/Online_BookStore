@@ -16,21 +16,21 @@
               Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
         <!-- Bootstrap Core CSS -->
-        <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+        <link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
         <!-- Custom CSS -->
-        <link href="css/style.css" rel='stylesheet' type='text/css' />
+        <link href="../css/style.css" rel='stylesheet' type='text/css' />
         <!-- Graph CSS -->
-        <link href="css/font-awesome.css" rel="stylesheet"> 
+        <link href="../css/font-awesome.css" rel="stylesheet"> 
         <!-- jQuery -->
         <!-- lined-icons -->
-        <link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
+        <link rel="stylesheet" href="../css/icon-font.min.css" type='text/css' />
         <!-- //lined-icons -->
         <!-- chart -->
-        <script src="js/Chart.js"></script>
+        <script src="../js/Chart.js"></script>
         <!-- //chart -->
         <!--animate-->
-        <link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
-        <script src="js/wow.min.js"></script>
+        <link href="../css/animate.css" rel="stylesheet" type="text/css" media="all">
+        <script src="../js/wow.min.js"></script>
         <script>
             new WOW().init();
         </script>
@@ -39,7 +39,7 @@
         <link href='//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
         <!---//webfonts---> 
         <!-- Meters graphs -->
-        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="../js/jquery-1.10.2.min.js"></script>
         <!-- Placed js at the end of the document so the pages load faster -->
 
     </head> 
@@ -123,7 +123,7 @@
                                                 </div>
                                             </li>
                                             <li><a href="#">
-                                                    <div class="user_img"><img src="images/1.png" alt=""></div>
+                                                    <div class="user_img"><img src="../images1.png" alt=""></div>
                                                     <div class="notification_desc">
                                                         <p>Lorem ipsum dolor sit amet</p>
                                                         <p><span>1 hour ago</span></p>
@@ -131,7 +131,7 @@
                                                     <div class="clearfix"></div>	
                                                 </a></li>
                                             <li class="odd"><a href="#">
-                                                    <div class="user_img"><img src="images/1.png" alt=""></div>
+                                                    <div class="user_img"><img src="../images1.png" alt=""></div>
                                                     <div class="notification_desc">
                                                         <p>Lorem ipsum dolor sit amet </p>
                                                         <p><span>1 hour ago</span></p>
@@ -139,7 +139,7 @@
                                                     <div class="clearfix"></div>	
                                                 </a></li>
                                             <li><a href="#">
-                                                    <div class="user_img"><img src="images/1.png" alt=""></div>
+                                                    <div class="user_img"><img src="../images1.png" alt=""></div>
                                                     <div class="notification_desc">
                                                         <p>Lorem ipsum dolor sit amet </p>
                                                         <p><span>1 hour ago</span></p>
@@ -164,8 +164,8 @@
                                             </div>
                                         </div>
                                         <!-- search-scripts -->
-                                        <script src="js/classie.js"></script>
-                                        <script src="js/uisearch.js"></script>
+                                        <script src="../js/classie.js"></script>
+                                        <script src="../js/uisearch.js"></script>
                                         <script>
             new UISearch(document.getElementById('sb-search'));
                                         </script>
@@ -180,7 +180,7 @@
                                                 </div>
                                             </li>
                                             <li><a href="#">
-                                                    <div class="user_img"><img src="images/1.png" alt=""></div>
+                                                    <div class="user_img"><img src="../images1.png" alt=""></div>
                                                     <div class="notification_desc">
                                                         <p>Lorem ipsum dolor sit amet</p>
                                                         <p><span>1 hour ago</span></p>
@@ -188,7 +188,7 @@
                                                     <div class="clearfix"></div>	
                                                 </a></li>
                                             <li class="odd"><a href="#">
-                                                    <div class="user_img"><img src="images/1.png" alt=""></div>
+                                                    <div class="user_img"><img src="../images1.png" alt=""></div>
                                                     <div class="notification_desc">
                                                         <p>Lorem ipsum dolor sit amet </p>
                                                         <p><span>1 hour ago</span></p>
@@ -196,7 +196,7 @@
                                                     <div class="clearfix"></div>	
                                                 </a></li>
                                             <li><a href="#">
-                                                    <div class="user_img"><img src="images/1.png" alt=""></div>
+                                                    <div class="user_img"><img src="../images1.png" alt=""></div>
                                                     <div class="notification_desc">
                                                         <p>Lorem ipsum dolor sit amet </p>
                                                         <p><span>1 hour ago</span></p>
@@ -270,7 +270,7 @@
                                     <li class="dropdown profile_details_drop">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                             <div class="profile_img">	
-                                                <span style="background:url(images/1.jpg) no-repeat center"> </span> 
+                                                <span style="background:url(../images1.jpg) no-repeat center"> </span> 
                                                 <div class="user-name">
                                                     <p>Michael<span>Administrator</span></p>
                                                 </div>
@@ -310,14 +310,14 @@
                     <div class="graphs">
                         <h3 class="blank1">Charge Cards Forms</h3>
 
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <!-- Horizontal Form -->
                             <div >
 
-                                <form method="POST" action='../ChargingCardController' class="form-horizontal col-sm-8 switch-right-grid" style="padding: 15px;padding-left:  0">
+                                <form method="POST" action='../../ChargingCardController' class="form-horizontal col-sm-10 switch-right-grid" style="padding: 15px;padding-left:  0">
                                     <div class="box-body col-sm-12 " >
                                         <div class="form-group col-sm-12 " style="padding: 0px" >
-                                            
+
                                             <label for="inputEmail3" class="col-sm-4 control-label">Card Value:</label>
 
                                             <div class="col-sm-8" >
@@ -328,12 +328,12 @@
                                                     <input name="cardValue" class="form-control1"  type="text" placeholder="Card Value">
                                                 </div>
                                             </div>
-                                          
+
 
                                         </div>
-                                        
+
                                         <div class="form-group col-sm-12 " style="padding: 0px" >
-                                            
+
                                             <label for="inputEmail3" class="col-sm-4 control-label">Count:</label>
 
                                             <div class="col-sm-8" >
@@ -344,11 +344,11 @@
                                                     <input name="cardCount" class="form-control1"  type="text" placeholder="Card Count ">
                                                 </div>
                                             </div>
-                                          
+
 
                                         </div>
 
-                                      
+
 
                                     </div >
                                     <div class="col-sm-12 " >
@@ -360,8 +360,51 @@
 
                         </div>
 
+                        <div class="bs-example4 col-md-6" data-example-id="contextual-table">
+                            <div class="form-group">
+
+                                <form action="#" method="GET">
+                                    <div class="input-group input-group-ind">
+                                        <input type="text" name="search" class="form-control1 input-search" placeholder="Search...">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-success" type="submit"><i class="fa fa-search icon-ser"></i></button>
+                                        </span>
+                                    </div><!-- Input Group -->
+                                </form>
+                                <div class="clearfix"> </div>
+                            </div>
+                            <table class="table table table-striped">
+                                <thead class="alert alert-info">
+                                    <tr >
+                                        <th>#</th>
+                                        <th>price</th> 
+                                        <th>Count</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr >
+                                        <th scope="row">1</th>
+                                        <td>Column content</td>
+                                        <td>Column content</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Column content</td>
+                                        <td>Column content</td>
+                                    </tr>
+                               
+                                </tbody>
+                            </table>
+                            <!--<button class="btn-success btn centerBtn">Add new Book</button>-->
+                            <!-- <a href="#" class="bt_green"><span class="bt_green_lft"></span><strong>Add new item</strong><span class="bt_green_r"></span></a> -->
+                        </div>
+
+
                     </div>
+
                 </div>
+
+
             </div>
             <!--footer section start-->
             <footer>
@@ -370,9 +413,9 @@
             <!--footer section end-->
         </section>
 
-        <script src="js/jquery.nicescroll.js"></script>
-        <script src="js/scripts.js"></script>
+        <script src="../js/jquery.nicescroll.js"></script>
+        <script src="../js/scripts.js"></script>
         <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
     </body>
 </html>
