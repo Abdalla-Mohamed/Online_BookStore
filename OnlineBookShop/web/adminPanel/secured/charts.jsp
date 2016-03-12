@@ -8,28 +8,28 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Easy Admin Panel an Admin Panel Category Flat Bootstrap Responsive Website Template | Compose Mail :: w3layouts</title>
+<title>Easy Admin Panel an Admin Panel Category Flat Bootstrap Responsive Website Template | Charts :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Easy Admin Panel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
  <!-- Bootstrap Core CSS -->
-<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 <!-- Custom CSS -->
-<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="../css/style.css" rel='stylesheet' type='text/css' />
 <!-- Graph CSS -->
-<link href="css/font-awesome.css" rel="stylesheet"> 
+<link href="../css/font-awesome.css" rel="stylesheet"> 
 <!-- jQuery -->
 <!-- lined-icons -->
-<link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
+<link rel="stylesheet" href="../css/icon-font.min.css" type='text/css' />
 <!-- //lined-icons -->
 <!-- chart -->
-<script src="js/Chart.js"></script>
+<script src="../js/Chart.js"></script>
 <!-- //chart -->
 <!--animate-->
-<link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
-<script src="js/wow.min.js"></script>
+<link href="../css/animate.css" rel="stylesheet" type="text/css" media="all">
+<script src="../js/wow.min.js"></script>
 	<script>
 		 new WOW().init();
 	</script>
@@ -38,7 +38,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
 <!---//webfonts---> 
  <!-- Meters graphs -->
-<script src="js/jquery-1.10.2.min.js"></script>
+<script src="../js/jquery-1.10.2.min.js"></script>
 <!-- Placed js at the end of the document so the pages load faster -->
 
 </head> 
@@ -72,13 +72,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</li>
 						<li><a href="forms.jsp"><i class="lnr lnr-spell-check"></i> <span>Forms</span></a></li>
 						<li><a href="tables.jsp"><i class="lnr lnr-menu"></i> <span>Tables</span></a></li>              
-						<li class="menu-list act"><a href="#"><i class="lnr lnr-envelope"></i> <span>MailBox</span></a>
+						<li class="menu-list"><a href="#"><i class="lnr lnr-envelope"></i> <span>MailBox</span></a>
 							<ul class="sub-menu-list">
 								<li><a href="inbox.jsp">Inbox</a> </li>
 								<li><a href="compose-mail.jsp">Compose Mail</a></li>
 							</ul>
 						</li>  
-						<li class="menu-list"><a href="#"><i class="lnr lnr-indent-increase"></i> <span>Menu Levels</span></a>  
+						<li class="menu-list act"><a href="#"><i class="lnr lnr-indent-increase"></i> <span>Menu Levels</span></a>  
 							<ul class="sub-menu-list">
 								<li><a href="charts.jsp">Basic Charts</a> </li>
 							</ul>
@@ -99,7 +99,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- left side end-->
     
     <!-- main content start-->
-		<div class="main-content main-content3 main-content3copy">
+		<div class="main-content main-content5">
 			<!-- header-starts -->
 			<div class="header-section">
 			 
@@ -122,7 +122,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												</div>
 											</li>
 											<li><a href="#">
-											   <div class="user_img"><img src="images/1.png" alt=""></div>
+											   <div class="user_img"><img src="../images1.png" alt=""></div>
 											   <div class="notification_desc">
 												<p>Lorem ipsum dolor sit amet</p>
 												<p><span>1 hour ago</span></p>
@@ -130,7 +130,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											   <div class="clearfix"></div>	
 											 </a></li>
 											 <li class="odd"><a href="#">
-												<div class="user_img"><img src="images/1.png" alt=""></div>
+												<div class="user_img"><img src="../images1.png" alt=""></div>
 											   <div class="notification_desc">
 												<p>Lorem ipsum dolor sit amet </p>
 												<p><span>1 hour ago</span></p>
@@ -138,7 +138,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											  <div class="clearfix"></div>	
 											 </a></li>
 											<li><a href="#">
-											   <div class="user_img"><img src="images/1.png" alt=""></div>
+											   <div class="user_img"><img src="../images1.png" alt=""></div>
 											   <div class="notification_desc">
 												<p>Lorem ipsum dolor sit amet </p>
 												<p><span>1 hour ago</span></p>
@@ -163,8 +163,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										</div>
 									</div>
 										<!-- search-scripts -->
-										<script src="js/classie.js"></script>
-										<script src="js/uisearch.js"></script>
+										<script src="../js/classie.js"></script>
+										<script src="../js/uisearch.js"></script>
 											<script>
 												new UISearch( document.getElementById( 'sb-search' ) );
 											</script>
@@ -179,7 +179,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											</div>
 										</li>
 										<li><a href="#">
-											<div class="user_img"><img src="images/1.png" alt=""></div>
+											<div class="user_img"><img src="../images1.png" alt=""></div>
 										   <div class="notification_desc">
 											<p>Lorem ipsum dolor sit amet</p>
 											<p><span>1 hour ago</span></p>
@@ -187,7 +187,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										  <div class="clearfix"></div>	
 										 </a></li>
 										 <li class="odd"><a href="#">
-											<div class="user_img"><img src="images/1.png" alt=""></div>
+											<div class="user_img"><img src="../images1.png" alt=""></div>
 										   <div class="notification_desc">
 											<p>Lorem ipsum dolor sit amet </p>
 											<p><span>1 hour ago</span></p>
@@ -195,7 +195,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										   <div class="clearfix"></div>	
 										 </a></li>
 										 <li><a href="#">
-											<div class="user_img"><img src="images/1.png" alt=""></div>
+											<div class="user_img"><img src="../images1.png" alt=""></div>
 										   <div class="notification_desc">
 											<p>Lorem ipsum dolor sit amet </p>
 											<p><span>1 hour ago</span></p>
@@ -269,7 +269,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li class="dropdown profile_details_drop">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 									<div class="profile_img">	
-										<span style="background:url(images/1.jpg) no-repeat center"> </span> 
+										<span style="background:url(../images1.jpg) no-repeat center"> </span> 
 										 <div class="user-name">
 											<p>Michael<span>Administrator</span></p>
 										 </div>
@@ -307,126 +307,178 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- //header-ends -->
 			<div id="page-wrapper">
 				<div class="graphs">
-					<h3 class="blank1">Compose Mail</h3>
-					<div class="xs">
-						<div class="col-md-4 email-list1">
-							<ul class="collection">
-								<li class="collection-item avatar email-unread">
-								  <i class="fa fa-users icon_1"></i>
-								  <div class="avatar_left">
-									<span class="email-title">Social</span>
-									<p class="truncate grey-text ultra-small">Lorem Ipsum is simply dummy text of.</p>
-								  </div>
-								  <a href="#!" class="secondary-content"><span class="new badge1 blue">4</span></a>
-								  <div class="clearfix"> </div>
-								</li>
-								<li class="collection-item avatar email-unread">
-								  <i class="fa fa-exclamation-circle icon_2"></i>
-								  <div class="avatar_left">
-									<span class="email-title">Updates</span>
-									<p class="truncate grey-text ultra-small">It is a long established fact that a reader.</p>
-								  </div>
-								  <a href="#!" class="secondary-content"><span class="new badge1 red">4</span></a>
-								  <div class="clearfix"> </div>
-								</li>
-								<li class="collection-item avatar email-unread">
-								  <i class="fa fa-tag icon_3"></i>
-								  <div class="avatar_left">
-									<span class="email-title">Promotions</span>
-									<p class="truncate grey-text ultra-small">There are many variations of passages.</p>
-								  </div>
-								  <a href="#!" class="secondary-content"><span class="new badge1 blue1">4</span></a>
-								  <div class="clearfix"> </div>
-								</li>
-								<li class="collection-item avatar email-unread">
-								  <i class="icon_4">G</i>
-								  <div class="avatar_left">
-									<span class="email-title">Gmail</span>
-									<p class="truncate grey-text ultra-small">Sed ut perspiciatis unde omnis iste.</p>
-								  </div>
-								  <a href="#!" class="secondary-content"><span class="blue-text ultra-small">2:15 pm</span></a>
-								  <div class="clearfix"> </div>
-								</li>
-								<li class="collection-item avatar email-unread">
-								  <i class="icon_4 icon_5">F</i>
-								  <div class="avatar_left">
-									<span class="email-title">Facebook</span>
-									<p class="truncate grey-text ultra-small">But I must explain to you how.</p>
-								  </div>
-								  <a href="#!" class="secondary-content"><span class="blue-text ultra-small">2:15 pm</span></a>
-								  <div class="clearfix"> </div>
-								</li>
-								<li class="collection-item avatar email-unread email_last">
-								  <i class="icon_4 icon_6">T</i>
-								  <div class="avatar_left">
-									<span class="email-title">Twitter</span>
-									<p class="truncate grey-text ultra-small">At vero eos et accusamus et iusto odio.</p>
-								  </div>
-								  <a href="#!" class="secondary-content"><span class="blue-text ultra-small">2:15 pm</span></a>
-								  <div class="clearfix"> </div>
-								</li>
-							</ul>
-							<div class="content-box  mrg15B">
-							  <div class="content-box-wrapper text-center">
-								<h4 class="content-box-header">
-								Chat
-								<small>(Online friends)</small>
-								</h4>
-								<div class="status-badge mrg10A">
-									<img class="img-circle" width="40" src="images/1.png" alt="">
-									<div class="small-badge bg-red"></div>
-								</div>
-								<div class="status-badge mrg10A">
-									<img class="img-circle" width="40" src="images/3.png" alt="">
-									<div class="small-badge bg-red"></div>
-								</div>
-								<div class="status-badge mrg10A">
-									<img class="img-circle" width="40" src="images/4.png" alt="">
-									<div class="small-badge bg-green1"></div>
-								</div>
-								<div class="status-badge mrg10A">
-									<img class="img-circle" width="40" src="images/5.png" alt="">
-									<div class="small-badge bg-orange"></div>
-								</div>
-								<div class="status-badge mrg10A">
-									<img class="img-circle" width="40" src="images/1.png" alt="">
-									<div class="small-badge bg-red"></div>
-								</div>
-								<div class="status-badge mrg10A">
-									<img class="img-circle" width="40" src="images/4.png" alt="">
-									<div class="small-badge bg-green1"></div>
-								</div>
-								<div class="status-badge mrg10A">
-									<img class="img-circle" width="40" src="images/3.png" alt="">
-									<div class="small-badge bg-orange"></div>
-								</div>
-							  </div>
+					<h3 class="blank1">Simple Charts</h3>
+					<div class="graph_box">
+						<div class="col-md-4 grid_2">
+							<div class="grid_1">
+								<h4>Circular</h4>
+								<canvas id="doughnut" height="300" width="470" style="width: 470px; height: 300px;"></canvas>
+								<script>
+									var doughnutData = [
+									{
+										value: 30,
+										color:"#F44336"
+									},
+									{
+										value : 50,
+										color : "#929292"
+									},
+									{
+										value : 100,
+										color : "#00aced"
+									},
+									{
+										value : 40,
+										color : "#9358ac"
+									},
+									];
+									new Chart(document.getElementById("doughnut").getContext("2d")).Doughnut(doughnutData);
+								</script>
 							</div>
 						</div>
-						<div class="col-md-8 inbox_right">
-							<div class="Compose-Message">               
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										Compose New Message 
-									</div>
-									<div class="panel-body panel-body-com-m">
-										<div class="alert alert-info">
-											Please fill details to send a new message
-										</div>
-										<form class="com-mail">
-											<hr>
-												<label>Enter Recipient Name : </label>
-												<input type="text" class="form-control1 control3">
-												<label>Enter Subject :  </label>
-												<input type="text" class="form-control1 control3">
-												<label>Enter Message : </label>
-												<textarea rows="6" class="form-control1 control2"></textarea>
-											<hr>
-											<input type="submit" value="Send Message">
-										</form>
-									</div>
+						<div class="col-md-4 grid_2">
+							<div class="grid_1">
+								<h4>Radar</h4>
+								<canvas id="radar" height="300" width="470" style="width: 470px; height: 300px;"></canvas>
+									<script>
+										var radarChartData = {
+											labels : ["","","","","","",""],
+											datasets : [
+												{
+													fillColor : "#00aced",
+													strokeColor : "#00aced",
+													pointColor : "#00aced",
+													pointStrokeColor : "#fff",
+													data : [65,59,90,81,56,55,40]
+												},
+												{
+													fillColor : "#8BC34A",
+													strokeColor : "#8BC34A",
+													pointColor : "#8BC34A",
+													pointStrokeColor : "#fff",
+													data : [28,48,40,19,96,27,100]
+												}
+											]
+											
+										};
+										new Chart(document.getElementById("radar").getContext("2d")).Radar(radarChartData);
+									</script>
+								</div>
+						</div>
+						<div class="col-md-4 grid_2">
+							<div class="grid_1">
+								<h4>PolarArea</h4>
+								<canvas id="polarArea" height="300" width="450" style="width: 450px; height: 300px;"></canvas>
+								<script>
+									var chartData = [
+										{
+											value : Math.random(),
+											color: "#8BC34A"
+										},
+										{
+											value : Math.random(),
+											color: "#C7604C"
+										},
+										{
+											value : Math.random(),
+											color: "#21323D"
+										},
+										{
+											value : Math.random(),
+											color: "#9D9B7F"
+										},
+										{
+											value : Math.random(),
+											color: "#7D4F6D"
+										},
+										{
+											value : Math.random(),
+											color: "#9358ac"
+										}
+									];
+									new Chart(document.getElementById("polarArea").getContext("2d")).PolarArea(chartData);
+								</script>
+							</div>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="graph_box1">
+						<div class="col-md-6 grid_2 grid_2_bot">
+							<div class="grid_1">
+								<h4>Pie</h4>
+								<div class="legend">
+									<div id="os-Win-lbl">Chrome <span>100%</span></div>
+									<div id="os-Mac-lbl">Internet Explorer <span> 50%</span></div>
+									<div id="os-Other-lbl">Safari<span>30%</span></div>
 								 </div>
-							  </div>
+
+								<canvas id="pie" height="315" width="470" style="width: 470px; height: 315px;"></canvas>
+								<script>
+									var pieData = [
+										{
+											value: 30,
+											color:"#ef553a"
+										},
+										{
+											value : 30,
+											color : "#FF0Fed"
+										},
+										{
+											value : 30,
+											color : "#8BC34A"
+										}
+									
+									];
+									new Chart(document.getElementById("pie").getContext("2d")).Pie(pieData);
+								</script>
+							</div>
+						</div>
+						<div class="col-md-6 grid_2 grid_2_bot">
+							<div class="grid_1">
+								<h4>Line</h4>
+								<canvas id="line1" height="100" width="600" style="width: 600px; height: 100px;"></canvas>
+								<script>
+										var lineChartData = {
+											labels : ["Mon","Tue","Wed","Thu","Fri","Sat","Mon"],
+											datasets : [
+												{
+													fillColor : "#fff",
+													strokeColor : "#F44336",
+													pointColor : "#fbfbfb",
+													pointStrokeColor : "#F44336",
+													data : [20,35,45,30,10,65,40]
+												}
+											]
+											
+										};
+										new Chart(document.getElementById("line1").getContext("2d")).Line(lineChartData);
+								</script>
+							</div>
+							<div class="line-bottom-grid">
+								<div class="grid_1">
+									<h4>Bar</h4>
+									<canvas id="bar1" height="100" width="600" style="width: 600px; height: 100px;"></canvas>
+									<script>
+										var barChartData = {
+											labels : ["Mon","Tue","Wed","Thu","Fri","Sat","Mon","Tue","Wed","Thu"],
+											datasets : [
+												{
+													fillColor : "#8BC34A",
+													strokeColor : "#8BC34A",
+													data : [25,40,50,65,55,30,20,10,6,4]
+												},
+												{
+													fillColor : "#8BC34A",
+													strokeColor : "#8BC34A",
+													data : [30,45,55,70,40,25,15,8,5,2]
+												}
+											]
+											
+										};
+											new Chart(document.getElementById("bar1").getContext("2d")).Bar(barChartData);
+									</script>
+								</div>
+							</div>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -440,9 +492,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!--footer section end-->
 	</section>
 	
-<script src="js/jquery.nicescroll.js"></script>
-<script src="js/scripts.js"></script>
+<script src="../js/jquery.nicescroll.js"></script>
+<script src="../js/scripts.js"></script>
 <!-- Bootstrap Core JavaScript -->
-   <script src="js/bootstrap.min.js"></script>
+   <script src="../js/bootstrap.min.js"></script>
 </body>
 </html>
