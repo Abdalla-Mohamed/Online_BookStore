@@ -20,8 +20,10 @@ import javax.servlet.http.HttpSession;
 public class Logout extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException, IOException{
-         HttpSession session=req.getSession();
+        
+        HttpSession session=req.getSession();
          session.invalidate();
-       res.sendRedirect("");
+       res.sendRedirect("customerSite/checkout.jsp");
+       
     }
 }

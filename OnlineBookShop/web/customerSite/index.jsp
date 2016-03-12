@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<%@page session="false" %>
 <!DOCTYPE html>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -44,7 +45,7 @@
       <section class="row-fluid">
         <section class="span6">
           <ul class="top-nav">
-            <li><a href="index.html" class="active">Home page</a></li>
+            <li><a href="index.jsp" class="active">Home page</a></li>
             <li><a href="grid-view.html">Online Store</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html">Contact Us</a></li>
@@ -52,7 +53,7 @@
         </section>
         <section class="span6 e-commerce-list">
           <ul>
-            <li>Welcome! <a href="checkout.html">Login</a> or <a href="checkout.html">Create an account</a></li>
+            <li>Welcome! <a href="checkout.jsp">Login</a> or <a href="checkout.jsp">Create an account</a></li>
             <li><p>Welcome you are user number ${applicationScope.x+1}</p>
                 <c:set var="x" scope="application" value="${x+1}"/></li>
           </ul>
@@ -75,7 +76,7 @@
     <section class="container-fluid container">
       <section class="row-fluid">
         <section class="span4">
-          <h1 id="logo"> <a href="index.html"><img src="images/logo.png" /></a> </h1>
+          <h1 id="logo"> <a href="index.jsp"><img src="images/logo.png" /></a> </h1>
         </section>
         <section class="span8">
           <ul class="top-nav2">

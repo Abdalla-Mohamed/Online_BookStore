@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session="false" %>
 <!DOCTYPE html>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -44,7 +45,7 @@
       <section class="row-fluid">
         <section class="span6">
           <ul class="top-nav">
-            <li><a href="index.html" class="active">Home page</a></li>
+            <li><a href="index.jsp" class="active">Home page</a></li>
             <li><a href="grid-view.html">Online Store</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="shortcodes.html">Short Codes</a></li>
@@ -54,7 +55,7 @@
         </section>
         <section class="span6 e-commerce-list">
           <ul>
-            <li>Welcome! <a href="checkout.html">Login</a> or <a href="checkout.html">Create an account</a></li>
+            <li>Welcome! <a href="checkout.jsp">Login</a> or <a href="checkout.jsp">Create an account</a></li>
           </ul>
           <div class="c-btn"> <a href="cart.html" class="cart-btn">Cart</a>
             <div class="btn-group">
@@ -75,7 +76,7 @@
     <section class="container-fluid container">
       <section class="row-fluid">
         <section class="span4">
-          <h1 id="logo"> <a href="index.html"><img src="images/logo.png" /></a> </h1>
+          <h1 id="logo"> <a href="index.jsp"><img src="images/logo.png" /></a> </h1>
         </section>
         <section class="span8">
           <ul class="top-nav2">
@@ -155,7 +156,7 @@
                 <div class="accordion-inner">
 <div class="span5 check-method-right"> <strong class="green-t">Login</strong>
                     <p>Already registered? Please log in below:</p>
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" action="../Login" method="post">
                       <div class="control-group">
                         <label class="control-label" for="IEmail">Email Address <sup>*</sup></label>
                         <div class="controls">
@@ -184,7 +185,7 @@
               <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">
                 	<strong class="green-t">Sign Up now</strong>
-                    <form class="form-horizontal">
+                        <form class="form-horizontal" action="../Signup" method="post">
                         <ul class="billing-form">
                             <li>   
                               <div class="control-group">
