@@ -4,7 +4,11 @@
     Author     : Abdalla
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="com.beans.ChargingCardList" %>
+<jsp:useBean id="chargingCardList" scope="page" class="com.beans.ChargingCardList"/>    
+
 
 <!DOCTYPE HTML>
 <html>
@@ -45,6 +49,7 @@
     </head> 
 
     <body class="sticky-header left-side-collapsed"  onload="initMap()">
+
         <section>
             <!-- left side start-->
             <div class="left-side sticky-left-side">
@@ -376,23 +381,20 @@
                             <table class="table table table-striped">
                                 <thead class="alert alert-info">
                                     <tr >
-                                        <th>#</th>
+                                        <th>Number</th>
                                         <th>price</th> 
                                         <th>Count</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    
+                                    <c:forEach items="${chargingCardList.amountList}" var="charge" varStatus="loopCounter">
                                     <tr >
-                                        <th scope="row">1</th>
-                                        <td>Column content</td>
-                                        <td>Column content</td>
+                                        <th scope="row">${loopCounter.count}</th>
+                                        <td><c:out value="${charge.getCardAmount()}"/></td>
+                                        <td><c:out value="${charge.getCountAmount()}"/></td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Column content</td>
-                                        <td>Column content</td>
-                                    </tr>
-                               
+                                    </c:forEach>
                                 </tbody>
                             </table>
                             <!--<button class="btn-success btn centerBtn">Add new Book</button>-->

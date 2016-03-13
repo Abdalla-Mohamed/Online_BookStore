@@ -6,6 +6,7 @@
 package com.daos;
 
 import com.beans.ChargingCard;
+import com.beans.ChargingCardList;
 import com.utilts.DbConnctor;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -26,7 +27,7 @@ public class ChargingCard_Dao {
     ResultSet resultSet = null;
     
     
-    public void addChargingCard(ChargingCard chargingCard) throws SQLException
+    public boolean addChargingCard(ChargingCard chargingCard) throws SQLException
     {
         try {                
             connection = DbConnctor.openConnection();
@@ -48,6 +49,7 @@ public class ChargingCard_Dao {
 
                 DbConnctor.closeConnection();
             }
+        return true;
     }
     
     public boolean deleteChargingCard(ChargingCard chargingCard) throws SQLException {
@@ -85,6 +87,53 @@ public class ChargingCard_Dao {
                 card.setCardAmount(resultSet.getInt("CARD_AMOUNT"));
                 card.setCardStatus(resultSet.getString("CARD_STATUS").charAt(0));
                 
+                
+                chargingCardList.add(card);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally{
+            DbConnctor.closeConnection();
+        }
+
+        return chargingCardList;
+    }
+    
+    public List<ChargingCard> getAllCardNumber() throws SQLException {
+        
+        List<ChargingCard> chargingCardList = new ArrayList<ChargingCard>();
+        try {
+            connection = DbConnctor.openConnection();
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery("SELECT CARD_NUMBER FROM CHARGING_CARD");
+            while (resultSet.next()) {
+                ChargingCard card = new ChargingCard();
+                
+                card.setCardNumber(resultSet.getString("CARD_NUMBER"));
+                               
+                chargingCardList.add(card);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally{
+            DbConnctor.closeConnection();
+        }
+
+        return chargingCardList;
+    }
+    
+    public List<ChargingCardList> getAllChargingCardByAmount() throws SQLException {
+        
+        List<ChargingCardList> chargingCardList = new ArrayList<ChargingCardList>();
+        try {
+            connection = DbConnctor.openConnection();
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery("SELECT CARD_AMOUNT, COUNT(CARD_AMOUNT) FROM CHARGING_CARD WHERE CARD_STATUS='F' GROUP BY CARD_AMOUNT ORDER BY CARD_AMOUNT");
+            while (resultSet.next()) {
+                ChargingCardList card = new ChargingCardList();
+                
+                card.setCardAmount(resultSet.getInt("CARD_AMOUNT")); 
+            card.setCountAmount(resultSet.getInt(2));
                 
                 chargingCardList.add(card);
             }
