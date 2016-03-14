@@ -36,6 +36,25 @@
         <servlet-name>AddCategory</servlet-name>
         <url-pattern>/AddCategory</url-pattern>
     </servlet-mapping>
+    
+    <!-- *************************--> 
+    
+    
+    
+      <servlet>
+        <servlet-name>AuthorControllrer</servlet-name>
+        <servlet-class>com.servlets.admin.AuthorControllrer</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AuthorControllrer</servlet-name>
+        <url-pattern>/AuthorControllrer</url-pattern>
+    </servlet-mapping>
+    
+     <!-- *************************--> 
+    
+    
+    
+    
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
