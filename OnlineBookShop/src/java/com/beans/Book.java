@@ -70,6 +70,15 @@ public class Book implements Serializable {
         this.cartList = cartList;
     }
     
+    
+    public void setImages(String bFrontImg, String bBackImg, String bHdr01Img, String bHdr02Img) {
+        this.bFrontImg = bFrontImg;
+        this.bBackImg = bBackImg;
+        this.bHdr01Img = bHdr01Img;
+        this.bHdr02Img = bHdr02Img;
+    
+    }
+    
     public Book(Integer bIsbn) {
         this.bIsbn = bIsbn;
     }
@@ -220,5 +229,7 @@ public class Book implements Serializable {
     public String toString() {
         return "beans.Book[ bIsbn=" + bIsbn + " ]";
     }
+
+    
     
 }
