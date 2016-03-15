@@ -8,6 +8,7 @@ package com.daos;
 import com.beans.Book;
 import com.beans.Customer;
 import com.beans.Cart;
+import com.beans.Category;
 import com.utilts.DbConnctor;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,6 +16,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -22,7 +25,7 @@ import java.util.List;
  */
 public class Cart_Dao {
 
-    private static final String SQL_READ = "SELECT * FROM CART WHERE C_ID=?";
+    private static final String SQL_READ = "SELECT B_NAME,C_B_COUNT FROM BOOK B,CART C WHERE B_ISBN IN(SELECT B_ID FROM CART WHERE C_ID= ?) AND C.B_ID=B.B_ISBN";
     private static final String SQL_INSERT = "INSERT INTO CART(B_ID,C_ID,C_B_D) VALUES(?,?,?)";
     private static final String SQL_UPDATE = "UPDATE CART SET C_B_COUNT=? WHERE C_ID=?";
     private static final String SQL_DELETE = "DELETE FROM CART WHERE B_ID=? AND C_ID=?";
@@ -46,6 +49,7 @@ public class Cart_Dao {
             if (statement.executeUpdate() > 0) {
                 return true;
             }
+            connection.commit();
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -64,6 +68,7 @@ public class Cart_Dao {
             if (statement.executeUpdate() > 0) {
                 return true;
             }
+            connection.commit();
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -82,6 +87,7 @@ public class Cart_Dao {
             if (statement.executeUpdate() > 0) {
                 return true;
             }
+            connection.commit();
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -90,26 +96,40 @@ public class Cart_Dao {
         return false;
     }
 
-//    public List<Cart> readAll(int customerID) throws SQLException {
-//        ArrayList<Cart> cartList = new ArrayList();
-//        try {
-//            connection = DbConnctor.openConnection();
-//            Cart cart = null;
-//            statement = connection.prepareStatement(SQL_READ);
-//            resultSet = statement.executeQuery();
-//            statement.setInt(1, customerID);
-//            while (resultSet.next()) {
-//                cart = new Cart();
-//                cart.setCu(resultSet.getInt(1));
-//               // cart.setCatName(resultSet.getString(2));
-//                cartList.add(cart);
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        } finally {
-//            DbConnctor.closeConnection();
-//        }
-//        return cartList;
-//    }
+    public List<Book> readAll(int customerID) throws SQLException {
+        List<Book> cartList = null;
+        try {
+            connection = DbConnctor.openConnection();
+            Cart cart = null;
+            statement = connection.prepareStatement(SQL_READ);
+            statement.setInt(1, customerID);
+            resultSet = statement.executeQuery();
+            cartList = getBooks(resultSet);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DbConnctor.closeConnection();
+        }
+        return cartList;
+    }
 
+    private List<Book> getBooks(ResultSet result) {
+
+        List<Book> list =null;
+        Book bookObj;
+        try {
+            while (result.next()) {
+                if(list == null){
+                    list = new ArrayList<>();
+                }
+                bookObj = new Book();
+                bookObj.setBName(result.getString("B_NAME"));
+                //bookObj.setBDescription(result.getString("B_DESCRIPTION"));
+                list.add(bookObj);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Interests_Dao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    }
 }
