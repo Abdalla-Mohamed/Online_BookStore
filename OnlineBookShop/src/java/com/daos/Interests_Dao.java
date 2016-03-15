@@ -28,7 +28,7 @@ public class Interests_Dao {
     private static final String SQL_INSERT = "INSERT INTO INTEREST(CUSTOMER_ID,CAT_ID) values(?,?)";
     private static final String SQL_DELETE = "DELETE FROM INTEREST WHERE CAT_ID=? and CUSTOMER_ID =?";
     private static final String CAT_LIST = "SELECT * FROM CATEGORY where CAT_ID IN (select CAT_ID from INTEREST where CUSTOMER_ID =?)";
-
+    private static final String SQL_DELETECCUSTOMERCAT = "DELETE FROM INTEREST WHERE CUSTOMER_ID =?";
     Connection connection = null;
     PreparedStatement statement = null;
     ResultSet resultSet = null;
@@ -109,4 +109,24 @@ public class Interests_Dao {
         }
         return list;
     }
+    
+      public boolean deleteCustomersCategories(int customerId) throws SQLException {
+
+        Boolean deleted = true;
+        try {
+            connection = DbConnctor.openConnection();
+            statement = connection.prepareStatement(SQL_DELETECCUSTOMERCAT);
+            statement.setInt(1, customerId);
+            if (statement.executeUpdate() > 0) {
+                deleted = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DbConnctor.closeConnection();
+        }
+        return deleted;
+    }
+      
+      
 }
