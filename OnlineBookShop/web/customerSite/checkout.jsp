@@ -80,9 +80,9 @@
         </section>
         <section class="span8">
           <ul class="top-nav2">
-            <li><a href="checkout.html">My Account</a></li>
+            <li><a href="checkout.jsp">My Account</a></li>
             <li><a href="cart.html">My Cart</a></li>
-            <li><a href="checkout.html">Checkout</a></li>
+            <li><a href="checkout.jsp">Checkout</a></li>
             <li><a href="order-recieved.html">Track Your Order</a></li>
           </ul>
           <div class="search-bar">
