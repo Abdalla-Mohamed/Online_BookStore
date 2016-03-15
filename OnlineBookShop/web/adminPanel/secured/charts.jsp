@@ -47,11 +47,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <section>
     <!-- left side start-->
 		<%@include file='left-side.jsp'%>
+    <!-- left side end-->
     
     <!-- main content start-->
 		<div class="main-content main-content5">
 			<!-- header-starts -->
-		<%@include file='header.jsp'%>
+			<%@include file='header.jsp'%>
 	<!-- //header-ends -->
 			<div id="page-wrapper">
 				<div class="graphs">

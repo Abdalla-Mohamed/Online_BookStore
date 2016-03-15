@@ -5,6 +5,13 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.io.*,java.util.*,java.sql.*"%>
+<%@ page import="javax.servlet.http.*,javax.servlet.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
+<jsp:useBean id="auth" scope="page" class="com.helpclasses.GetAuthers"/>
+
+
 
 <!DOCTYPE HTML>
 <html>
@@ -45,15 +52,42 @@
     </head> 
 
     <body class="sticky-header left-side-collapsed"  onload="initMap()">
+
+
+
+        <%--                          
+                    
+               <sql:setDataSource
+                   var="resutset" driver="oracle.jdbc.OracleDriver"
+                   url="jdbc:oracle:thin:@127.0.0.1:1521:xe"
+                   user="BOOKSTORE"  password="bookdb"/>
+               
+               
+                   <sql:query dataSource="${resutset}" var="Avar">
+                       SELECT   * from  AUTHOR;  
+                    
+
+            </sql:query>
+                            
+
+                    <c:forEach var="row" items="${Avar.rows}">
+                        <tr>
+                            <td><c:out value="${row.authId}"/></td>
+                            <td><c:out value="${row.authName}"/></td>
+                            <td><c:out value="${row.authAbout}"/></td>
+                         
+                        </tr>
+                    </c:forEach>  --%>
+
         <section>
             <!-- left side start-->
-           <%@include file='left-side.jsp'%>
+            <%@include file='left-side.jsp'%>
             <!-- left side end-->
 
             <!-- main content start-->
             <div class="main-content main-content3">
                 <!-- header-starts -->
-               <%@include file='header.jsp'%>
+                <%@include file='header.jsp'%>
                 <!-- //header-ends -->
                 <div id="page-wrapper">
                     <div class="graphs">
@@ -63,7 +97,7 @@
                             <!-- Horizontal Form -->
                             <div >
 
-                                <form method="POST" action='../../ChargingCardController' class="form-horizontal col-sm-10 switch-right-grid" style="padding: 15px;padding-left:  0">
+                                <form method="POST" action='../../AuthorControllrer' class="form-horizontal col-sm-10 switch-right-grid" style="padding: 15px;padding-left:  0">
                                     <div class="box-body col-sm-12 " >
                                         <div class="form-group col-sm-12 " style="padding: 0px" >
 
@@ -74,7 +108,7 @@
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-usd"></i>
                                                     </span>
-                                                    <input name="cardValue" class="form-control1"  type="text" placeholder="enter author name">
+                                                    <input name="autherName" class="form-control1"  type="text" placeholder="enter author name">
                                                 </div>
                                             </div>
 
@@ -91,8 +125,8 @@
                                                         <i class="fa fa-clone"></i>
                                                     </span>
                                                     <!--<input name="cardCount" class="form-control1"  type="text" placeholder="Card Count ">-->
-                                                    <textarea rows="10" class="form-control1 control2"></textarea>
-                                                    
+                                                    <textarea rows="10" class="form-control1 control2"  name="aboutAuther"></textarea>
+
                                                 </div>
                                             </div>
 
@@ -103,7 +137,7 @@
 
                                     </div >
                                     <div class="col-sm-12 " >
-                                        <button type="submit" class="btn btn-info pull-right">generate</button>
+                                        <button type="submit" class="btn btn-info pull-right"   >Add Author </button>
 
                                     </div>
                                 </form>
@@ -114,7 +148,7 @@
                         <div class="bs-example4 col-md-6" data-example-id="contextual-table">
                             <div class="form-group">
 
-                                <form action="#" method="GET">
+                                <form action="#" method="POST">
                                     <div class="input-group input-group-ind">
                                         <input type="text" name="search" class="form-control1 input-search" placeholder="Search...">
                                         <span class="input-group-btn">
@@ -124,6 +158,11 @@
                                 </form>
                                 <div class="clearfix"> </div>
                             </div>
+
+
+
+
+
                             <table class="table table table-striped">
                                 <thead class="alert alert-info">
                                     <tr >
@@ -136,32 +175,41 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr >
-                                        <th scope="row">1</th>
-                                        <td>Column content</td>
-                                        <td><textarea rows="3" class="form-control1"></textarea></td>
-                                        <td>Column content</td>
-                                        <td><a href="#"><i class="fa fa-edit"/></a></td>
-                                        <td><a href="#" class="ask"><i class="fa fa-times"/></a></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Column content</td>
-                                        <td>Column content</td>
-                                        <td>Column content</td>
-                                        <td><a href="#"><i class="fa fa-edit"/></a></td>
-                                        <td><a href="#" class="ask"><i class="fa fa-times"/></a></td>
-                                    </tr>
-                                    <tr >
-                                        <th scope="row">3</th>
-                                        <td>Column content</td>
-                                        <td>Column content</td>
-                                        <td>Column content</td>
-                                        <td><a href="#"><i class="fa fa-edit"/></a></td>
-                                        <td><a href="#" class="ask"><i class="fa fa-times"/></a></td>
-                                    </tr>
-                                   
+
+
+                                    <%--
+                                    
+                                    
+                                    getAuthers  is  method in class GetAuthers  that retrive all data 
+                                    here in jsp translated into {id.authers}
+                                    
+                                    
+                                    
+                                    --%>
+                                    <c:forEach  items="${auth.authers}" var="row">
+
+                                        <tr>
+
+                                            <td><c:out value="${row.getAuthId()}" /></td>
+                                            <td><c:out value="${row.getAuthName()}" /></td>
+                                            <td><c:out value="${row.getAuthAbout()}" /></td>
+                                            <td><c:out value="not support" /></td>
+                                            <td><a herf="#" ><i class ="fa fa-edit"/></a></td>
+                                            <td><a  herf="#" /><i  class ="fa fa-times"/></td>
+
+
+                                        </tr>
+                                    </c:forEach>
+
+
+
+
+
                                 </tbody>
+
+
+
+
                             </table>
                             <!-- <a href="#" class="bt_green"><span class="bt_green_lft"></span><strong>Add new item</strong><span class="bt_green_r"></span></a> -->
                         </div>
@@ -177,6 +225,18 @@
             <%@include file='footer.jsp'%>
             <!--footer section end-->
         </section>
+
+
+
+
+
+
+
+
+
+
+
+
 
         <script src="../js/jquery.nicescroll.js"></script>
         <script src="../js/scripts.js"></script>
