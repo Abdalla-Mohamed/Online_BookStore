@@ -133,10 +133,14 @@ public class Book_Dao {
                 book.setBCount(resultSet.getInt(5));
                 book.setBPrice(resultSet.getDouble(6));
                 book.setBRating(resultSet.getInt(7));
-                book.setBFrontImg(resultSet.getString(8));
-                book.setBBackImg(resultSet.getString(9));
-                book.setBHdr01Img(resultSet.getString(10));
-                book.setBHdr02Img(resultSet.getString(11));
+                
+                // images folder path
+                String imagesFolder= Book.uplodedImgFolderDestntion+book.getBIsbn();
+                
+                book.setBFrontImg(imagesFolder+resultSet.getString(8));
+                book.setBBackImg(imagesFolder+resultSet.getString(9));
+                book.setBHdr01Img(imagesFolder+resultSet.getString(10));
+                book.setBHdr02Img(imagesFolder+resultSet.getString(11));
                 bookList.add(book);
             }
         } catch (SQLException e) {
