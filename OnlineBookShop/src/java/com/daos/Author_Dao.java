@@ -39,10 +39,9 @@ public class Author_Dao {
 
             connection = DbConnctor.openConnection();
             statement = connection.prepareStatement(SQL_INSERT);
-            statement.setInt(1, authorObj.getAuthId());
-            statement.setString(2, authorObj.getAuthName());
-            statement.setString(3, authorObj.getAuthAbout());
-            statement.setString(4, authorObj.getAuthImg());
+              statement.setString(1, authorObj.getAuthName());
+            statement.setString(2, authorObj.getAuthAbout());
+            statement.setString(3, authorObj.getAuthImg());
             if (statement.executeUpdate() > 0) {
                 return true;
             }
