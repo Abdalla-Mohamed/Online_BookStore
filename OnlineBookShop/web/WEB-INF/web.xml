@@ -40,12 +40,8 @@
         <servlet-name>AddCategory</servlet-name>
         <url-pattern>/AddCategory</url-pattern>
     </servlet-mapping>
-    
-    <!-- *************************--> 
-    
-    
-    
-      <servlet>
+    <!-- *************************-->
+    <servlet>
         <servlet-name>AuthorControllrer</servlet-name>
         <servlet-class>com.servlets.admin.AuthorControllrer</servlet-class>
     </servlet>
@@ -53,12 +49,7 @@
         <servlet-name>AuthorControllrer</servlet-name>
         <url-pattern>/AuthorControllrer</url-pattern>
     </servlet-mapping>
-    
-     <!-- *************************--> 
-    
-    
-    
-    
+    <!-- *************************-->
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -112,4 +103,8 @@
         <description/>
         <role-name>adminShop</role-name>
     </security-role>-->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/customerSite/404page.jsp</location>
+    </error-page>
 </web-app>
