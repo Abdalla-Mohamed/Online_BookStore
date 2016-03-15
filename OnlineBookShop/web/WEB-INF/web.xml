@@ -32,6 +32,10 @@
         <servlet-name>CategoryControllrer</servlet-name>
         <servlet-class>com.servlets.admin.CategoryControllrer</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FavoriteCategories</servlet-name>
+        <servlet-class>com.servlets.AddFavoriteCategories</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddCategory</servlet-name>
         <url-pattern>/AddCategory</url-pattern>
@@ -74,6 +78,10 @@
     <servlet-mapping>
         <servlet-name>CategoryControllrer</servlet-name>
         <url-pattern>/CategoryControllrer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FavoriteCategories</servlet-name>
+        <url-pattern>/FavoriteCategories</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

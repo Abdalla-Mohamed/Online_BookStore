@@ -428,7 +428,15 @@
                                 <tbody>
 
 
-
+                                    <%--
+                                    
+                                    
+                                    getAuthers  is  method in class GetAuthers  that retrive all data 
+                                    here in jsp translated into {id.authers}
+                                    
+                                    
+                                    
+                                    --%>
                                     <c:forEach  items="${auth.authers}" var="row">
 
                                         <tr>
@@ -436,8 +444,9 @@
                                             <td><c:out value="${row.getAuthId()}" /></td>
                                             <td><c:out value="${row.getAuthName()}" /></td>
                                             <td><c:out value="${row.getAuthAbout()}" /></td>
+                                            <td><c:out value="not support" /></td>
                                             <td><a herf="#" ><i class ="fa fa-edit"/></a></td>
-                                            <td><a  herf="#" /><i  class ="fa fa-edit"/></td>
+                                            <td><a  herf="#" /><i  class ="fa fa-times"/></td>
 
 
                                         </tr>

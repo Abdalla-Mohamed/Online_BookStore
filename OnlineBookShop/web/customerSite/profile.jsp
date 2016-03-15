@@ -5,6 +5,7 @@
 --%>
 
 <%@page import="com.beans.Customer"%>
+<%@page import="com.helpclasses.CustomerFavoriteCategories"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -37,6 +38,7 @@
 </head>
 <body>
 <jsp:useBean id="customer" scope="session" type="com.beans.Customer"/>    
+<jsp:useBean id="favoriteCat" scope="page" class="com.helpclasses.CustomerFavoriteCategories"/>    
 <!-- Start Main Wrapper -->
 
 <div class="wrapper">
@@ -154,13 +156,22 @@
             
             <!-- Start Sort by Section -->
           <div class="product_sort">
+              
+              <a href="update-profile.jsp"><h2>Update Profile</h2></a> 
 <div>
     <h3>Welcome <c:out value="${customer.CName}"/></h3>
     <h4>your balance is <c:out value="${customer.CCredit}"/></h4>
     <h4>your current address is <c:out value="${customer.CAddress}"/></h4>
     <h4>your current job is <c:out value="${customer.CJob}"/></h4>
     <h4>your current phone number is <c:out value="${customer.CMobile}"/></h4>
-                
+    <h4>-------------------------------------------------------------</hr>
+       
+    <h3>your favorite categories :</h3>
+    <c:set var="id" value="${customer.CId}"/>
+
+    <c:forEach  items="${favoriteCat.getFCategories(id)}" var="row">
+     <h4>  <c:out value="${row.getCatName()}"/>  <hr>
+       </c:forEach>
                 </div>
                 
             	<div class="row-2"> </div>

@@ -6,10 +6,11 @@
 package com.servlets.admin;
 
 import com.beans.ChargingCard;
+import com.beans.ChargingCardList;
 import com.daos.ChargingCard_Dao;
 import java.io.IOException;
 import java.sql.SQLException;
-import javax.servlet.RequestDispatcher;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -25,9 +26,6 @@ public class ChargingCardController extends HttpServlet {
     private ChargingCard chargingCard;
     private ChargingCard_Dao chargingCard_Dao;
     
-    //for test just
-    private static String LIST_USER = "adminPanel/index.jsp";
-
     public ChargingCardController() {
         super();
         // chargingCard_Dao = new ChargingCard_Dao();
@@ -53,23 +51,27 @@ public class ChargingCardController extends HttpServlet {
 
         int amount = Integer.parseInt(request.getParameter("cardValue"));
         int cardCount = Integer.parseInt(request.getParameter("cardCount"));
-                
-        for (int i = 0; i < cardCount; i++) {
+        int counter = 0;
+        while(counter < cardCount ){
+            
             try {
                 String result = RandomStringUtils.randomNumeric(15);
                 
                 chargingCard_Dao = new ChargingCard_Dao();
                 chargingCard = new ChargingCard(result, amount, ChargingCard.NOTCHARGED);
-                chargingCard_Dao.addChargingCard(chargingCard);
+                boolean addChargingCard = chargingCard_Dao.addChargingCard(chargingCard);
                 
+                if(addChargingCard == true){
+                    counter++;
+                }
                 System.out.println(result + "  " + amount + "  " + ChargingCard.NOTCHARGED);
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
-
+            
         }
-        RequestDispatcher view = request.getRequestDispatcher(LIST_USER);
-        view.forward(request, response);
+        response.sendRedirect("adminPanel/secured/chargeCard.jsp");
+        
 
     }
 

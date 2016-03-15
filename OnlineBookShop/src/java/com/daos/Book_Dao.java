@@ -18,10 +18,12 @@ import java.util.List;
 public class Book_Dao {
 
     private static final String SQL_READ = "SELECT * FROM BOOK";
+    private static final String SQL_READ_BY_NAME = "SELECT B_ISBN FROM BOOK where B_NAME=?";
     private static final String SQL_INSERT = "INSERT INTO BOOK(B_ISBN, B_NAME, B_DESCRIPTION, B_QUOTE,"
             + "B_COUNT,B_PRICE,B_RATING,B_FRONT_IMG,B_BACK_IMG,B_HDR01_IMG,B_HDR02_IMG) "
             + "VALUES(BOOK_SEQ_TMP.NEXTVAL,?,?,?,?,?,?,?,?,?,?)";
     private static final String SQL_UPDATE = "UPDATE BOOK SET B_NAME=? WHERE B_ISBN=?";
+    private static final String SQL_UPDATE_IMAGES = "UPDATE BOOK SET B_FRONT_IMG=?,B_BACK_IMG=?,B_HDR01_IMG=?,B_HDR02_IMG=? WHERE B_ISBN=?";
     private static final String SQL_DELETE = "DELETE FROM BOOK WHERE B_ISBN=?";
 
     Connection connection = null;
@@ -37,17 +39,17 @@ public class Book_Dao {
 
             connection = DbConnctor.openConnection();
             statement = connection.prepareStatement(SQL_INSERT);
-            statement.setInt(1, bookObj.getBIsbn());
-            statement.setString(2, bookObj.getBName());
-            statement.setString(3, bookObj.getBDescription());
-            statement.setString(4, bookObj.getBQuote());
-            statement.setInt(5, bookObj.getBCount());
-            statement.setDouble(6, bookObj.getBPrice());
-            statement.setInt(7, bookObj.getBRating());
-            statement.setString(8, bookObj.getBFrontImg());
-            statement.setString(9, bookObj.getBBackImg());
-            statement.setString(10, bookObj.getBHdr01Img());
-            statement.setString(11, bookObj.getBHdr02Img());
+//            statement.setInt(1, bookObj.getBIsbn());
+            statement.setString(1, bookObj.getBName());
+            statement.setString(2, bookObj.getBDescription());
+            statement.setString(3, bookObj.getBQuote());
+            statement.setInt(4, bookObj.getBCount());
+            statement.setDouble(5, bookObj.getBPrice());
+            statement.setInt(6, bookObj.getBRating());
+            statement.setString(7, bookObj.getBFrontImg());
+            statement.setString(8, bookObj.getBBackImg());
+            statement.setString(9, bookObj.getBHdr01Img());
+            statement.setString(10, bookObj.getBHdr02Img());
             if (statement.executeUpdate() > 0) {
                 return true;
             }
@@ -66,6 +68,27 @@ public class Book_Dao {
             statement = connection.prepareStatement(SQL_UPDATE);
             statement.setString(1, bookObj.getBName());
             statement.setInt(2, bookObj.getBIsbn());
+            if (statement.executeUpdate() > 0) {
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DbConnctor.closeConnection();
+        }
+        return false;
+    }
+
+    public boolean updateImages(Book bookObj) throws SQLException {
+
+        try {
+            connection = DbConnctor.openConnection();
+            statement = connection.prepareStatement(SQL_UPDATE_IMAGES);
+            statement.setString(1, bookObj.getBFrontImg());
+            statement.setString(2, bookObj.getBBackImg());
+            statement.setString(3, bookObj.getBHdr01Img());
+            statement.setString(4, bookObj.getBHdr02Img());
+            statement.setInt(5, bookObj.getBIsbn());
             if (statement.executeUpdate() > 0) {
                 return true;
             }
@@ -103,16 +126,17 @@ public class Book_Dao {
             resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 book = new Book();
-                book.setBName(resultSet.getString(1));
-                book.setBDescription(resultSet.getString(2));
-                book.setBQuote(resultSet.getString(3));
-                book.setBCount(resultSet.getInt(4));
-                book.setBPrice(resultSet.getDouble(5));
-                book.setBRating(resultSet.getInt(6));
-                book.setBFrontImg(resultSet.getString(7));
-                book.setBBackImg(resultSet.getString(8));
-                book.setBHdr01Img(resultSet.getString(9));
-                book.setBHdr02Img(resultSet.getString(10));
+                book.setBIsbn(Integer.parseInt(resultSet.getString(1)));
+                book.setBName(resultSet.getString(2));
+                book.setBDescription(resultSet.getString(3));
+                book.setBQuote(resultSet.getString(4));
+                book.setBCount(resultSet.getInt(5));
+                book.setBPrice(resultSet.getDouble(6));
+                book.setBRating(resultSet.getInt(7));
+                book.setBFrontImg(resultSet.getString(8));
+                book.setBBackImg(resultSet.getString(9));
+                book.setBHdr01Img(resultSet.getString(10));
+                book.setBHdr02Img(resultSet.getString(11));
                 bookList.add(book);
             }
         } catch (SQLException e) {
@@ -121,5 +145,27 @@ public class Book_Dao {
             DbConnctor.closeConnection();
         }
         return bookList;
+    }
+
+    public Book readByName(String bookName) throws SQLException {
+        Book book = null;
+
+        try {
+
+            connection = DbConnctor.openConnection();
+            statement = connection.prepareStatement(SQL_READ_BY_NAME);
+            statement.setString(1, bookName);
+
+            resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                book = new Book();
+                book.setBIsbn(Integer.parseInt(resultSet.getString(1)));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DbConnctor.closeConnection();
+        }
+        return book;
     }
 }
