@@ -7,7 +7,6 @@ package com.beans;
 
 import java.io.Serializable;
 
-
 import java.util.List;
 
 /**
@@ -15,6 +14,7 @@ import java.util.List;
  * @author Abdalla
  */
 public class Book implements Serializable {
+
     private Integer bIsbn;
     private String bName;
     private String bDescription;
@@ -32,10 +32,12 @@ public class Book implements Serializable {
     private List<OrderBook> orderBookList;
     private List<Cart> cartList;
 
+    static public final String uplodedImgFolderDestntion = "d:\\Program Files\\Apache Software Foundation\\Apache Tomcat 8.0.9\\uplodedImg\\";
+
     public Book() {
     }
 
-    public Book( String bName, String bDescription, String bQuote, Integer bCount, Double bPrice, Integer bRating, String bFrontImg, String bBackImg, String bHdr01Img, String bHdr02Img, List<Category> categoryList, List<Author> authorList, List<OrderBook> orderBookList, List<Cart> cartList) {
+    public Book(String bName, String bDescription, String bQuote, Integer bCount, Double bPrice, Integer bRating, String bFrontImg, String bBackImg, String bHdr01Img, String bHdr02Img, List<Category> categoryList, List<Author> authorList, List<OrderBook> orderBookList, List<Cart> cartList) {
         this.bName = bName;
         this.bDescription = bDescription;
         this.bQuote = bQuote;
@@ -69,20 +71,18 @@ public class Book implements Serializable {
         this.orderBookList = orderBookList;
         this.cartList = cartList;
     }
-    
-    
+
     public void setImages(String bFrontImg, String bBackImg, String bHdr01Img, String bHdr02Img) {
         this.bFrontImg = bFrontImg;
         this.bBackImg = bBackImg;
         this.bHdr01Img = bHdr01Img;
         this.bHdr02Img = bHdr02Img;
-    
+
     }
-    
+
     public Book(Integer bIsbn) {
         this.bIsbn = bIsbn;
     }
-
 
     public Integer getBIsbn() {
         return bIsbn;
@@ -180,7 +180,6 @@ public class Book implements Serializable {
         this.orderBookList = orderBookList;
     }
 
-    
     public String getBHdr01Img() {
         return bHdr01Img;
     }
@@ -196,7 +195,7 @@ public class Book implements Serializable {
     public void setBHdr02Img(String bHdr02Img) {
         this.bHdr02Img = bHdr02Img;
     }
-    
+
     public List<Cart> getCartList() {
         return cartList;
     }
@@ -230,6 +229,4 @@ public class Book implements Serializable {
         return "beans.Book[ bIsbn=" + bIsbn + " ]";
     }
 
-    
-    
 }

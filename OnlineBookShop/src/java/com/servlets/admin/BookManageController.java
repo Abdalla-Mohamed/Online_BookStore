@@ -39,7 +39,6 @@ public class BookManageController extends HttpServlet {
 
     private Book book;
     private Book_Dao book_Dao;
-    final String uplodedImgFolderDestntion = "d:\\Program Files\\Apache Software Foundation\\Apache Tomcat 8.0.9\\uplodedImg\\";
     final String jspBookMange = "adminPanel/secured/sign-up.jsp";
 
     public BookManageController() {
@@ -113,7 +112,7 @@ public class BookManageController extends HttpServlet {
             // get ID of new book 
             Book newBook = book_Dao.readByName(book.getBName());
             // create new path where images of book will saved
-            String bookImagesFolder = uplodedImgFolderDestntion + newBook.getBIsbn();
+            String bookImagesFolder = Book.uplodedImgFolderDestntion + newBook.getBIsbn();
 
             // get images of book from form
             FileItem imgFront = parseParameterMap.get("imgFront").get(0);
@@ -139,7 +138,7 @@ public class BookManageController extends HttpServlet {
 
             File scndHeaderFile = new File(bookImagesFolder, scndHeader.getName());
             scndHeader.write(scndHeaderFile);
-            newBook.setImages(imgFront.getName(), imgBack.getName(), frstHeader.getName(), scndHeader.getName());
+            newBook.setImages("\\"+imgFront.getName(), "\\"+imgBack.getName(), "\\"+frstHeader.getName(), "\\"+scndHeader.getName());
             book_Dao.updateImages(newBook);
 
             isInserted = true;
