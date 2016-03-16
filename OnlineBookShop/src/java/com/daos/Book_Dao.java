@@ -19,6 +19,7 @@ public class Book_Dao {
 
     private static final String SQL_READ = "SELECT * FROM BOOK";
     private static final String SQL_READ_BY_NAME = "SELECT B_ISBN FROM BOOK where B_NAME=?";
+    private static final String SQL_READ_BY_ISBN = "SELECT * FROM BOOK where B_ISBN=?";
     private static final String SQL_INSERT = "INSERT INTO BOOK(B_ISBN, B_NAME, B_DESCRIPTION, B_QUOTE,"
             + "B_COUNT,B_PRICE,B_RATING,B_FRONT_IMG,B_BACK_IMG,B_HDR01_IMG,B_HDR02_IMG) "
             + "VALUES(BOOK_SEQ_TMP.NEXTVAL,?,?,?,?,?,?,?,?,?,?)";
@@ -159,6 +160,27 @@ public class Book_Dao {
             connection = DbConnctor.openConnection();
             statement = connection.prepareStatement(SQL_READ_BY_NAME);
             statement.setString(1, bookName);
+
+            resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                book = new Book();
+                book.setBIsbn(Integer.parseInt(resultSet.getString(1)));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DbConnctor.closeConnection();
+        }
+        return book;
+    }
+    public Book readByIsbn(int isbn) throws SQLException {
+        Book book = null;
+
+        try {
+
+            connection = DbConnctor.openConnection();
+            statement = connection.prepareStatement(SQL_READ_BY_ISBN);
+            statement.setInt(1, isbn);
 
             resultSet = statement.executeQuery();
             while (resultSet.next()) {
