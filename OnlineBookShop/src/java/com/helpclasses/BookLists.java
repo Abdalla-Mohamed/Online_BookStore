@@ -13,32 +13,44 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
-
 /**
  *
  * @author Hosam
  */
 public class BookLists {
 
-    public BookLists(){
-        
+    Book_Dao bookDao;
+
+    public BookLists() {
+        bookDao = new Book_Dao();
     }
-    
-    public List<Book> getAllBooks(){
-        List<Book> books =null;
-        
-           
-        Book_Dao bookDao = new Book_Dao();
-        
+
+    public List<Book> getAllBooks() {
+        List<Book> books = null;
+
         try {
-            books =bookDao.readAll();
-            
+            books = bookDao.readAll();
+
         } catch (SQLException ex) {
             Logger.getLogger(BookLists.class.getName()).log(Level.SEVERE, null, ex);
         }
-            
-      return books;      
+
+        return books;
     }
-      
+    
+    public Book getBook(int isbn) {
+        Book book = null;
+
+        try {
+            book = bookDao.readByIsbn(isbn);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(BookLists.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return book;
+    }
+    
+    
+
 }

@@ -95,6 +95,7 @@
         <auth-method>FORM</auth-method>
         <realm-name>adminSecure</realm-name>
         <form-login-config>
+        
             <form-login-page>/adminPanel/secured/sign-in.jsp</form-login-page>
             <form-error-page>/adminPanel/secured/access_Denied.html</form-error-page>
         </form-login-config>
@@ -107,4 +108,6 @@
         <error-code>404</error-code>
         <location>/customerSite/404page.jsp</location>
     </error-page>
+    <jsp-config>
+    </jsp-config>
 </web-app>

@@ -8,42 +8,8 @@
 
 <!DOCTYPE HTML>
 <html>
-<head>
-<title>Easy Admin Panel an Admin Panel Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Easy Admin Panel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
- <!-- Bootstrap Core CSS -->
-<link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
-<!-- Custom CSS -->
-<link href="../css/style.css" rel='stylesheet' type='text/css' />
-<!-- Graph CSS -->
-<link href="../css/font-awesome.css" rel="stylesheet"> 
-<!-- jQuery -->
-<!-- lined-icons -->
-<link rel="stylesheet" href="../css/icon-font.min.css" type='text/css' />
-<!-- //lined-icons -->
-<!-- chart -->
-<script src="../js/Chart.js"></script>
-<!-- //chart -->
-<!--animate-->
-<link href="../css/animate.css" rel="stylesheet" type="text/css" media="all">
-<script src="../js/wow.min.js"></script>
-	<script>
-		 new WOW().init();
-	</script>
-<!--//end-animate-->
-<!----webfonts--->
-<link href='//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
-<!---//webfonts---> 
- <!-- Meters graphs -->
-<script src="../js/jquery-1.10.2.min.js"></script>
-<!-- Placed js at the end of the document so the pages load faster -->
+<%@include file='head.jsp'%>
 
-</head> 
-   
  <body class="sticky-header left-side-collapsed"  onload="initMap()">
     <section>
     <!-- left side start-->
@@ -271,7 +237,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<h3>Inbox</h3>
 					<div class="scrollbar scrollbar1" id="style-2">
 						<div class="activity-row">
-							<div class="col-xs-3 activity-img"><img src='../images1.png' class="img-responsive" alt=""/></div>
+							<div class="col-xs-3 activity-img"><img src='../images/1.png' class="img-responsive" alt=""/></div>
 							<div class="col-xs-7 activity-desc">
 								<h5><a href="#">John Smith</a></h5>
 								<p>Hey ! There I'm available.</p>
@@ -280,7 +246,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="clearfix"> </div>
 						</div>
 						<div class="activity-row">
-							<div class="col-xs-3 activity-img"><img src='../images5.png' class="img-responsive" alt=""/></div>
+							<div class="col-xs-3 activity-img"><img src='../images/5.png' class="img-responsive" alt=""/></div>
 							<div class="col-xs-7 activity-desc">
 								<h5><a href="#">Andrew Jos</a></h5>
 								<p>Hey ! There I'm available.</p>
@@ -289,7 +255,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="clearfix"> </div>
 						</div>
 						<div class="activity-row">
-							<div class="col-xs-3 activity-img"><img src='../images3.png' class="img-responsive" alt=""/></div>
+							<div class="col-xs-3 activity-img"><img src='../images/3.png' class="img-responsive" alt=""/></div>
 							<div class="col-xs-7 activity-desc">
 								<h5><a href="#">Adom Smith</a></h5>
 								<p>Hey ! There I'm available.</p>
@@ -298,7 +264,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="clearfix"> </div>
 						</div>
 						<div class="activity-row">
-							<div class="col-xs-3 activity-img"><img src='../images4.png' class="img-responsive" alt=""/></div>
+							<div class="col-xs-3 activity-img"><img src='../images/4.png' class="img-responsive" alt=""/></div>
 							<div class="col-xs-7 activity-desc">
 								<h5><a href="#">Peter Carl</a></h5>
 								<p>Hey ! There I'm available.</p>
@@ -307,7 +273,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="clearfix"> </div>
 						</div>
 						<div class="activity-row">
-							<div class="col-xs-3 activity-img"><img src='../images1.png' class="img-responsive" alt=""/></div>
+							<div class="col-xs-3 activity-img"><img src='../images/1.png' class="img-responsive" alt=""/></div>
 							<div class="col-xs-7 activity-desc">
 								<h5><a href="#">John Smith</a></h5>
 								<p>Hey ! There I'm available.</p>
@@ -323,7 +289,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<h3>chat</h3>
 					<div class="scrollbar" id="style-2">
 						<div class="activity-row activity-row1">
-							<div class="col-xs-3 activity-img"><img src='../images1.png' class="img-responsive" alt=""/><span>10:00 PM</span></div>
+							<div class="col-xs-3 activity-img"><img src='../images/1.png' class="img-responsive" alt=""/><span>10:00 PM</span></div>
 							<div class="col-xs-5 activity-img1">
 								<div class="activity-desc-sub">
 									<h5>John Smith</h5>
@@ -341,11 +307,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<p>Hi,How are you ? What about our next meeting?</p>
 								</div>
 							</div>
-							<div class="col-xs-3 activity-img"><img src='../images3.png' class="img-responsive" alt=""/><span>10:02 PM</span></div>
+							<div class="col-xs-3 activity-img"><img src='../images/3.png' class="img-responsive" alt=""/><span>10:02 PM</span></div>
 							<div class="clearfix"> </div>
 						</div>
 						<div class="activity-row activity-row1">
-							<div class="col-xs-3 activity-img"><img src='../images1.png' class="img-responsive" alt=""/><span>10:00 PM</span></div>
+							<div class="col-xs-3 activity-img"><img src='../images/1.png' class="img-responsive" alt=""/><span>10:00 PM</span></div>
 							<div class="col-xs-5 activity-img1">
 								<div class="activity-desc-sub">
 									<h5>John Smith</h5>
@@ -363,7 +329,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<p>Wow that's great</p>
 								</div>
 							</div>
-							<div class="col-xs-3 activity-img"><img src='../images3.png' class="img-responsive" alt=""/><span>10:02 PM</span></div>
+							<div class="col-xs-3 activity-img"><img src='../images/3.png' class="img-responsive" alt=""/><span>10:02 PM</span></div>
 							<div class="clearfix"> </div>
 						</div>
 					</div>
@@ -448,9 +414,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       <!-- main content end-->
    </section>
   
-<script src="../js/jquery.nicescroll.js"></script>
-<script src="../js/scripts.js"></script>
-<!-- Bootstrap Core JavaScript -->
-   <script src="../js/bootstrap.min.js"></script>
 </body>
 </html>
