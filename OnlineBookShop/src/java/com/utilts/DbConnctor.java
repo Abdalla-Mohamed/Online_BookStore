@@ -16,7 +16,7 @@ import oracle.jdbc.OracleDriver;
  */
 public class DbConnctor {
 
-    static private final String DBurl = "jdbc:oracle:thin:@127.0.0.1:1521:orcl";
+    static private final String DBurl = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
     static private final String userName = "BOOKSTORE";
     static private final String password = "bookdb";
 

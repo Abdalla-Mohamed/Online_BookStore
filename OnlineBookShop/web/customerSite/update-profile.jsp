@@ -156,8 +156,9 @@
                                                 <div class="product_sort">
 
                                                     <h2>update your profile</h2>
-                                                    <form class="form-horizontal" action="" method="post">
+                                                    <form class="form-horizontal" action="../UpdateCustomerData" method="post">
                                                         <table>
+                                                            <input type="hidden" name="cId" value="${customer.CId}">
                                                             <tr><td>Name</td><td><input type="text" name="cName" id="iName" value="${customer.CName}"></td></tr>
                                                             <tr><td>password</td><td><input type="text" name="cPassword" id="iPassword" value="${customer.CPassword}"></td></tr>
                                                             <tr><td>Pone number</td><td><input type="text" name="cMobile" id="iMobile" value="${customer.CMobile}"></td></tr>

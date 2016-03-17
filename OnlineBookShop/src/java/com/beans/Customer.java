@@ -5,10 +5,14 @@
  */
 package com.beans;
 
+import com.daos.Customer_Dao;
 import java.io.Serializable;
+import java.sql.SQLException;
 
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -178,5 +182,20 @@ public class Customer implements Serializable {
     public String toString() {
         return "beans.Customer[ cId=" + cId + " ]";
     }
+    
+    
+    public List<Customer> getAllCustomers(){
+        
+        List<Customer>list=null;
+        Customer_Dao cDao=new Customer_Dao();
+        
+        try {
+            list=cDao.getAllCustomers();
+        } catch (SQLException ex) {
+            Logger.getLogger(Customer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    }
+    
     
 }
