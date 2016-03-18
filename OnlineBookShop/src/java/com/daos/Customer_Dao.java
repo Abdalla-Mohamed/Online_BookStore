@@ -27,7 +27,10 @@ public class Customer_Dao {
     PreparedStatement pstatement = null;
     Statement statement = null;
     ResultSet resultSet = null;
-
+    
+    private static final String UPDATE ="UPDATE CUSTOMER SET C_NAME=?,C_PASSWORD=?,C_JOB=?,C_ADDRESS=?,"
+            +"C_MOBILE=? WHERE C_ID=?";
+    
     public Customer_Dao() {
     }
 
@@ -179,6 +182,31 @@ public class Customer_Dao {
         return arr;
     }
 
+    
+    public boolean update (Customer c) throws SQLException{
+                
+        boolean updated;              
+        try {
+            connection = DbConnctor.openConnection();
+            pstatement = connection.prepareStatement(UPDATE);
+            
+            pstatement.setString(1, c.getCName());
+            pstatement.setString(2, c.getCPassword());
+            pstatement.setString(3, c.getCJob());
+            pstatement.setString(4, c.getCAddress());
+            pstatement.setString(5, c.getCMobile());
+            pstatement.setInt(6, c.getCId());
+            pstatement.executeUpdate();
+            
+            updated=true;
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Customer_Dao.class.getName()).log(Level.SEVERE, null, ex);
+            updated=false;
+        }
+        return updated;
+    }
+    
     public boolean deleteCustomer(int CustId) throws SQLException {
         try {
             connection = DbConnctor.openConnection();

@@ -36,7 +36,14 @@ public class AuthorControllrer extends HttpServlet {
 
             String name = request.getParameter("autherName");
             String data = request.getParameter("aboutAuther");
+if(name.isEmpty()){
 
+   response.sendRedirect("adminPanel/secured/authers.jsp");
+}
+
+
+
+else {
             Author auther = new Author();
             Author_Dao obj = new Author_Dao();
 
@@ -57,6 +64,9 @@ public class AuthorControllrer extends HttpServlet {
                 response.sendRedirect("adminPanel/secured/authers.jsp");
 
             }
+            
+} 
+//End else 
 
                 //----------------------------------------------------------
         } catch (Exception ex) {
