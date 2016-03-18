@@ -63,13 +63,13 @@
                       <div class="control-group">
                         <label class="control-label" for="IEmail">Email Address <sup>*</sup></label>
                         <div class="controls">
-                          <input type="text" name="cEmail" id="IEmail" placeholder="enter your email">
+                            <input type="email" name="cEmail" id="IEmail" placeholder="enter your email" required>
                         </div>
                       </div>
                       <div class="control-group">
                         <label class="control-label" for="IPassword">Password <sup>*</sup></label>
                         <div class="controls">
-                          <input type="password" name="cPassword" id="IPassword" placeholder="password">
+                            <input type="password" name="cPassword" pattern=".{6,}" required title="6 characters minimum" id="IPassword" placeholder="password" required>
                         </div>
                       </div>
                       <p><a href="#">Forgot your password?</a></p>
@@ -94,13 +94,13 @@
                               <div class="control-group">
                                 <label class="control-label" for="iName">Name <sup>*</sup></label>
                                 <div class="controls">
-                                  <input type="text" name="cName" id="iName" placeholder="enter your name here">
+                                    <input type="text" name="cName" pattern=".{3,}" required title="3 characters minimum" id="iName" placeholder="enter your name here" required>
                                 </div>
                               </div>
                               <div class="control-group">
                                 <label class="control-label" for="iPassword">Password<sup>*</sup></label>
                                 <div class="controls">
-                                  <input type="password" name="cPassword" id="iPassword" placeholder="password">
+                                    <input type="password" name="cPassword" pattern=".{6,}" required title="6 characters minimum" id="iPassword" placeholder="password" required>
                                 </div>
                               </div>
                               
@@ -109,13 +109,13 @@
                               <div class="control-group">
                                 <label class="control-label" for="iJob">Job<sup>*</sup></label>
                                 <div class="controls">
-                                  <input type="text" name="cJob" id="iJob" placeholder="your Job">
+                                    <input type="text" name="cJob" pattern=".{3,}" required title="3 characters minimum" id="iJob" placeholder="your Job" required>
                                 </div>
                               </div>
                               <div class="control-group">
                                 <label class="control-label" for="IEmail">Email Address<sup>*</sup></label>
                                 <div class="controls">
-                                  <input type="email" name="cEmail" id="IEmail" placeholder="Email">
+                                    <input type="email" name="cEmail" id="IEmail" placeholder="Email" required>
                                 </div>
                               </div>
                             </li>
@@ -123,7 +123,7 @@
                               <div class="control-group">
                                 <label class="control-label" for="iAddress">Address<sup>*</sup></label>
                                 <div class="controls">
-                                  <input type="text" name="cAddress" id="iAddress" placeholder="your address" class="address-field">
+                                    <input type="text" name="cAddress" pattern=".{3,}" required title="3 characters minimum" id="iAddress" placeholder="your address" class="address-field" required>
                                 </div>
                               </div>
                             
@@ -139,7 +139,7 @@
   								<div class="control-group">
                                 <label class="control-label" for="iMobile">Mobile <sup>*</sup></label>
                                 <div class="controls">
-                                  <input type="text" name="cMobile" id="iMobile" placeholder="">
+                                    <input type="text" name="cMobile" pattern="\d{9,}" required title="9 numbers minimum" id="iMobile" placeholder="" required>
                                 </div>
 </div>
                            <br><br>   <div class="control-group"> 
