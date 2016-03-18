@@ -134,14 +134,14 @@ public class Book_Dao {
                 book.setBCount(resultSet.getInt(5));
                 book.setBPrice(resultSet.getDouble(6));
                 book.setBRating(resultSet.getInt(7));
-                
+
                 // images folder path
-                String imagesFolder= Book.uplodedImgFolderDestntion+book.getBIsbn();
-                
-                book.setBFrontImg(imagesFolder+resultSet.getString(8));
-                book.setBBackImg(imagesFolder+resultSet.getString(9));
-                book.setBHdr01Img(imagesFolder+resultSet.getString(10));
-                book.setBHdr02Img(imagesFolder+resultSet.getString(11));
+                String imagesFolder = "images/" + book.getBIsbn()+"/";
+
+                book.setBFrontImg(imagesFolder + resultSet.getString(8));
+                book.setBBackImg(imagesFolder + resultSet.getString(9));
+                book.setBHdr01Img(imagesFolder + resultSet.getString(10));
+                book.setBHdr02Img(imagesFolder + resultSet.getString(11));
                 bookList.add(book);
             }
         } catch (SQLException e) {
@@ -173,6 +173,7 @@ public class Book_Dao {
         }
         return book;
     }
+
     public Book readByIsbn(int isbn) throws SQLException {
         Book book = null;
 
@@ -185,7 +186,21 @@ public class Book_Dao {
             resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 book = new Book();
-                book.setBIsbn(Integer.parseInt(resultSet.getString(1)));
+                book.setBIsbn(resultSet.getInt(1));
+                book.setBName(resultSet.getString(2));
+                book.setBDescription(resultSet.getString(3));
+                book.setBQuote(resultSet.getString(4));
+                book.setBCount(resultSet.getInt(5));
+                book.setBPrice(resultSet.getDouble(6));
+                book.setBRating(resultSet.getInt(7));
+
+                // images folder path
+                String imagesFolder = Book.uplodedImgFolderDestntion + book.getBIsbn()+"\\";
+
+                book.setBFrontImg(imagesFolder + resultSet.getString(8));
+                book.setBBackImg(imagesFolder + resultSet.getString(9));
+                book.setBHdr01Img(imagesFolder + resultSet.getString(10));
+                book.setBHdr02Img(imagesFolder + resultSet.getString(11));
             }
         } catch (SQLException e) {
             e.printStackTrace();

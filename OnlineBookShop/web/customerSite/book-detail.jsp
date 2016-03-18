@@ -96,11 +96,14 @@
                         <div class="comm-nav">
                         	<strong class="title2">Quantity</strong>
                             <ul>
-                            	<li><input name="" type="text" /></li>
+                                 <form method="POST">
+                                 <li><input name="count" type="number" /></li><br/><br/><br/>
                                 <li class="b-price">$68.00</li>
-                                <li><a href="cart.jsp" class="more-btn">+ Add to Cart</a></li>
+                                <li><button type="submit" class=" more-btn" >+ Add to Cart</button></li>   
+                                  <input type="hidden" name="ispnRow" value="${book.getBIsbn()}" />
+                                 </form>
                             </ul>
-                            <a href="#">Add to Wishlist</a>
+                           
                         </div>
                    </div>
                 <!-- End Book Overview Section -->

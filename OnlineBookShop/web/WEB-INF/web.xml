@@ -114,8 +114,6 @@
     </security-role>-->
     <error-page>
         <error-code>404</error-code>
-        <location>/customerSite/404page.jsp</location>
+        <location>/index.html</location>
     </error-page>
-    <jsp-config>
-    </jsp-config>
 </web-app>

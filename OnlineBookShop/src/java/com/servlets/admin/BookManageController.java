@@ -6,19 +6,14 @@
 package com.servlets.admin;
 
 import com.beans.Book;
-import com.beans.ChargingCard;
 import com.daos.Book_Dao;
-import com.daos.ChargingCard_Dao;
 import java.io.File;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.sql.SQLException;
-import java.util.Iterator;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,7 +23,6 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import org.apache.commons.lang.RandomStringUtils;
 
 /**
  *
@@ -48,7 +42,9 @@ public class BookManageController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        this.doPost(request, response);
+                    System.out.println(Paths.get(".").toAbsolutePath().normalize().toString());
+
+     //   this.doPost(request, response);
     }
 
     /**
@@ -62,8 +58,7 @@ public class BookManageController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        if (createNewBook(request)) {
+        if (createNewBookFrom(request)) {
             // show msg succefully
         } else {
             // show msg error
@@ -84,7 +79,7 @@ public class BookManageController extends HttpServlet {
     }// </editor-fold>
 
 //------------------ besinse code ----------------------------------------------
-    public boolean createNewBook(HttpServletRequest request) {
+    public boolean createNewBookFrom(HttpServletRequest request) {
         boolean isInserted = false;
         try {
 
@@ -138,7 +133,7 @@ public class BookManageController extends HttpServlet {
 
             File scndHeaderFile = new File(bookImagesFolder, scndHeader.getName());
             scndHeader.write(scndHeaderFile);
-            newBook.setImages("\\"+imgFront.getName(), "\\"+imgBack.getName(), "\\"+frstHeader.getName(), "\\"+scndHeader.getName());
+            newBook.setImages(imgFront.getName(), imgBack.getName(), frstHeader.getName(), scndHeader.getName());
             book_Dao.updateImages(newBook);
 
             isInserted = true;

@@ -8,6 +8,7 @@ package com.servlets;
 import com.beans.Customer;
 import com.daos.Author_Dao;
 import com.daos.Customer_Dao;
+import com.utilts.SharedNames;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
@@ -58,7 +59,7 @@ public class Login extends HttpServlet {
                if(customer !=null){
                    
                    HttpSession session = request.getSession(true);
-                   session.setAttribute("customer",customer);
+                   session.setAttribute(SharedNames.loginedCustomer,customer);
                    
                    response.sendRedirect("customerSite/profile.jsp");
                 

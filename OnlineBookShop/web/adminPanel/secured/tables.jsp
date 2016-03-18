@@ -9,19 +9,15 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:useBean id="bookLists" scope="page" class="com.helpclasses.BookLists"/>
 <c:set var="books" value="${bookLists.allBooks}"> </c:set> 
+<jsp:useBean id="updateBook" scope="session"  class="com.beans.Book" />
 
 
 <!DOCTYPE HTML>
 <html>
     <%@include file='head.jsp'%>
 
-    
-                                <script type="text/javascript">
-                                    $(document).ready(function () {
-                                        $("#editDailog").modal('show');
-                                    });
-                                </script>
-    
+
+
     <body class="sticky-header left-side-collapsed"  onload="initMap()">
         <section>
             <!-- left side start-->
@@ -76,8 +72,8 @@
                                                         <input type="hidden" name="ispnRow" value="${book.getBIsbn()}" />
                                                         <button type="submit" class="btn btn-primary fa fa-edit" /> 
                                                     </form>
-                                                    
-                                                    
+
+
                                                 </td>
 
                                                 <td><a href="#" class="ask"><i class="fa fa-times"/></a></td>
@@ -94,7 +90,7 @@
                                         <div class="modal-content">
                                             <div class="sign-up">
                                                 <form action="/OnlineBookShop/BookManageSrvlt" method="post" enctype="multipart/form-data"  >
-                                                    <h3>New book form</h3>
+                                                    <h3>Update book form</h3>
                                                     <p class="creating">Having hands on experience in creating innovative designs,I do offer design 
                                                         solutions which harness.</p>
                                                     <h5>Personal Information</h5>
@@ -103,7 +99,7 @@
                                                             <h4>Book Title* :</h4>
                                                         </div>
                                                         <div class="sign-up2">
-                                                            <input name="title" type="text" placeholder=" " required=" "/>
+                                                            <input name="title" type="text" placeholder=" " required=" " value="${updateBook.BName}"/>
                                                         </div>
                                                         <div class="clearfix"> </div>
                                                     </div>
@@ -112,7 +108,7 @@
                                                             <h4>count* :</h4>
                                                         </div>
                                                         <div class="sign-up2">
-                                                            <input name="count"   type="text" placeholder=" " required=" "/>
+                                                            <input name="count"   type="text" placeholder=" " required=" " value="${updateBook.BCount}" />
                                                         </div>
                                                         <div class="clearfix"> </div>
                                                     </div>
@@ -121,7 +117,7 @@
                                                             <h4>price* :</h4>
                                                         </div>
                                                         <div class="sign-up2">
-                                                            <input name="price" type="text" placeholder=" " required=" "/>
+                                                            <input name="price" type="text" placeholder=" " required=" " value="${updateBook.BPrice}"/>
                                                         </div>
                                                         <div class="clearfix"> </div>
                                                     </div>
@@ -131,7 +127,7 @@
                                                             <h4>Description* :</h4>
                                                         </div>
                                                         <div class="sign-up2">
-                                                            <input name="description" type="text" placeholder=" " required=" "/>
+                                                            <input name="description" type="text" placeholder=" " required=" " value="${updateBook.BDescription}" />
                                                         </div>
                                                         <div class="clearfix"> </div>
                                                     </div>
@@ -141,7 +137,7 @@
                                                             <h4>Quote* :</h4>
                                                         </div>
                                                         <div class="sign-up2">
-                                                            <input name="quote"  type="text" placeholder=" " required=" "/>
+                                                            <input name="quote"  type="text" placeholder=" " required=" " value="${updateBook.BQuote}" />
                                                         </div>
                                                         <div class="clearfix"> </div>
                                                     </div>
@@ -153,7 +149,7 @@
                                                             <h4>rate* :</h4>
                                                         </div>
                                                         <div class="sign-up2">
-                                                            <input name="rate"  type="text" placeholder=" " required=" "/>
+                                                            <input name="rate"  type="text" placeholder=" " required=" " value="${updateBook.BRating}" />
                                                         </div>
                                                         <div class="clearfix"> </div>
                                                     </div>
@@ -162,27 +158,27 @@
                                                     <div class="form-group col-md-6">
 
                                                         <label for="exampleInputFile"><h4>front image* :</h4></label>
-                                                        <input type="file" id="exampleInputFile" name="imgFront"  >
+                                                        <input type="file" id="exampleInputFile" name="imgFront" value="${updateBook.BFrontImg}" >
                                                         <p class="help-block">Example block-level help text here.</p>
                                                     </div>
 
                                                     <div class="form-group col-md-6">
                                                         <label for="exampleInputFile"><h4>back image* :</h4></label>
-                                                        <input type="file" id="exampleInputFile" name="imgBack"  >
+                                                        <input type="file" id="exampleInputFile" name="imgBack" value="${updateBook.BBackImg}" >
                                                         <p class="help-block">Example block-level help text here.</p>
                                                     </div>
 
                                                     <div class="form-group col-md-6">
 
                                                         <label for="exampleInputFile"><h4>1st Header image* :</h4></label>
-                                                        <input type="file" id="exampleInputFile" name="frstHeader" >
+                                                        <input type="file" id="exampleInputFile" name="frstHeader" value="${updateBook.BHdr01Img}" >
                                                         <p class="help-block">Example block-level help text here.</p>
                                                     </div>
 
                                                     <div class="form-group col-md-6">
                                                         <label for="exampleInputFile"><h4>back image* :</h4></label>
-                                                        <input type="file" id="exampleInputFile" name="scndHeader" >
-                                                        <p class="help-block">Example block-level help text here.</p>
+                                                        <input type="file" id="exampleInputFile" name="scndHeader" value="${updateBook.BHdr02Img}" >
+                                                        <p class="help-block">${updateBook.BHdr02Img}</p>
                                                     </div>
 
                                                     <div class="sub_home">
@@ -410,7 +406,14 @@
             <%@include file='footer.jsp'%>
             <!--footer section end-->
         </section>
-
+            <c:if test="${not (updateBook eq null or  updateBook.BIsbn eq null)  }" >
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $("#editDailog").modal('show');
+                });
+            </script>
+            <jsp:setProperty name="updateBook" property="BIsbn" value="${null}"/>
+        </c:if>
 
     </body>
 </html>
