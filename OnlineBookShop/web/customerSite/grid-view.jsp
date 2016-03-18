@@ -5,6 +5,11 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="com.helpclasses.BookLists"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<jsp:useBean id="bookLists" scope="page" class="com.helpclasses.BookLists" />
+<c:set var="books" value="${bookLists.allBooks}"> </c:set> 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -27,12 +32,14 @@
 <!--[if lte IE 10]><link rel="stylesheet" type="text/css" href="css/customIE.css" /><![endif]-->
 <link href="css/font-awesome.css" rel="stylesheet" type="text/css" /><!-- Font Awesome Css -->
 <link href="css/font-awesome-ie7.css" rel="stylesheet" type="text/css" /><!-- Font Awesome iE7 Css -->
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" /><!-- Font Awesome iE7 Css -->
 <noscript>
 <link rel="stylesheet" type="text/css" href="css/noJS.css" />
 </noscript>
 <!-- Css Files End -->
 </head>
 <body>
+    
 <!-- Start Main Wrapper -->
 <div class="wrapper">
   <!-- Start Main Header -->
@@ -48,7 +55,7 @@
         </div>
         <!-- Start Main Content -->
         <section class="span9 first">
-        	<!-- Start Ad Slider Section 
+        	 <!--Start Ad Slider Section--> 
 			<div class="blog-sec-slider">
                 <div class="slider5">
                   <div class="slide"><a href="#"><img src="images/image22.jpg" alt=""/></a></div>
@@ -56,7 +63,7 @@
                   <div class="slide"><a href="#"><img src="images/image22.jpg" alt=""/></a></div>
                 </div>
             </div>
-            <!-- End Ad Slider Section -->
+            <!-- End Ad Slider Section 
             
             <!-- Start Grid View Section -->
             <div class="product_sort">
@@ -99,92 +106,34 @@
                 </div>
             </div>
             <section class="grid-holder features-books">
-            	<figure class="span4 slide">
-                	<a href="book-detail.jsp"><img src="images/image25.jpg" alt="" class="pro-img"/></a>
-                    <span class="title"><a href="book-detail.jsp">A Walk Across The Sun</a></span>
+
+                <c:forEach  items="${books}" var="book" varStatus="loop" >
+                    <div class=" slide col-sm-4"  >
+                     <form method="POST">
+                         <input type="hidden" name="ispnRow" value="${book.getBIsbn()}" />
+                         <button type="submit" style="border: none"><img src="${book.getBFrontImg()}" style="float: left" alt="" class="pro-img "/></button>
+                     </form>
+                    <span class="title"><a >${book.getBName()}</a></span>
                     <span class="rating-bar"><img src="images/rating-star.png" alt="Rating Star"/></span>
                     <div class="cart-price">
-                        <a class="cart-btn2" href="cart.jsp">Add to Cart</a>
-                        <span class="price">$129.90</span>
+                        <form method="POST">
+                            <button type="submit" class="cart-btn2" style="border: none">Info</button>
+                            <span class="price">${book.getBPrice()}</span>
+                            <input type="hidden" name="ispnRow" value="${book.getBIsbn()}" />
+                            <input name="count" type="hidden" value="1" />
+                        </form>
+                      
+                        
               		</div>
-                </figure>
-                <figure class="span4 slide">
-                	<a href="book-detail.jsp"><img src="images/image38.jpg" alt="" class="pro-img"/></a>
-                    <span class="title"><a href="book-detail.jsp">A Walk Across The Sun</a></span>
-                    <span class="rating-bar"><img src="images/rating-star.png" alt="Rating Star"/></span>
-                    <div class="cart-price">
-                        <a class="cart-btn2" href="cart.jsp">Add to Cart</a>
-                        <span class="price">$129.90</span>
-              		</div>
-                </figure>
-                <figure class="span4 slide">
-                	<a href="book-detail.jsp"><img src="images/image39.jpg" alt="" class="pro-img"/></a>
-                    <span class="title"><a href="book-detail.jsp">A Walk Across The Sun</a></span>
-                    <span class="rating-bar"><img src="images/rating-star.png" alt="Rating Star"/></span>
-                    <div class="cart-price">
-                        <a class="cart-btn2" href="cart.jsp">Add to Cart</a>
-                        <span class="price">$129.90</span>
-              		</div>
-                </figure>
-                <hr/>
-                <figure class="span4 slide first">
-                	<a href="book-detail.jsp"><img src="images/image40.jpg" alt="" class="pro-img"/></a>
-                    <span class="title"><a href="book-detail.jsp">A Walk Across The Sun</a></span>
-                    <span class="rating-bar"><img src="images/rating-star.png" alt="Rating Star"/></span>
-                    <div class="cart-price">
-                        <a class="cart-btn2" href="cart.jsp">Add to Cart</a>
-                        <span class="price">$129.90</span>
-              		</div>
-                </figure>
-                <figure class="span4 slide">
-                	<a href="book-detail.jsp"><img src="images/image41.jpg" alt="" class="pro-img"/></a>
-                    <span class="title"><a href="book-detail.jsp">A Walk Across The Sun</a></span>
-                    <span class="rating-bar"><img src="images/rating-star.png" alt="Rating Star"/></span>
-                    <div class="cart-price">
-                        <a class="cart-btn2" href="about-us.jsp">Add to Cart</a>
-                        <span class="price">$129.90</span>
-              		</div>
-                </figure>
-                <figure class="span4 slide">
-                	<a href="book-detail.jsp"><img src="images/image25.jpg" alt="" class="pro-img"/></a>
-                    <span class="title"><a href="book-detail.jsp">A Walk Across The Sun</a></span>
-                    <span class="rating-bar"><img src="images/rating-star.png" alt="Rating Star"/></span>
-                    <div class="cart-price">
-                        <a class="cart-btn2" href="cart.jsp">Add to Cart</a>
-                        <span class="price">$129.90</span>
-              		</div>
-                </figure>
-                <hr/>
-                <figure class="span4 slide first">
-                	<a href="book-detail.jsp"><img src="images/image39.jpg" alt="" class="pro-img"/></a>
-                    <span class="title"><a href="book-detail.jsp">A Walk Across The Sun</a></span>
-                    <span class="rating-bar"><img src="images/rating-star.png" alt="Rating Star"/></span>
-                    <div class="cart-price">
-                        <a class="cart-btn2" href="cart.jsp">Add to Cart</a>
-                        <span class="price">$129.90</span>
-              		</div>
-                </figure>
-                <figure class="span4 slide">
-                	<a href="book-detail.jsp"><img src="images/image42.jpg" alt="" class="pro-img"/></a>
-                    <span class="title"><a href="book-detail.jsp">A Walk Across The Sun</a></span>
-                    <span class="rating-bar"><img src="images/rating-star.png" alt="Rating Star"/></span>
-                    <div class="cart-price">
-                        <a class="cart-btn2" href="cart.jsp">Add to Cart</a>
-                        <span class="price">$129.90</span>
-              		</div>
-                </figure>
-                <figure class="span4 slide">
-                	<a href="book-detail.jsp"><img src="images/image38.jpg" alt="" class="pro-img"/></a>
-                    <span class="title"><a href="book-detail.jsp">A Walk Across The Sun</a></span>
-                    <span class="rating-bar"><img src="images/rating-star.png" alt="Rating Star"/></span>
-                    <div class="cart-price">
-                        <a class="cart-btn2" href="cart.jsp">Add to Cart</a>
-                        <span class="price">$129.90</span>
-              		</div>
-                </figure>
+                </div>
+                
+                </c:forEach>
+            
+            
             </section>
-            <div class="blog-footer">
-            	<div class="pagination">  
+            
+            <div class="blog-footer col-md-12" style="float: left">
+            	<div class="pagination" >  
                   <ul>  
                     <li><a href="#">Prev</a></li>  
                     <li class="active">  
@@ -197,12 +146,14 @@
                   </ul>  
                 </div>
                 
-            	<ul class="product_view">
+            	<ul class="product_view" style="float: right">
+               	
                		<li>View as:</li>
                     <li><a class="grid-view" href="cart.jsp">Grid View</a></li>
                 	<li><a class="list-view" href="list-view.jsp">List View</a></li>
                </ul>
             </div>
+            
             <!-- End Grid View Section -->
             
         </section>
@@ -215,7 +166,7 @@
             </div>
             
             <!-- Start Shop by Section -->
-            <!--<div class="side-holder">
+            <div class="side-holder">
             	<article class="shop-by-list">
                 	<h2>Shop by</h2>
                     <div class="side-inner-holder">
@@ -240,7 +191,7 @@
                         </ul>
                     </div>
                 </article>
-            </div> -->
+            </div> 
             <!-- End Shop by Section -->
             
             <!-- Start Latest Reviews Section -->

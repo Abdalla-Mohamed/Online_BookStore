@@ -30,7 +30,7 @@ public class BookLists {
 
         try {
             books = bookDao.readAll();
-
+            System.out.println("");
         } catch (SQLException ex) {
             Logger.getLogger(BookLists.class.getName()).log(Level.SEVERE, null, ex);
         }
