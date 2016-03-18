@@ -13,7 +13,7 @@
             if (document.myForm.title.value === "")
             {
                 var msg1 = "Please enter book title...!";
-                document.getElementById("titleError").innerHTML += msg1;
+                document.getElementById("titleError").innerHTML = msg1;
                 document.myForm.title.focus();
                 return false;
             }
@@ -27,13 +27,13 @@
 
             if (isNaN(document.myForm.count.value)) {
                 var msg1 = "Please enter valid data...!";
-                document.getElementById("countError").innerHTML += msg1;
+                document.getElementById("countError").innerHTML = msg1;
                 document.myForm.count.focus();
                 return false;
             }
             if (document.myForm.count.value === "") {
                 var msg2 = "Please enter book count...!";
-                document.getElementById("countError").innerHTML += msg2;
+                document.getElementById("countError").innerHTML = msg2;
                 document.myForm.count.focus();
                 return false;
             }
@@ -45,14 +45,14 @@
         function validateBookPrice() {
             if (isNaN(document.myForm.price.value)) {
                 var msg1 = "Please enter valid price...!";
-                document.getElementById("priceError").innerHTML += msg1;
+                document.getElementById("priceError").innerHTML = msg1;
                 document.myForm.price.focus();
                 return false;
             }
             if (document.myForm.price.value === "")
             {
                 var msg1 = "Please enter book price...!";
-                document.getElementById("priceError").innerHTML += msg1;
+                document.getElementById("priceError").innerHTML = msg1;
                 document.myForm.price.focus();
                 return false;
             }
@@ -65,7 +65,7 @@
             if (document.myForm.description.value === "")
             {
                 var msg1 = "Please enter book description...!";
-                document.getElementById("descError").innerHTML += msg1;
+                document.getElementById("descError").innerHTML = msg1;
                 document.myForm.description.focus();
                 return false;
             }
@@ -78,7 +78,7 @@
             if (document.myForm.quote.value === "")
             {
                 var msg1 = "Please enter book quote...!";
-                document.getElementById("quoteError").innerHTML += msg1;
+                document.getElementById("quoteError").innerHTML = msg1;
                 document.myForm.quote.focus();
                 return false;
             }
@@ -90,14 +90,14 @@
         function validateBookRate() {
             if (isNaN(document.myForm.rate.value)) {
                 var msg1 = "Please enter valid data...!";
-                document.getElementById("rateError").innerHTML += msg1;
+                document.getElementById("rateError").innerHTML = msg1;
                 document.myForm.rate.focus();
                 return false;
             }
             if (document.myForm.rate.value === "")
             {
                 var msg1 = "Please enter book rate...!";
-                document.getElementById("rateError").innerHTML += msg1;
+                document.getElementById("rateError").innerHTML = msg1;
                 document.myForm.rate.focus();
                 return false;
             }
