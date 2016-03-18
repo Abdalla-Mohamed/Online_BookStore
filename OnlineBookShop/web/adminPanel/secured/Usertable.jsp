@@ -9,6 +9,9 @@
 <!DOCTYPE HTML>
 <html>
 <%@include file='head.jsp'%>
+<%@page import="com.beans.Customer"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<jsp:useBean id="customer" scope="page" class="com.beans.Customer"/>
 
 <body class="sticky-header left-side-collapsed"  onload="initMap()">
 	<section>
@@ -50,79 +53,20 @@
 										</tr>
 									</thead>
 									<tbody>
+                                                                             <c:set var="count" value="0" scope="page" />
+                                                                                 <c:forEach  items="${customer.allCustomers}" var="row">
+                                                                                     <c:set var="count" value="${count + 1}" scope="page"/>
 										<tr class="active">
-											<th scope="row">1</th>
-											<td>Column content</td>
-											<td>Column content</td>
-											<td>Column content</td>
-											<td>Column content</td>
-											<td>Column content</td>
+                                                                                
+											<th scope="row"><c:out value="${count}"/></th>
+											<td><c:out value="${row.getCId()}"/></td>
+											<td><c:out value="${row.getCName()}"/></td>
+											<td><c:out value="${row.getCEmail()}"/></td>
+											<td><c:out value="${row.getCMobile()}"/></td>
+											<td><c:out value="${row.getCCredit()}"/></td>
+                                                                                 
 										</tr>
-										<tr>
-											<th scope="row">2</th>
-											<td>Column content</td>
-											<td>Column content</td>
-											<td>Column content</td>
-											<td>Column content</td>
-											<td>Column content</td>
-										</tr>
-										<tr class="success">
-											<th scope="row">3</th>
-											<td>Column content</td>
-											<td>Column content</td>
-											<td>Column content</td>
-											<td>Column content</td>
-											<td>Column content</td>
-										</tr>
-										<tr>
-											<th scope="row">4</th>
-											<td>Column content</td>
-											<td>Column content</td>
-											<td>Column content</td>
-
-											<td><a href="#"><i class="fa fa-edit"/></a></td>
-											<td><a href="#" class="ask"><img src="../images/trash.png" alt="" title="" border="0" /></a></td>
-										</tr>
-										<tr class="info">
-											<th scope="row">5</th>
-											<td>Column content</td>
-											<td>Column content</td>
-											<td>Column content</td>
-											<td>Column content</td>
-											<td>Column content</td>
-										</tr>
-										<tr>
-											<th scope="row">6</th>
-											<td>Column content</td>
-											<td>Column content</td>
-											<td>Column content</td>
-											<td><a href="#"><i class="fa fa-edit"/></a></td>
-											<td><a href="#" class="ask"><img src="../images/trash.png" alt="" title="" border="0" /></a></td>							  
-										</tr>
-										<tr class="warning">
-											<th scope="row">7</th>
-											<td>Column content</td>
-											<td>Column content</td>
-											<td>Column content</td>
-											<td><a href="#"><i class="fa fa-edit"/></a></td>
-											<td><a href="#" class="ask"><img src="../images/trash.png" alt="" title="" border="0" /></a></td>							  
-										</tr>
-										<tr>
-											<th scope="row">8</th>
-											<td>Column content</td>
-											<td>Column content</td>
-											<td>Column content</td>
-											<td><a href="#"><i class="fa fa-edit"/></a></td>
-											<td><a href="#" class="ask"><img src="../images/trash.png" alt="" title="" border="0" /></a></td>							  
-										</tr>
-										<tr class="danger">
-											<th scope="row">9</th>
-											<td>Column content</td>
-											<td>Column content</td>
-											<td>Column content</td>
-											<td><a href="#"><i class="fa fa-edit"/></a></td>
-											<td><a href="#" class="ask"><img src="../images/trash.png" alt="" title="" border="0" /></a></td>							  
-										</tr>
+										</c:forEach>
 									</tbody>
 								</table>
 								<!--<button class="btn-success btn centerBtn">Add new Book</button>-->

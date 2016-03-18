@@ -34,7 +34,7 @@
                             <noscript>
                                 <link rel="stylesheet" type="text/css" href="css/noJS.css" />
                             </noscript>
-                                       
+
                             <!-- Css Files End -->
                             </head>
                             <body>
@@ -62,204 +62,189 @@
                                                     <form class="form-horizontal" action="../UpdateCustomerData" method="post">
                                                         <table>
                                                             <input type="hidden" name="cId" value="${customer.CId}">
-                                                            <tr><td>Name</td><td><input type="text" name="cName" id="iName" value="${customer.CName}"></td></tr>
-                                                            <tr><td>password</td><td><input type="text" name="cPassword" id="iPassword" value="${customer.CPassword}"></td></tr>
-                                                            <tr><td>Pone number</td><td><input type="text" name="cMobile" id="iMobile" value="${customer.CMobile}"></td></tr>
-                                                            <tr><td>job</td><td><input type="text" name="cJob" id="iJob" value="${customer.CJob}"></td></tr>
-                                                            <tr><td>Address</td><td><input type="text" name="cAddress" id="iAddress" value="${customer.CAddress}"></td></tr>
-                                                            <tr><td></td><td><input type="submit" name="submit" class="vote-btn"></td></tr>
+                                                                <tr><td>Name</td><td><input type="text" name="cName" id="iName" value="${customer.CName}"  pattern=".{3,}" required title="3 characters minimum" ></td></tr>
+                                                                <tr><td>password</td><td><input type="text" name="cPassword" id="iPassword" value="${customer.CPassword}"  pattern=".{6,}" required title="6 characters minimum"></td></tr>
+                                                                <tr><td>Pone number</td><td><input type="text" name="cMobile" id="iMobile" value="${customer.CMobile}"  pattern="\d{9,}" required title="9 numbers minimum"></td></tr>
+                                                                <tr><td>job</td><td><input type="text" name="cJob" id="iJob" value="${customer.CJob}"  pattern=".{3,}" required title="3 characters minimum"></td></tr>
+                                                                <tr><td>Address</td><td><input type="text" name="cAddress" id="iAddress" value="${customer.CAddress}"  pattern=".{3,}" required title="3 characters minimum"></td></tr>
+                                                                <tr><td></td><td><input type="submit" name="submit" class="vote-btn"></td></tr>
                                                         </table>
-                                                    </form>>
+                                                    </form>
 
-                                                        <div class="row-2"> </div>
+                                                    <div class="row-2"> </div>
                                                 </div>
-                                                <!-- End Sort by Section -->
-
-                                                <!-- Start Blog Post Section -->        	<!-- End Blog Post Section -->
-
-                                                <!-- Start Blog Post Section -->        	<!-- End Blog Post Section -->
-
-                                                <!-- Start Blog Post Section -->
-
-                                                <!-- End Blog Post Section -->
-
-                                                <!-- End Blog Post Section -->
-                                                <!-- End Blog Post Section -->
-
-                                            </section>
-
-
-                                            <section class="span9 first">
-                                                <!-- Start Ad Slider Section -->            <!-- End Ad Slider Section -->
-
-                                                <!-- Start Sort by Section -->
-                                                <div class="product_sort">
+ <div class="product_sort">
 
                                                     <h2>update your profile</h2>
-                                                    
-                                                    
-                                                    
-                                                        <table>
-                                                            <form action="../FavoriteCategories" method="post" class="form-horizontal">
-                                                           <tr>
-                                                               <td rowspan="1" colspan="3" align="center">  <h4><font color="red" size="large">Interests</font></h4></td>
+
+
+
+                                                    <table>
+                                                        <form action="../FavoriteCategories" method="post" class="form-horizontal">
+                                                            <tr>
+                                                                <td rowspan="1" colspan="3" align="center">  <h4><font color="red" size="large">Interests</font></h4></td>
                                                             </tr>
-                                                        <c:forEach  items="${category.categories}" var="row">
-                                                    <c:out value="${row.getCatName()}"/>                                                
-                                                            
-                                                            <tr><td><c:out value="${row.getCatName()}"/></td>
-                                                                <td><input type="checkbox" name="fCat" value="<c:out value='${row.getCatId()}'/>"></input></td>
-                                                                
-                                                            </tr>
-                                                                
+                                                            <c:forEach  items="${category.categories}" var="row">
+                                                                <c:out value="${row.getCatName()}"/>                                                
+
+                                                                <tr><td><c:out value="${row.getCatName()}"/></td>
+                                                                    <td><input type="checkbox" name="fCat" value="<c:out value='${row.getCatId()}'/>"></input></td>
+
+                                                                </tr>
+
                                                             </c:forEach>
                                                             <tr><td><br></td></br></tr>
-                                                           <tr><td> 
-                                                                   <button type="submit" class="btn btn-info pull-right">Add Categories </button>                                                              </td>
-                                                           </tr>
-                                                            
-                                                            </form>
-                                                        </table>
-                                                        
-                                                    
-                                                        <div class="row-2"> </div>
+                                                            <tr><td> 
+                                                                    <button type="submit" class="btn btn-info pull-right">Add Categories </button> </td>
+                                                            </tr>
+
+                                                        </form>
+                                                    </table>
+
+
+                                                    <div class="row-2"> </div>
                                                 </div>
-                                                <!-- End Sort by Section -->
 
-                                                <!-- Start Blog Post Section -->        	<!-- End Blog Post Section -->
+                                                                <br><br><br><br>
+                                                                
+                                              <div class="product_sort">
 
-                                                <!-- Start Blog Post Section -->        	<!-- End Blog Post Section -->
+                                                    <figure class="span4">
+                                                        <div class="cart-option-box">
+                                                            <h4><i class="icon-money"></i> Charge your account </h4>
+                                                            <p>Enter your coupon code if you have one.</p>
+                                                            <form action="" method="post">
+                                                            <input type="text" id="inputDiscount" placeholder="">
+                                                                <br / class="clearfix">
+                                                                    <input type="submit" name="Charge" class="vote-btn" pattern="\d{15,}" required title="15 numbers minimum">
+                                                         </div>
+                                                    </figure>
 
-                                                <!-- Start Blog Post Section -->
-
-                                                <!-- End Blog Post Section -->
-
-                                                <!-- End Blog Post Section -->
-                                                <!-- End Blog Post Section -->
-
+                                                </div>
+                                                                
                                             </section>
 
 
+                                            
 
+                                                                    <!-- End Main Content -->
 
-                                            <!-- End Main Content -->
+                                                                    <!-- Start Main Side Bar -->
+                                                                    <section class="span3">
+                                                                        <div class="side-holder">
+                                                                            <article class="banner-ad"><img src="images/image20.jpg" alt="Banner Ad" /></article>
+                                                                        </div>
 
-                                            <!-- Start Main Side Bar -->
-                                            <section class="span3">
-                                                <div class="side-holder">
-                                                    <article class="banner-ad"><img src="images/image20.jpg" alt="Banner Ad" /></article>
-                                                </div>
+                                                                        <!-- Start Shop by Section -->
+                                                                        <div class="side-holder">
+                                                                            <article class="shop-by-list">
+                                                                                <h2>Shop by</h2>
+                                                                                <div class="side-inner-holder">
+                                                                                    <strong class="title">Category</strong>
+                                                                                    <ul class="side-list">
+                                                                                        <li><a href="#">Fiction (15)</a></li>
+                                                                                        <li><a href="#">Healthcare (15)</a></li>
+                                                                                        <li><a href="#">Technology (15)</a></li>
+                                                                                        <li><a href="#">Science(15)</a></li>
+                                                                                    </ul>
+                                                                                    <strong class="title">Price</strong>
+                                                                                    <ul class="side-list">
+                                                                                        <li><a href="#">$0.00 - $10,00.00 (13)</a></li>
+                                                                                        <li><a href="#">$10,00.00 - $20,00.00 (2)</a></li>
+                                                                                    </ul>
+                                                                                    <strong class="title">Author</strong>
+                                                                                    <ul class="side-list">
+                                                                                        <li><a href="#">Khalid Hoessini (9)</a></li>
+                                                                                        <li><a href="#">William Blake (2)</a></li>
+                                                                                        <li><a href="#">Anna Kathrinena (1)</a></li>
+                                                                                        <li><a href="#">Gray Alvin (3)</a></li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </article>
+                                                                        </div>
+                                                                        <!-- End Shop by Section -->
 
-                                                <!-- Start Shop by Section -->
-                                                <div class="side-holder">
-                                                    <article class="shop-by-list">
-                                                        <h2>Shop by</h2>
-                                                        <div class="side-inner-holder">
-                                                            <strong class="title">Category</strong>
-                                                            <ul class="side-list">
-                                                                <li><a href="#">Fiction (15)</a></li>
-                                                                <li><a href="#">Healthcare (15)</a></li>
-                                                                <li><a href="#">Technology (15)</a></li>
-                                                                <li><a href="#">Science(15)</a></li>
-                                                            </ul>
-                                                            <strong class="title">Price</strong>
-                                                            <ul class="side-list">
-                                                                <li><a href="#">$0.00 - $10,00.00 (13)</a></li>
-                                                                <li><a href="#">$10,00.00 - $20,00.00 (2)</a></li>
-                                                            </ul>
-                                                            <strong class="title">Author</strong>
-                                                            <ul class="side-list">
-                                                                <li><a href="#">Khalid Hoessini (9)</a></li>
-                                                                <li><a href="#">William Blake (2)</a></li>
-                                                                <li><a href="#">Anna Kathrinena (1)</a></li>
-                                                                <li><a href="#">Gray Alvin (3)</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </article>
-                                                </div>
-                                                <!-- End Shop by Section -->
+                                                                        <!-- Start Latest Reviews Section -->
+                                                                        <div class="side-holder"> </div>
+                                                                        <!-- End Latest Reviews Section -->
 
-                                                <!-- Start Latest Reviews Section -->
-                                                <div class="side-holder"> </div>
-                                                <!-- End Latest Reviews Section -->
+                                                                        <!-- Start Price Range Section -->
+                                                                        <div class="side-holder">
+                                                                            <article class="price-range">
+                                                                                <h2>Price Range</h2>
+                                                                                <div class="side-inner-holder">
+                                                                                    <p>Select the price range for better search</p>                    	
+                                                                                    <div id="slider-range"></div>
+                                                                                    <p> <input type="text" id="amount" class="r-input"> </p>
+                                                                                </div>
+                                                                            </article>
+                                                                        </div>
+                                                                        <!-- End Price Range Section -->
 
-                                                <!-- Start Price Range Section -->
-                                                <div class="side-holder">
-                                                    <article class="price-range">
-                                                        <h2>Price Range</h2>
-                                                        <div class="side-inner-holder">
-                                                            <p>Select the price range for better search</p>                    	
-                                                            <div id="slider-range"></div>
-                                                            <p> <input type="text" id="amount" class="r-input"> </p>
-                                                        </div>
-                                                    </article>
-                                                </div>
-                                                <!-- End Price Range Section -->
+                                                                        <!-- Start Community Poll Section -->
+                                                                        <div class="side-holder">
+                                                                            <article class="price-range">
+                                                                                <h2>Community Poll</h2>
+                                                                                <div class="side-inner-holder">
+                                                                                    <p>Who is your favourite American author?</p>
+                                                                                    <label class="radio">
+                                                                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                                                                            Jane Austin
+                                                                                    </label>
+                                                                                    <label class="radio">
+                                                                                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                                                                            William Blake
+                                                                                    </label>
+                                                                                    <label class="radio">
+                                                                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                                                                            Keith Urban
+                                                                                    </label>
+                                                                                    <label class="radio">
+                                                                                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                                                                            Anna Smith
+                                                                                    </label>
+                                                                                    <a href="#" class="vote-btn">Vote</a>
+                                                                                </div>
+                                                                            </article>
+                                                                        </div>
+                                                                        <!-- End Community Poll Section -->
 
-                                                <!-- Start Community Poll Section -->
-                                                <div class="side-holder">
-                                                    <article class="price-range">
-                                                        <h2>Community Poll</h2>
-                                                        <div class="side-inner-holder">
-                                                            <p>Who is your favourite American author?</p>
-                                                            <label class="radio">
-                                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                                                    Jane Austin
-                                                            </label>
-                                                            <label class="radio">
-                                                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                                                                    William Blake
-                                                            </label>
-                                                            <label class="radio">
-                                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                                                    Keith Urban
-                                                            </label>
-                                                            <label class="radio">
-                                                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                                                                    Anna Smith
-                                                            </label>
-                                                            <a href="#" class="vote-btn">Vote</a>
-                                                        </div>
-                                                    </article>
-                                                </div>
-                                                <!-- End Community Poll Section -->
+                                                                    </section>
+                                                                    <!-- End Main Side Bar -->
+                                                                    </section>
+                                                                    </section>
+                                                                    <!-- End Main Content Holder -->
+                                                                    <!-- Start Footer Top 1 -->
+                                                                    <%@include file='footer.jsp'%>
+                                                                    <!-- End Main Footer -->
+                                                                    </div>
+                                                                    <!-- End Main Wrapper -->
 
-                                            </section>
-                                            <!-- End Main Side Bar -->
-                                        </section>
-                                    </section>
-                                    <!-- End Main Content Holder -->
-                                    <!-- Start Footer Top 1 -->
-                                    <%@include file='footer.jsp'%>
-                                    <!-- End Main Footer -->
-                                </div>
-                                <!-- End Main Wrapper -->
-
-                                <!-- JS Files Start -->
-                                <script type="text/javascript" src="js/lib.js"></script><!-- lib Js -->
-                                <script type="text/javascript" src="js/modernizr.js"></script><!-- Modernizr -->
-                                <script type="text/javascript" src="js/easing.js"></script><!-- Easing js -->
-                                <script type="text/javascript" src="js/bs.js"></script><!-- Bootstrap -->
-                                <script type="text/javascript" src="js/bxslider.js"></script><!-- BX Slider -->
-                                <script type="text/javascript" src="js/input-clear.js"></script><!-- Input Clear -->
-                                <script src="js/range-slider.js"></script><!-- Range Slider -->
-                                <script src="js/jquery.zoom.js"></script><!-- Zoom Effect -->
-                                <script type="text/javascript" src="js/bookblock.js"></script><!-- Flip Slider -->
-                                <script type="text/javascript" src="js/custom.js"></script><!-- Custom js -->
-                                <script type="text/javascript" src="js/social.js"></script><!-- Social Icons -->
-                                <!-- JS Files End -->
-                                <noscript>
-                                    <style>
-                                        #socialicons>a span { top: 0px; left: -100%; -webkit-transition: all 0.3s ease; -moz-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; transition: all 0.3s 	ease-in-out;}
-                                        #socialicons>ahover div{left: 0px;}
-                                    </style>
-                                </noscript>
-                                <script type="text/javascript">
-                                    /* <![CDATA[ */
-                                    $(document).ready(function () {
-                                        $('.social_active').hoverdir({});
-                                    })
-                                    /* ]]> */
-                                </script>
-                            </body>
-                            </html>
+                                                                    <!-- JS Files Start -->
+                                                                    <script type="text/javascript" src="js/lib.js"></script><!-- lib Js -->
+                                                                    <script type="text/javascript" src="js/modernizr.js"></script><!-- Modernizr -->
+                                                                    <script type="text/javascript" src="js/easing.js"></script><!-- Easing js -->
+                                                                    <script type="text/javascript" src="js/bs.js"></script><!-- Bootstrap -->
+                                                                    <script type="text/javascript" src="js/bxslider.js"></script><!-- BX Slider -->
+                                                                    <script type="text/javascript" src="js/input-clear.js"></script><!-- Input Clear -->
+                                                                    <script src="js/range-slider.js"></script><!-- Range Slider -->
+                                                                    <script src="js/jquery.zoom.js"></script><!-- Zoom Effect -->
+                                                                    <script type="text/javascript" src="js/bookblock.js"></script><!-- Flip Slider -->
+                                                                    <script type="text/javascript" src="js/custom.js"></script><!-- Custom js -->
+                                                                    <script type="text/javascript" src="js/social.js"></script><!-- Social Icons -->
+                                                                    <!-- JS Files End -->
+                                                                    <noscript>
+                                                                        <style>
+                                                                            #socialicons>a span { top: 0px; left: -100%; -webkit-transition: all 0.3s ease; -moz-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; transition: all 0.3s 	ease-in-out;}
+                                                                            #socialicons>ahover div{left: 0px;}
+                                                                        </style>
+                                                                    </noscript>
+                                                                    <script type="text/javascript">
+                                                                        /* <![CDATA[ */
+                                                                        $(document).ready(function () {
+                                                                            $('.social_active').hoverdir({});
+                                                                        })
+                                                                        /* ]]> */
+                                                                    </script>
+                                                                    </body>
+                                                                    </html>
