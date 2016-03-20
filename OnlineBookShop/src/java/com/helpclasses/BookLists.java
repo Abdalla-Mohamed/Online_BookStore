@@ -7,6 +7,7 @@ package com.helpclasses;
 
 import com.beans.Book;
 import com.beans.Book;
+import com.daos.BookCategoriesDao;
 import com.daos.Book_Dao;
 import java.sql.SQLException;
 import java.util.List;
@@ -20,9 +21,10 @@ import java.util.logging.Logger;
 public class BookLists {
 
     Book_Dao bookDao;
-
+    BookCategoriesDao bookCatDao;
     public BookLists() {
         bookDao = new Book_Dao();
+        bookCatDao=new BookCategoriesDao();
     }
 
     public List<Book> getAllBooks() {
@@ -51,6 +53,39 @@ public class BookLists {
         return book;
     }
     
+    public List<Book> getBooksByCategory(int CatId){
+        List<Book>books=null;
+        
+        try {
+            books=bookCatDao.getBooksByCategory(CatId);
+        } catch (SQLException ex) {
+            Logger.getLogger(BookLists.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return books;
+    }
     
+    public List<Book> getBooksWithNoCategory(){
+        List<Book>books=null;
+        
+        try {
+            books=bookCatDao.getBooksWithNoCategory();
+        } catch (SQLException ex) {
+            Logger.getLogger(BookLists.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return books;
+    }
+    
+    
+    public List<Book> getOtherBookx(int catID){
+         List<Book>books=null;
+         
+        try {
+            books=bookCatDao.getOtherCatBooks(catID);
+        } catch (SQLException ex) {
+            Logger.getLogger(BookLists.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         
+         return books;
+    }
 
 }
