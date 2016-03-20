@@ -48,9 +48,28 @@ public class BookEditController extends HttpServlet {
             throws ServletException, IOException {
         System.out.println(Paths.get(".").toAbsolutePath().normalize().toString());
 
-        //   this.doPost(request, response);
+        Book book = new Book();
+        Book_Dao bookDao = new Book_Dao();
+
+        int id = Integer.parseInt(request.getParameter("ispnRow"));
+        try {
+            book = bookDao.readByIsbn(id);
+            book.setBCount(0);
+            bookDao.update(book);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(BookEditController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        HttpSession session = request.getSession(true);
+        session.setAttribute("book", book);
+
+        response.setContentType("text/html");
+
+        response.sendRedirect("adminPanel/secured/tables.jsp");
     }
 
+    //   this.doPost(request, response);
     /**
      * Handles the HTTP <code>POST</code> method.
      *
@@ -88,8 +107,10 @@ public class BookEditController extends HttpServlet {
         response.setContentType("text/html");
         try {
             bookDao.update(book);
+
         } catch (SQLException ex) {
-            Logger.getLogger(UpdateCustomerData.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UpdateCustomerData.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
 
         response.sendRedirect("adminPanel/secured/tables.jsp");

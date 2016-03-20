@@ -45,10 +45,7 @@
             <li class="menu-list"><a href="sign-in.jsp"><i class="fa fa-sign-in"></i>  <span>Pages</span></a> 
             <li class="menu-list"><a href="sign-up.jsp"><i class="fa fa-book"></i>  <span>Pages</span></a> 
             <li class="menu-list"><a href="authers.jsp"><i class="fa fa-user"></i>  <span>Pages</span></a> 
-
-            <li><a href="blank_page.jsp">Blank Page</a></li>
-            </li>
-            <li class="lnr lnr-book"><a href="chargeCard.jsp">Charging</li>
+            <li class="menu-list"><a href="chargeCard.jsp"><i class="fa fa-money"></i>  <span>Pages</span></a></li>
         </ul>
         <!--sidebar nav end-->
     </div>

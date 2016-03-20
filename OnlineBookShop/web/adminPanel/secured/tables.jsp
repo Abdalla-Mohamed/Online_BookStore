@@ -68,15 +68,23 @@
                                                 <td>${book.getBRating()}</td>
                                                 <!--<td><a href="#"><i class="fa fa-edit"/></a></td>-->
                                                 <td>
-                                                    <form action="/OnlineBookShop/UpdateBookDilog" method="post" >
+                                                    <form action="/OnlineBookShop/UpdateBookDilog" method="post">
                                                         <input type="hidden" name="ispnRow" value="${book.getBIsbn()}" />
                                                         <button type="submit" class="btn btn-primary fa fa-edit" /> 
                                                     </form>
-
-
                                                 </td>
 
-                                                <td><a href="#" class="ask"><i class="fa fa-times"/></a></td>
+                                                <td>
+                                                    <!-- <a href="#" class="ask"><i class="fa fa-times"/>
+                                                         
+                                                      </a>
+                                                    -->
+                                                    <form  action="/OnlineBookShop/BookEditController" method="get" >
+                                                        <input type="hidden" name="ispnRow" value="${book.getBIsbn()}" />
+                                                        <button type="submit" class="btn btn-primary fa fa-times" /> 
+                                                    </form>
+
+                                                </td>
                                             </tr>
                                         </c:forEach>
 
