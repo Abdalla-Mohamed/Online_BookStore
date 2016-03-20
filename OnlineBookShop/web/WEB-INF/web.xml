@@ -40,6 +40,10 @@
         <servlet-name>UpdateCustomerData</servlet-name>
         <servlet-class>com.servlets.UpdateCustomerData</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BookEditController</servlet-name>
+        <servlet-class>com.servlets.admin.BookEditController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddCategory</servlet-name>
         <url-pattern>/AddCategory</url-pattern>
@@ -98,12 +102,10 @@
         <servlet-name>UpdateCustomerData</servlet-name>
         <url-pattern>/UpdateCustomerData</url-pattern>
     </servlet-mapping>
-    
-    
-    
-    
-    
-    
+    <servlet-mapping>
+        <servlet-name>BookEditController</servlet-name>
+        <url-pattern>/BookEditController</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

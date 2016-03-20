@@ -23,7 +23,7 @@ public class Book_Dao {
     private static final String SQL_INSERT = "INSERT INTO BOOK(B_ISBN, B_NAME, B_DESCRIPTION, B_QUOTE,"
             + "B_COUNT,B_PRICE,B_RATING,B_FRONT_IMG,B_BACK_IMG,B_HDR01_IMG,B_HDR02_IMG) "
             + "VALUES(BOOK_SEQ_TMP.NEXTVAL,?,?,?,?,?,?,?,?,?,?)";
-    private static final String SQL_UPDATE = "UPDATE BOOK SET B_NAME=? WHERE B_ISBN=?";
+    private static final String SQL_UPDATE = "UPDATE BOOK SET B_NAME=?,B_COUNT=?,B_PRICE=?,B_DESCRIPTION=? WHERE B_ISBN=?";
     private static final String SQL_UPDATE_IMAGES = "UPDATE BOOK SET B_FRONT_IMG=?,B_BACK_IMG=?,B_HDR01_IMG=?,B_HDR02_IMG=? WHERE B_ISBN=?";
     private static final String SQL_DELETE = "DELETE FROM BOOK WHERE B_ISBN=?";
 
@@ -68,7 +68,10 @@ public class Book_Dao {
             connection = DbConnctor.openConnection();
             statement = connection.prepareStatement(SQL_UPDATE);
             statement.setString(1, bookObj.getBName());
-            statement.setInt(2, bookObj.getBIsbn());
+            statement.setInt(2, bookObj.getBCount());
+            statement.setDouble(3, bookObj.getBPrice());
+            statement.setString(4, bookObj.getBDescription());
+            statement.setInt(5, bookObj.getBIsbn());
             if (statement.executeUpdate() > 0) {
                 return true;
             }
@@ -136,7 +139,7 @@ public class Book_Dao {
                 book.setBRating(resultSet.getInt(7));
 
                 // images folder path
-                String imagesFolder = "images/" + book.getBIsbn()+"/";
+                String imagesFolder = "images/" + book.getBIsbn() + "/";
 
                 book.setBFrontImg(imagesFolder + resultSet.getString(8));
                 book.setBBackImg(imagesFolder + resultSet.getString(9));
@@ -195,7 +198,7 @@ public class Book_Dao {
                 book.setBRating(resultSet.getInt(7));
 
                 // images folder path
-                String imagesFolder = Book.uplodedImgFolderDestntion + book.getBIsbn()+"\\";
+                String imagesFolder = Book.uplodedImgFolderDestntion + book.getBIsbn() + "\\";
 
                 book.setBFrontImg(imagesFolder + resultSet.getString(8));
                 book.setBBackImg(imagesFolder + resultSet.getString(9));
