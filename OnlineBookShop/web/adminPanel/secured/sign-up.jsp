@@ -23,14 +23,7 @@
             }
         }
         function validateBookCount() {
-            // var count = document.myForm.count;
 
-            if (isNaN(document.myForm.count.value)) {
-                var msg1 = "Please enter valid data...!";
-                document.getElementById("countError").innerHTML = msg1;
-                document.myForm.count.focus();
-                return false;
-            }
             if (document.myForm.count.value === "") {
                 var msg2 = "Please enter book count...!";
                 document.getElementById("countError").innerHTML = msg2;
@@ -43,12 +36,7 @@
             }
         }
         function validateBookPrice() {
-            if (isNaN(document.myForm.price.value)) {
-                var msg1 = "Please enter valid price...!";
-                document.getElementById("priceError").innerHTML = msg1;
-                document.myForm.price.focus();
-                return false;
-            }
+
             if (document.myForm.price.value === "")
             {
                 var msg1 = "Please enter book price...!";
@@ -88,12 +76,7 @@
             }
         }
         function validateBookRate() {
-            if (isNaN(document.myForm.rate.value)) {
-                var msg1 = "Please enter valid data...!";
-                document.getElementById("rateError").innerHTML = msg1;
-                document.myForm.rate.focus();
-                return false;
-            }
+
             if (document.myForm.rate.value === "")
             {
                 var msg1 = "Please enter book rate...!";
@@ -206,7 +189,7 @@
                                     <h4>count* :</h4>
                                 </div>
                                 <div class="sign-up2">
-                                    <input name="count" type="text" placeholder=" " required=" " onblur="validateBookCount()"/>
+                                    <input name="count" type="number" placeholder=" " required=" " onblur="validateBookCount()"/>
                                     <span style="color:red;" id="countError" > </span>
                                 </div>
                                 <div class="clearfix"> </div>
@@ -216,7 +199,7 @@
                                     <h4>price* :</h4>
                                 </div>
                                 <div class="sign-up2">
-                                    <input name="price" type="text" placeholder=" " required=" " onblur="validateBookPrice()"/>
+                                    <input name="price" type="number" placeholder=" " required=" " onblur="validateBookPrice()"/>
                                     <span style="color:red;" id="priceError" > </span>
 
                                 </div>
@@ -252,7 +235,7 @@
                                     <h4>rate* :</h4>
                                 </div>
                                 <div class="sign-up2">
-                                    <input name="rate"  type="text" placeholder=" " required=" " onblur="validateBookRate()"/>
+                                    <input name="rate"  type="number" placeholder=" " required=" " onblur="validateBookRate()"/>
                                     <span style="color:red;" id="rateError"> </span>
                                 </div>
                                 <div class="clearfix"> </div>

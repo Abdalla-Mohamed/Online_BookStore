@@ -9,7 +9,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:useBean id="bookLists" scope="page" class="com.helpclasses.BookLists"/>
 <c:set var="books" value="${bookLists.allBooks}"> </c:set> 
-<jsp:useBean id="updateBook" scope="session"  class="com.beans.Book" />
+<jsp:useBean id="updateBook" scope="session"  class="com.beans.Book"/>
 
 
 <!DOCTYPE HTML>
@@ -89,11 +89,20 @@
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="sign-up">
-                                                <form action="/OnlineBookShop/BookManageSrvlt" method="post" enctype="multipart/form-data"  >
+                                                <form action="/OnlineBookShop/BookEditController" method="post">
                                                     <h3>Update book form</h3>
                                                     <p class="creating">Having hands on experience in creating innovative designs,I do offer design 
                                                         solutions which harness.</p>
                                                     <h5>Personal Information</h5>
+                                                    <div class="sign-u">
+                                                        <div class="sign-up1">
+                                                            <h4>Book ISBN* :</h4>
+                                                        </div>
+                                                        <div class="sign-up2">
+                                                            <input name="isbn" type="hidden" placeholder=" " required=" " value="${updateBook.BIsbn}"/>
+                                                        </div>
+                                                        <div class="clearfix"> </div>
+                                                    </div>
                                                     <div class="sign-u">
                                                         <div class="sign-up1">
                                                             <h4>Book Title* :</h4>
@@ -105,7 +114,7 @@
                                                     </div>
                                                     <div class="sign-u">
                                                         <div class="sign-up1">
-                                                            <h4>count* :</h4>
+                                                            <h4>Count* :</h4>
                                                         </div>
                                                         <div class="sign-up2">
                                                             <input name="count"   type="text" placeholder=" " required=" " value="${updateBook.BCount}" />
@@ -114,7 +123,7 @@
                                                     </div>
                                                     <div class="sign-u">
                                                         <div class="sign-up1">
-                                                            <h4>price* :</h4>
+                                                            <h4>Price* :</h4>
                                                         </div>
                                                         <div class="sign-up2">
                                                             <input name="price" type="text" placeholder=" " required=" " value="${updateBook.BPrice}"/>
@@ -146,7 +155,7 @@
 
                                                     <div class="sign-u">
                                                         <div class="sign-up1">
-                                                            <h4>rate* :</h4>
+                                                            <h4>Rate* :</h4>
                                                         </div>
                                                         <div class="sign-up2">
                                                             <input name="rate"  type="text" placeholder=" " required=" " value="${updateBook.BRating}" />
@@ -155,7 +164,7 @@
                                                     </div>
                                                     <br>
 
-                                                    <div class="form-group col-md-6">
+                                                    <!--<div class="form-group col-md-6">
 
                                                         <label for="exampleInputFile"><h4>front image* :</h4></label>
                                                         <input type="file" id="exampleInputFile" name="imgFront" value="${updateBook.BFrontImg}" >
@@ -180,11 +189,11 @@
                                                         <input type="file" id="exampleInputFile" name="scndHeader" value="${updateBook.BHdr02Img}" >
                                                         <p class="help-block">${updateBook.BHdr02Img}</p>
                                                     </div>
-
+                                                    -->
                                                     <div class="sub_home">
 
                                                         <div class="sub_home_left">
-                                                            <input type="submit" value="Add to store">
+                                                            <input type="submit" value="Save Changes">
                                                         </div>
                                                         <div class="sub_home_right">
                                                             <p>Go Back to <a href="index.jsp">Home</a></p>
@@ -406,7 +415,7 @@
             <%@include file='footer.jsp'%>
             <!--footer section end-->
         </section>
-            <c:if test="${not (updateBook eq null or  updateBook.BIsbn eq null)  }" >
+        <c:if test="${not (updateBook eq null or  updateBook.BIsbn eq null)  }" >
             <script type="text/javascript">
                 $(document).ready(function () {
                     $("#editDailog").modal('show');
