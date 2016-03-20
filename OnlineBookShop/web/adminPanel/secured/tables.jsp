@@ -184,6 +184,7 @@
                                                     <div class="sub_home">
 
                                                         <div class="sub_home_left">
+                                                              <input type="hidden" name="ispnRow" value="${updateBook.getBIsbn()}" />
                                                             <input type="submit" value="Add to store">
                                                         </div>
                                                         <div class="sub_home_right">

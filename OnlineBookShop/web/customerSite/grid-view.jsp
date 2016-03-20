@@ -105,18 +105,18 @@
                 	</ul>
                 </div>
             </div>
-            <section class="grid-holder features-books">
+            <div class="grid-holder features-books" >
 
                 <c:forEach  items="${books}" var="book" varStatus="loop" >
-                    <div class=" slide col-sm-4"  >
+                    <div class=" slide col-sm-4"    >
                      <form method="POST">
                          <input type="hidden" name="ispnRow" value="${book.getBIsbn()}" />
-                         <button type="submit" style="border: none"><img src="${book.getBFrontImg()}" style="float: left" alt="" class="pro-img "/></button>
+                         <button type="submit" style="border: none"><img  src="../productImage?imageName=${book.getBFrontImg()}" style="float: left" alt="" class="pro-img "/></button>
                      </form>
                     <span class="title"><a >${book.getBName()}</a></span>
                     <span class="rating-bar"><img src="images/rating-star.png" alt="Rating Star"/></span>
                     <div class="cart-price">
-                        <form method="POST">
+                        <form action="/OnlineBookShop/AddToCart" method="POST">
                             <button type="submit" class="cart-btn2" style="border: none">Info</button>
                             <span class="price">${book.getBPrice()}</span>
                             <input type="hidden" name="ispnRow" value="${book.getBIsbn()}" />
@@ -130,7 +130,7 @@
                 </c:forEach>
             
             
-            </section>
+            </div>
             
             <div class="blog-footer col-md-12" style="float: left">
             	<div class="pagination" >  

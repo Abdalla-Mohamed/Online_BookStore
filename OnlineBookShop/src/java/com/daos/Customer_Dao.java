@@ -28,8 +28,10 @@ public class Customer_Dao {
     Statement statement = null;
     ResultSet resultSet = null;
     
+    private static final String SELECT_CRIDIT ="select C_CREDIT from BOOKSTORE.CUSTOMER WHERE C_ID =?";
     private static final String UPDATE ="UPDATE CUSTOMER SET C_NAME=?,C_PASSWORD=?,C_JOB=?,C_ADDRESS=?,"
             +"C_MOBILE=? WHERE C_ID=?";
+    private static final String UPDATE_CREDIT ="UPDATE CUSTOMER SET C_CREDIT = ? WHERE C_ID=? ";
     
     public Customer_Dao() {
     }
@@ -140,7 +142,7 @@ public class Customer_Dao {
                 customer.setCMobile(resultSet.getString("c_mobile"));
                 customer.setCCredit(resultSet.getInt("c_credit"));
                 customerList.add(customer);
-                System.out.println("mashy ");
+                
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -206,6 +208,25 @@ public class Customer_Dao {
         }
         return updated;
     }
+    public boolean updateCredit (Customer c) throws SQLException{
+                
+        boolean updated;              
+        try {
+            connection = DbConnctor.openConnection();
+            pstatement = connection.prepareStatement(UPDATE_CREDIT);
+            
+            pstatement.setInt(1, c.getCCredit());
+            pstatement.setInt(2, c.getCId());
+            pstatement.executeUpdate();
+            
+            updated=true;
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Customer_Dao.class.getName()).log(Level.SEVERE, null, ex);
+            updated=false;
+        }
+        return updated;
+    }
     
     public boolean deleteCustomer(int CustId) throws SQLException {
         try {
@@ -247,5 +268,26 @@ public class Customer_Dao {
             Logger.getLogger(Customer_Dao.class.getName()).log(Level.SEVERE, null, ex);
         }
         return customer;
+    }
+
+    public double getCustomerCredit(int customerId) throws SQLException {
+          double cridit=0;
+        try {
+            connection = DbConnctor.openConnection();;
+            pstatement = connection.prepareStatement(SELECT_CRIDIT);
+            pstatement.setInt(1, customerId);
+            resultSet = pstatement.executeQuery();
+            while (resultSet.next()) {
+                cridit = resultSet.getInt(1);
+
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+
+            DbConnctor.closeConnection();
+        }
+        return cridit;
     }
 }

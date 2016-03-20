@@ -47,14 +47,14 @@ public class Cart implements Serializable {
         this.book = book;
         this.customer = customer;
     }
-
-    public Integer getcBCount() {
-        return cBCount;
+    
+    public void addOnCount(int oldCount){
+        cBCount+=oldCount;
+        
+                
     }
 
-    public void setcBCount(Integer cBCount) {
-        this.cBCount = cBCount;
-    }
+  
     
 
    public int getBookId(){

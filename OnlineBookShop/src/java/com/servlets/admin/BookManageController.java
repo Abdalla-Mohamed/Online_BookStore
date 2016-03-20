@@ -33,7 +33,7 @@ public class BookManageController extends HttpServlet {
 
     private Book book;
     private Book_Dao book_Dao;
-    final String jspBookMange = "adminPanel/secured/sign-up.jsp";
+    final String jspBookMange = "/OnlineBookShop/adminPanel/secured/tables.jsp";
 
     public BookManageController() {
         super();
