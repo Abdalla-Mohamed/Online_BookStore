@@ -41,6 +41,10 @@
         <servlet-class>com.servlets.UpdateCustomerData</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>BookEditController</servlet-name>
+        <servlet-class>com.servlets.admin.BookEditController</servlet-class>
+    </servlet>
+	<servlet>
         <servlet-name>DeleteBookFromCat</servlet-name>
         <servlet-class>com.servlets.admin.DeleteBookFromCat</servlet-class>
     </servlet>
@@ -48,11 +52,12 @@
         <servlet-name>AddBookToCat</servlet-name>
         <servlet-class>com.servlets.admin.AddBookToCat</servlet-class>
     </servlet>
+	
     <servlet-mapping>
         <servlet-name>AddCategory</servlet-name>
         <url-pattern>/AddCategory</url-pattern>
     </servlet-mapping>
-    <!-- *************************-->
+
     <servlet>
         <servlet-name>AuthorControllrer</servlet-name>
         <servlet-class>com.servlets.admin.AuthorControllrer</servlet-class>
@@ -61,7 +66,17 @@
         <servlet-name>AuthorControllrer</servlet-name>
         <url-pattern>/AuthorControllrer</url-pattern>
     </servlet-mapping>
-    <!-- *************************-->
+    
+    <servlet>
+        <servlet-name>ShowBookDetails1</servlet-name>
+        <servlet-class>com.servlets.ShowBookDetails1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowBookDetails1</servlet-name>
+        <url-pattern>/ShowBookDetails1</url-pattern>
+    </servlet-mapping>
+       
+    
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -91,6 +106,10 @@
         <url-pattern>/UpdateCustomerData</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>BookEditController</servlet-name>
+        <url-pattern>/BookEditController</url-pattern>
+    </servlet-mapping>
+	<servlet-mapping>
         <servlet-name>DeleteBookFromCat</servlet-name>
         <url-pattern>/DeleteBookFromCat</url-pattern>
     </servlet-mapping>
