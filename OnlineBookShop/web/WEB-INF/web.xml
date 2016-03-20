@@ -58,6 +58,22 @@
         <url-pattern>/AuthorControllrer</url-pattern>
     </servlet-mapping>
     <!-- *************************-->
+    
+      <!-- ********///////////////*********** -->
+    <servlet>
+        <servlet-name>ShowBookDetails1</servlet-name>
+        <servlet-class>com.servlets.ShowBookDetails1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowBookDetails1</servlet-name>
+        <url-pattern>/ShowBookDetails1</url-pattern>
+    </servlet-mapping>
+    <!-- *******-///////////////////////////////*******-->
+    
+    
+    
+    
+    
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>

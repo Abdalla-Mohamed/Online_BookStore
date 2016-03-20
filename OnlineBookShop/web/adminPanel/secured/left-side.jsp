@@ -23,7 +23,7 @@
         <ul class="nav nav-pills nav-stacked custom-nav">
             <li><a href="index.jsp"><i class="lnr lnr-power-switch"></i>
                     <span>Dashboard</span></a></li>
-           				
+
             <li><a href="forms.jsp"><i class="fa fa-credit-card-alt"></i> <span>Forms</span></a></li>
             <li><a href="tables.jsp"><i class="lnr lnr-menu"></i> <span>Tables</span></a></li>              
             <li class="menu-list"><a href="#"><i class="lnr lnr-envelope"></i> <span>MailBox</span></a>
@@ -37,14 +37,16 @@
                     <li><a href="charts.jsp">Basic Charts</a> </li>
                 </ul>
             </li>
-     
+
             <li class="menu-list"><a href="#"><i class="lnr lnr-book"></i>  <span>Pages</span></a> 
             <li class="menu-list"><a href="#"><i class="fa fa-book"></i>  <span>Pages</span></a> 
-             
-                    <li><a href="sign-in.jsp">Sign In</a> </li>
-                    <li class="fa fa-book"><a href="sign-up.jsp">Books</a></li>
-                    <li><a href="authers.jsp">Authors</a></li>
-                    <li><a href="blank_page.jsp">Blank Page</a></li>
+
+            
+            <li class="menu-list"><a href="sign-in.jsp"><i class="fa fa-sign-in"></i>  <span>Pages</span></a> 
+            <li class="menu-list"><a href="sign-up.jsp"><i class="fa fa-book"></i>  <span>Pages</span></a> 
+            <li class="menu-list"><a href="authers.jsp"><i class="fa fa-user"></i>  <span>Pages</span></a> 
+
+            <li><a href="blank_page.jsp">Blank Page</a></li>
             </li>
             <li class="lnr lnr-book"><a href="chargeCard.jsp">Charging</li>
         </ul>
