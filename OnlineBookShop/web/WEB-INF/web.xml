@@ -40,6 +40,14 @@
         <servlet-name>UpdateCustomerData</servlet-name>
         <servlet-class>com.servlets.UpdateCustomerData</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteBookFromCat</servlet-name>
+        <servlet-class>com.servlets.admin.DeleteBookFromCat</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddBookToCat</servlet-name>
+        <servlet-class>com.servlets.admin.AddBookToCat</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddCategory</servlet-name>
         <url-pattern>/AddCategory</url-pattern>
@@ -81,6 +89,14 @@
     <servlet-mapping>
         <servlet-name>UpdateCustomerData</servlet-name>
         <url-pattern>/UpdateCustomerData</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteBookFromCat</servlet-name>
+        <url-pattern>/DeleteBookFromCat</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddBookToCat</servlet-name>
+        <url-pattern>/AddBookToCat</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
