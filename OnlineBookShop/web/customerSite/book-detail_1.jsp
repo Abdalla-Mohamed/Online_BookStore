@@ -69,9 +69,9 @@
 			<div class="blog-sec-slider">
                 <div class="slider5">
                     
-                    <div class="slide"><a href="#"><img src="${bookdetials.BHdr01Img}" alt=""/></a></div>
+                    <div class="slide"><a href="#"><img src="images/image22.jpg" alt=""/></a></div>
                   <div class="slide"><a href="#"><img src="images/image36.jpg" alt=""/></a></div>
-                  <div class="slide"><a href="#"><img src="${bookdetials.BHdr01Img}" alt=""/></a></div>
+                  <div class="slide"><a href="#"><img src="images/image22.jpg" alt=""/></a></div>
                 </div>
             </div>
             <!-- End Ad Slider Section -->

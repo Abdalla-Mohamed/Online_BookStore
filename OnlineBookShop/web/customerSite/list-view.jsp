@@ -114,7 +114,8 @@
                                                             </div>
                                                             
                                                             <div class="span10">
-                                                                <form method="post">
+                                                                <form method="post"   action="../ShowBookDetails1"    >
+                                                                   <input type="hidden" name="ispnRow" value="${book.getBIsbn()}" />
                                                                     <button type="submit" class=" more-btn" >more Details</button>
                                                                 <div class="title-bar"><a >${book.getBName()}</a> <span>by Khalid Hoessini</span></div>
 
