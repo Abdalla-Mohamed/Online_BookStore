@@ -54,7 +54,7 @@ public class BookEditController extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("ispnRow"));
         try {
             book = bookDao.readByIsbn(id);
-            book.setBCount(0);
+            book.setBCount(-1);
             bookDao.update(book);
 
         } catch (SQLException ex) {

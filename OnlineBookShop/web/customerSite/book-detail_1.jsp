@@ -97,7 +97,7 @@
                 	<div class="span6 b-img-holder">
                             
                         <span class='zoom' id='ex1'>
-                            <img src="${bookdetials.BFrontImg}"  height="219" width="300" id='jack' alt=''/></span>
+                            <img src="../productImage?imageName=${bookdetials.BFrontImg}"  height="219" width="300" id='jack' alt=''/></span>
                     </div>
                 <!-- End Book Image Section -->
                 
@@ -114,14 +114,14 @@
                         <div class="comm-nav">
                         	<strong class="title2">Quantity</strong>
                             <ul>
-                                 <form method="POST">
-                                 <li><input name="count" type="number" /></li><br/><br/><br/>
+                                 <form action="/OnlineBookShop/AddToCart" method="POST" >
+                                     <li><input name="count" type="number" max='${bookdetials.BCount}' /></li><br/><br/><br/>
                                  
                                  
                                  <li class="b-price">   <c:out value="${bookdetials.BPrice}"/>
                           </li>
                                 <li><button type="submit" class=" more-btn" >+ Add to Cart</button></li>   
-                                  <input type="hidden" name="ispnRow" value="${book.getBIsbn()}" />
+                                <input type="hidden" name="ispnRow" value="${bookdetials.BIsbn}" />
                                  </form>
                             </ul>
                            

@@ -31,7 +31,7 @@ public class Book implements Serializable {
     private List<Author> authorList;
     private List<OrderBook> orderBookList;
     private List<Cart> cartList;
-    static public final String uplodedImgFolderDestntion = "D:\\repabdo\\Online_BookStore\\OnlineBookShop\\build\\web\\customerSite\\images\\";
+    static public final String uplodedImgFolderDestntion = "C:/Book_Shop/images/";
 //    static public final String uplodedImgFolderDestntion = "/path/to/imgUploads/";
 
     public Book() {

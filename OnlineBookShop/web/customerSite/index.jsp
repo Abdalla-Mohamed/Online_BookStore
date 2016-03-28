@@ -5,8 +5,11 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <%@page session="false" %>
+<%@page import="com.helpclasses.BookLists"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<jsp:useBean id="bookLists" scope="page" class="com.helpclasses.BookLists" />
+<c:set var="books" value="${bookLists.allBooks}"> </c:set> 
 <!DOCTYPE html>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -46,60 +49,33 @@
     <section class="row-fluid">
       <section class="span12 slider">
         <section class="main-slider">
+            <c:forEach  items="${books}" var="book" varStatus="loop" >
           <div class="bb-custom-wrapper">
             <div id="bb-bookblock" class="bb-bookblock">
               <div class="bb-item">
                 <div class="bb-custom-content">
                   <div class="slide-inner">
-                    <div class="span4 book-holder"> <a href="book-detail.jsp"><img src="imgs/mahfouz/khan el khalili.jpg" alt="Book" /></a>
-                      <div class="cart-price"> <a class="cart-btn2" href="cart.jsp">Add to Cart</a> <span class="price">$129.90</span> </div>
+                    <div class="span4 book-holder"> <a href="book-detail.jsp"><img src="../productImage?imageName=${book.getBFrontImg()}" alt="Book" /></a>
+                      <!--<div class="cart-price"> <a class="cart-btn2" href="cart.jsp">Add to Cart</a> <span class="price">$129.90</span> </div>-->
                     </div>
                     <div class="span8 book-detail">
-                      <h2>Khan al-Khalili</h2>
-                      <strong class="title">by Naguib Mahfouz</strong> <span class="rating-bar"> <img src="images/raing-star2.png" alt="Rating Star" /> </span> <a href="book-detail.jsp" class="shop-btn">SHOP NOW</a>
+                      <h2>${book.getBName()}</h2>
+                      <!--<strong class="title">by Naguib Mahfouz</strong>--> 
+                      <span class="rating-bar"> <img src="images/raing-star2.png" alt="Rating Star" /> </span> <a href="book-detail.jsp" class="shop-btn">SHOP NOW</a>
                       <div class="cap-holder">
-                        <p><img src="images/image27.png" alt="Best Choice" align="right"/>  Khan al-Khalili reflects instead a deep concern with the lives and problems of contemporary Egyptians. </p>
-                        <a href="book-detail.jsp">Read More</a> </div>
+                        <p><img src="images/image27.png" alt="Best Choice" align="right"/>  ${book.getBDescription()}</p>
+                        <!--<a href="book-detail.jsp">Read More</a> </div>-->
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="bb-item">
-                <div class="bb-custom-content">
-                	<div class="slide-inner">
-                    <div class="span8 book-detail">
-                      <h2>Palac of desire</h2>
-                      <strong class="title">by Naguib Mahfouz</strong> <span class="rating-bar"> <img src="images/raing-star2.png" alt="Rating Star" /> </span> <a href="book-detail.jsp" class="shop-btn">SHOP NOW</a>
-                      <div class="cap-holder">
-                        <p><img src="images/image27.png" alt="Best Choice" align="right"/> Palace Of Desire follows the Al Jawad family into the awakening world of the 1920's and the sometimes violent clash between Islamic ideals, personal dreams and modern realities.. </p>
-                        <a href="book-detail.jsp">Read More</a> </div>
-                    </div>
-                    <div class="span4 book-holder"> <a href="book-detail.jsp"><img src="imgs/mahfouz/palace of desire.jpg" alt="Book" /></a>
-                      <div class="cart-price"> <a class="cart-btn2" href="cart.jsp">Add to Cart</a> <span class="price">$129.90</span> </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="bb-item">
-                <div class="bb-custom-content">
-                	<div class="slide-inner">
-                    <div class="span4 book-holder"> <a href="book-detail.jsp"><img src="imgs/pol&his/pawnson chessboard2.jpg" alt="Book" /></a>
-                      <div class="cart-price"> <a class="cart-btn2" href="cart.jsp">Add to Cart</a> <span class="price">$129.90</span> </div>
-                    </div>
-                    <div class="span8 book-detail">
-                      <h2>pawns in the game</h2>
-                      <strong class="title">by William Jay Carr</strong> <span class="rating-bar"> <img src="images/raing-star2.png" alt="Rating Star" /> </span> <a href="book-detail.jsp" class="shop-btn">SHOP NOW</a>
-                      <div class="cap-holder">
-                        <p><img src="images/image27.png" alt="Best Choice" align="right"/> best single work available on the evil conspiracy that has been responsible for the devastating wars and continuing conflicts of the past century. </p>
-                        <a href="book-detail.jsp">Read More</a> </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              
             </div>
           </div>
           <nav class="bb-custom-nav"> <a href="#" id="bb-nav-prev" class="left-arrow">Previous</a> <a href="#" id="bb-nav-next" class="right-arrow">Next</a> </nav>
-        </section>
+                  </c:forEach>
+
+            </section>
         <span class="slider-bottom"><img src="images/slider-bg.png" alt="Shadow"/></span> </section>
       <section class="span12 wellcome-msg m-bottom first">
         <h2>WELCOME TO BookShoppe’.</h2>

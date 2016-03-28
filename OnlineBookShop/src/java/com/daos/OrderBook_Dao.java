@@ -31,13 +31,13 @@ public class OrderBook_Dao {
         try {                
             connection = DbConnctor.openConnection();
             String sql= "INSERT INTO ORDER_BOOK(O_B_ID, O_B_COUNT, BOOK_ID, ORDER_NO)"
-                        + "VALUES(?,?,?,?)";
+                        + "VALUES(ORDER_BOOK_SEQ.NEXTVAL,?,?,?)";
             pstatement = connection.prepareStatement(sql);
                 
-            pstatement.setInt(1,orderBook.getId());
-            pstatement.setInt(2, orderBook.getCount());
-            pstatement.setInt(3, orderBook.getBookId().getBIsbn());
-            pstatement.setInt(4, orderBook.getOrderNo().getOrderId());
+//            pstatement.setInt(1,orderBook.getId());
+            pstatement.setInt(1, orderBook.getCount());
+            pstatement.setInt(2, orderBook.getBookId().getBIsbn());
+            pstatement.setInt(3, orderBook.getOrderNo().getOrderId());
                 
             pstatement.executeUpdate();
                 

@@ -25,10 +25,12 @@ import java.util.logging.Logger;
  */
 public class Cart_Dao {
 
-    private static final String SQL_READ = "SELECT B_NAME,C_B_COUNT FROM BOOK B,CART C WHERE B_ISBN IN(SELECT B_ID FROM CART WHERE C_ID= ?) AND C.B_ID=B.B_ISBN";
-    private static final String SQL_INSERT = "INSERT INTO CART(B_ID,C_ID,C_B_D) VALUES(?,?,?)";
-    private static final String SQL_UPDATE = "UPDATE CART SET C_B_COUNT=? WHERE C_ID=?";
-    private static final String SQL_DELETE = "DELETE FROM CART WHERE B_ID=? AND C_ID=?";
+    private static final String CountOfBookInCart = "select NVL(sum(C_B_COUNT),0) from BOOKSTORE.CART WHERE  C_ID=? and B_ID=?";
+    private static final String SQL_READ = "SELECT * FROM CART WHERE C_ID= ? ORDER BY B_ID desc";
+    private static final String SQL_INSERT = "INSERT INTO CART(B_ID,C_ID,C_B_COUNT) VALUES(?,?,?)";
+    private static final String SQL_UPDATE = "UPDATE CART SET C_B_COUNT=? WHERE C_ID=? and B_ID=?";
+    private static final String SQL_DELETE = "DELETE FROM CART WHERE C_ID=? and B_ID=?";
+    private static final String SQL_DELETE_USER_CART = "DELETE FROM CART WHERE C_ID=? ";
 
     Connection connection = null;
     PreparedStatement statement = null;
@@ -36,6 +38,26 @@ public class Cart_Dao {
 
     public Cart_Dao() {
 
+    }
+
+    public int countInCart(Cart cartObj) throws SQLException {
+       int count=0;
+        try {
+
+            connection = DbConnctor.openConnection();
+            statement = connection.prepareStatement(CountOfBookInCart);
+            statement.setInt(1, cartObj.getCustomerId());
+            statement.setInt(2, cartObj.getBookId());
+           ResultSet executeQuery = statement.executeQuery();
+           executeQuery.next();
+           
+           count=executeQuery.getInt(1);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DbConnctor.closeConnection();
+        }
+        return count;
     }
 
     public boolean add(Cart cartObj) throws SQLException {
@@ -65,6 +87,7 @@ public class Cart_Dao {
             statement = connection.prepareStatement(SQL_UPDATE);
             statement.setInt(1, cartObj.getCBCount());
             statement.setInt(2, cartObj.getCustomerId());
+            statement.setInt(3, cartObj.getBookId());
             if (statement.executeUpdate() > 0) {
                 return true;
             }
@@ -77,13 +100,13 @@ public class Cart_Dao {
         return false;
     }
 
-    public boolean delete(Book bookID, Customer customerID) throws SQLException {
+    public boolean delete(Cart cartItem) throws SQLException {
 
         try {
             connection = DbConnctor.openConnection();
             statement = connection.prepareStatement(SQL_DELETE);
-            statement.setInt(1, bookID.getBIsbn());
-            statement.setInt(2, customerID.getCId());
+            statement.setInt(1, cartItem.getCustomerId());
+            statement.setInt(2, cartItem.getBookId());
             if (statement.executeUpdate() > 0) {
                 return true;
             }
@@ -96,15 +119,15 @@ public class Cart_Dao {
         return false;
     }
 
-    public List<Book> readAll(int customerID) throws SQLException {
-        List<Book> cartList = null;
+    public List<Cart> readAll(int customerID) throws SQLException {
+        List<Cart> cartList = null;
         try {
             connection = DbConnctor.openConnection();
             Cart cart = null;
             statement = connection.prepareStatement(SQL_READ);
             statement.setInt(1, customerID);
             resultSet = statement.executeQuery();
-            cartList = getBooks(resultSet);
+            cartList = getCart(resultSet);
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -113,23 +136,42 @@ public class Cart_Dao {
         return cartList;
     }
 
-    private List<Book> getBooks(ResultSet result) {
+    private List<Cart> getCart(ResultSet result) {
 
-        List<Book> list =null;
-        Book bookObj;
+        List<Cart> list =null;
+        Cart cartItem;
         try {
             while (result.next()) {
                 if(list == null){
                     list = new ArrayList<>();
                 }
-                bookObj = new Book();
-                bookObj.setBName(result.getString("B_NAME"));
+                cartItem = new Cart();
+                cartItem.setCBCount(result.getInt("C_B_COUNT"));
+//                cartItem.setCustomer(new Customer(result.getInt("C_ID")));
                 //bookObj.setBDescription(result.getString("B_DESCRIPTION"));
-                list.add(bookObj);
+                list.add(cartItem);
             }
         } catch (SQLException ex) {
             Logger.getLogger(Interests_Dao.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
+    }
+
+    public boolean freeCartOfCustmer(int customerId) throws SQLException {
+       boolean isDeleted = false;
+        try {
+            connection = DbConnctor.openConnection();
+            statement = connection.prepareStatement(SQL_DELETE_USER_CART);
+            statement.setInt(1, customerId);
+            if (statement.executeUpdate() > 0) {
+                isDeleted= true;
+            }
+            connection.commit();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DbConnctor.closeConnection();
+        }
+        return isDeleted;
     }
 }

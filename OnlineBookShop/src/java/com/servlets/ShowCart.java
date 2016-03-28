@@ -6,6 +6,7 @@
 package com.servlets;
 
 import com.beans.Book;
+import com.beans.Cart;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -14,23 +15,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.daos.Category_Dao;
 import com.beans.Category;
+import com.beans.Customer;
 import com.daos.Cart_Dao;
+import com.helpclasses.BookLists;
+import com.helpclasses.CartController;
+import com.utilts.SharedNames;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Administrator
  */
-public class AddCategory extends HttpServlet {
+@WebServlet(name = "ShowCart",urlPatterns = "/ShowCart")
+public class ShowCart extends HttpServlet {
 
-  protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-      
-    }
-
+ 
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -44,12 +48,20 @@ public class AddCategory extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+    
+    
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+
+         HttpSession session = request.getSession(false);
+        Integer cId = ((Customer)(request.getSession().getAttribute(SharedNames.loginedCustomer))).getCId();
+        
+        List<Cart> customerCart = new CartController().getCustomerCart(cId);
+//        request.getSession().c
+        response.sendRedirect("/OnlineBookShop/customerSite/grid-view.jsp");
+    
     }
 
     /**

@@ -39,6 +39,18 @@ public class BookLists {
 
         return books;
     }
+    public List<Book> getCustomerCartBooks(int CustmerID) {
+        List<Book> books = null;
+
+        try {
+            books = bookDao.customerCartBooks(CustmerID);
+            System.out.println("");
+        } catch (SQLException ex) {
+            Logger.getLogger(BookLists.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return books;
+    }
     
     public Book getBook(int isbn) {
         Book book = null;

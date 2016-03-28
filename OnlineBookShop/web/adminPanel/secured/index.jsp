@@ -39,9 +39,9 @@
 							<div class="r3_counter_box">
 								<i class="fa fa-users"></i>
 								<div class="stats">
-								  <h5>50 <span>%</span></h5>
+								  <h5>${applicationScope.x}</h5>
 								  <div class="grow grow1">
-									<p>New Users</p>
+									<p>online Users</p>
 								  </div>
 								</div>
 							</div>

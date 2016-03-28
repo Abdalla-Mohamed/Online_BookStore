@@ -6,6 +6,7 @@
 package com.daos;
 
 import com.beans.Customer;
+import com.beans.OrderBook;
 import com.beans.Orders;
 import com.utilts.DbConnctor;
 import java.sql.Connection;
@@ -44,6 +45,14 @@ public class Orders_Dao {
                
                 
             pstatement.executeUpdate();
+            
+            int selectLastOrderId = selectLastOrderId();
+             OrderBook_Dao orderBook_Dao = new OrderBook_Dao();
+           List<OrderBook> orderBookList = order.getOrderBookList();
+            for (OrderBook orderItem : orderBookList) {
+                orderItem.setOrderNo(new Orders(selectLastOrderId));
+                orderBook_Dao.addOrderBook(orderItem);
+            }
                 
             } catch (SQLException ex) {
                 ex.printStackTrace();
@@ -116,6 +125,27 @@ public class Orders_Dao {
             }
         
         return arr;
+    }
+    private int selectLastOrderId() throws SQLException{
+        int lastID=0;
+        try {
+            connection = DbConnctor.openConnection();;
+            pstatement = connection.prepareStatement("select max(ORDER_ID) from BOOKSTORE.ORDERS");
+            resultSet = pstatement.executeQuery();
+            
+            while(resultSet.next())
+            {
+                lastID = resultSet.getInt(1);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+      finally {
+
+                DbConnctor.closeConnection();
+            }
+        
+        return lastID;
     }
     
     public List<Orders> getAllOrders() throws SQLException {
