@@ -40,11 +40,22 @@
         <servlet-name>UpdateCustomerData</servlet-name>
         <servlet-class>com.servlets.UpdateCustomerData</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BookEditController</servlet-name>
+        <servlet-class>com.servlets.admin.BookEditController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteBookFromCat</servlet-name>
+        <servlet-class>com.servlets.admin.DeleteBookFromCat</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddBookToCat</servlet-name>
+        <servlet-class>com.servlets.admin.AddBookToCat</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddCategory</servlet-name>
         <url-pattern>/AddCategory</url-pattern>
     </servlet-mapping>
-    <!-- *************************-->
     <servlet>
         <servlet-name>AuthorControllrer</servlet-name>
         <servlet-class>com.servlets.admin.AuthorControllrer</servlet-class>
@@ -53,7 +64,14 @@
         <servlet-name>AuthorControllrer</servlet-name>
         <url-pattern>/AuthorControllrer</url-pattern>
     </servlet-mapping>
-    <!-- *************************-->
+    <servlet>
+        <servlet-name>ShowBookDetails1</servlet-name>
+        <servlet-class>com.servlets.ShowBookDetails1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowBookDetails1</servlet-name>
+        <url-pattern>/ShowBookDetails1</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -82,12 +100,24 @@
         <servlet-name>UpdateCustomerData</servlet-name>
         <url-pattern>/UpdateCustomerData</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BookEditController</servlet-name>
+        <url-pattern>/BookEditController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteBookFromCat</servlet-name>
+        <url-pattern>/DeleteBookFromCat</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddBookToCat</servlet-name>
+        <url-pattern>/AddBookToCat</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
-    <!--     <security-constraint>
+    <security-constraint>
         <display-name>adminPrivacy</display-name>
         <web-resource-collection>
             <web-resource-name>admin pages</web-resource-name>
@@ -103,7 +133,6 @@
         <auth-method>FORM</auth-method>
         <realm-name>adminSecure</realm-name>
         <form-login-config>
-        
             <form-login-page>/adminPanel/secured/sign-in.jsp</form-login-page>
             <form-error-page>/adminPanel/secured/access_Denied.html</form-error-page>
         </form-login-config>
@@ -111,7 +140,7 @@
     <security-role>
         <description/>
         <role-name>adminShop</role-name>
-    </security-role>-->
+    </security-role>
     <error-page>
         <error-code>404</error-code>
         <location>/index.html</location>

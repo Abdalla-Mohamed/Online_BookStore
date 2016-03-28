@@ -53,7 +53,7 @@ public class CheckoutProcess extends HttpServlet {
         boolean checkoutTheCart = new OrderController().checkoutTheCart(customerId, total);
         if (checkoutTheCart) {
             try {
-                request.getSession().setAttribute("msgCheck", "checkout completed ");
+               
                 Customer customer =  (Customer) request.getSession().getAttribute(SharedNames.loginedCustomer);
                 customer.setCCredit((int)new Customer_Dao().getCustomerCredit(customerId));
                  request.getSession().setAttribute(SharedNames.loginedCustomer,customer);
@@ -61,7 +61,6 @@ public class CheckoutProcess extends HttpServlet {
                 Logger.getLogger(CheckoutProcess.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
-            request.getSession().setAttribute("msgCheck", "checkout not complete ");
 
         }
 

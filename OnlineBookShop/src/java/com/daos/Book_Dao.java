@@ -19,14 +19,14 @@ import java.util.logging.Logger;
  */
 public class Book_Dao {
 
-    private static final String SQL_READ = "SELECT * FROM BOOK";
+    private static final String SQL_READ = "SELECT * FROM BOOK where B_COUNT > 0";
     private static final String SQL_RETRIVE_Books_InCart = "SELECT * FROM BOOK B WHERE B_ISBN IN(SELECT B_ID FROM CART WHERE C_ID = ?  ) ORDER BY B_ISBN desc ";
     private static final String SQL_READ_BY_NAME = "SELECT B_ISBN FROM BOOK where B_NAME=?";
     private static final String SQL_READ_BY_ISBN = "SELECT * FROM BOOK where B_ISBN=?";
     private static final String SQL_INSERT = "INSERT INTO BOOK(B_ISBN, B_NAME, B_DESCRIPTION, B_QUOTE,"
             + "B_COUNT,B_PRICE,B_RATING,B_FRONT_IMG,B_BACK_IMG,B_HDR01_IMG,B_HDR02_IMG) "
             + "VALUES(BOOK_SEQ_TMP.NEXTVAL,?,?,?,?,?,?,?,?,?,?)";
-    private static final String SQL_UPDATE = "UPDATE BOOK SET B_NAME=? WHERE B_ISBN=?";
+    private static final String SQL_UPDATE = "UPDATE BOOK SET B_NAME=?,B_COUNT=?,B_PRICE=?,B_DESCRIPTION=? WHERE B_ISBN=?";
     private static final String SQL_UPDATE_IMAGES = "UPDATE BOOK SET B_FRONT_IMG=?,B_BACK_IMG=?,B_HDR01_IMG=?,B_HDR02_IMG=? WHERE B_ISBN=?";
     private static final String SQL_DELETE = "DELETE FROM BOOK WHERE B_ISBN=?";
 
@@ -73,7 +73,10 @@ public class Book_Dao {
             connection = DbConnctor.openConnection();
             statement = connection.prepareStatement(SQL_UPDATE);
             statement.setString(1, bookObj.getBName());
-            statement.setInt(2, bookObj.getBIsbn());
+            statement.setInt(2, bookObj.getBCount());
+            statement.setDouble(3, bookObj.getBPrice());
+            statement.setString(4, bookObj.getBDescription());
+            statement.setInt(5, bookObj.getBIsbn());
             if (statement.executeUpdate() > 0) {
                 return true;
             }

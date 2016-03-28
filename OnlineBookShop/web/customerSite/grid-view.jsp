@@ -108,10 +108,10 @@
             <div class="grid-holder features-books" >
 
                 <c:forEach  items="${books}" var="book" varStatus="loop" >
-                    <div class=" slide col-sm-4"    >
-                     <form method="POST">
-                         <input type="hidden" name="ispnRow" value="${book.getBIsbn()}" />
-                         <button type="submit" style="border: none"><img  src="../productImage?imageName=${book.getBFrontImg()}" style="float: left" alt="" class="pro-img "/></button>
+                    <div class=" slide col-sm-4"  >
+                     <form method="POST"   action="../ShowBookDetails1"  >
+                         <input type="hidden"  name="ispnRow" value="${book.getBIsbn()}" />
+                         <button type="submit" style="border: none"><img src="../productImage?imageName=${book.getBFrontImg()}" style="float: left" alt="" class="pro-img "/></button>
                      </form>
                     <span class="title"><a >${book.getBName()}</a></span>
                     <span class="rating-bar"><img src="images/rating-star.png" alt="Rating Star"/></span>

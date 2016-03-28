@@ -51,7 +51,6 @@
                                     <!-- Start Main Content Holder -->
                                     <section id="content-holder" class="container-fluid container">
                                         <section class="row-fluid">
-                                            <form>
                                             <!-- Start Main Content -->
                                             <section class="span12 cart-holder">
                                                 <div class="heading-bar">
@@ -62,7 +61,7 @@
                                                 <div class="cart-table-holder">
                                                     <table width="100%" border="0" cellpadding="10">
                                                         <tr>
-                                                            <th width="14%">&nbsp;</th>
+                                                            <!--<th width="14%">&nbsp;</th>-->
                                                             <th width="20%" align="left">Product Name</th>
                                                             <th width="6%"></th>
                                                             <th width="10%">Unit Price</th>
@@ -120,18 +119,18 @@
                                                                         </table>
                                                                         <hr />
                                                                           <c:if test="${ customer.CCredit lt total }">
-                                                                        <!--<button style="background: none;border: none" type="submit"><a href="../CheckoutProcess?customer=${customer.CId}&total=${total}" class="more-btn">proceed to checkout</a></button>-->   
+
                                                                         <p style="color: red">you don't have enough credit</p>
                                                                         </c:if>
                                                                        
                                                                         <c:if test="${ customer.CCredit ge total }">
-                                                                        <button style="background: none;border: none" type="submit"><a href="../CheckoutProcess?customer=${customer.CId}&total=${total}" class="more-btn">proceed to checkout</a></button>   
+                                                                            <a href="../CheckoutProcess?customer=${customer.CId}&total=${total}" class="more-btn">proceed to checkout</a>
                                                                         </c:if>
                                                                     </div>
                                                                 </figure>
                                                                 </section>
                                                                 <!-- End Main Content -->
-                                                                </form>
+                                                              
                                                                 </section>
                                                                 </section>
                                                                 <!-- End Main Content Holder -->

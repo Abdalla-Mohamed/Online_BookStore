@@ -37,6 +37,15 @@ public class Book implements Serializable {
     public Book() {
     }
 
+    public Book(String bName, String bDescription, String bQuote,Integer bCount, Double bPrice, Integer bRating) {
+        this.bName = bName;
+        this.bDescription = bDescription;
+        this.bQuote = bQuote;
+        this.bCount=bCount;
+        this.bPrice = bPrice;
+        this.bRating = bRating;
+    }
+
     public Book(String bName, String bDescription, String bQuote, Integer bCount, Double bPrice, Integer bRating, String bFrontImg, String bBackImg, String bHdr01Img, String bHdr02Img, List<Category> categoryList, List<Author> authorList, List<OrderBook> orderBookList, List<Cart> cartList) {
         this.bName = bName;
         this.bDescription = bDescription;

@@ -5,13 +5,16 @@
  */
 package com.servlets;
 
+import com.beans.Author;
 import com.beans.Book;
+import com.daos.Author_Dao;
 import com.daos.Book_Dao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,8 +26,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Abdalla
  */
-@WebServlet(name = "ShowBookDetails", urlPatterns = {"/ShowBookDetails"})
-public class ShowBookDetails extends HttpServlet {
+public class ShowBookDetails1 extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
