@@ -17,9 +17,13 @@ public class ChargingCard implements Serializable {
     private String cardNumber;
     private Integer cardAmount;
     private Character cardStatus;
+    private Character cardPrinted;
     
     public static final char CHARGED = 'T';
     public static final char NOTCHARGED = 'F';
+    
+    public static final char PRINTED = 'T';
+    public static final char NOTPRINTED = 'F';
     
 
     public ChargingCard() {
@@ -31,7 +35,12 @@ public class ChargingCard implements Serializable {
         this.cardStatus = cardStatus;
     }
 
-    
+    public ChargingCard(String cardNumber, Integer cardAmount, Character cardStatus, Character cardPrinted) {
+        this.cardNumber = cardNumber;
+        this.cardAmount = cardAmount;
+        this.cardStatus = cardStatus;
+        this.cardPrinted = cardPrinted;
+    }
     
     
     public ChargingCard(String cardNumber) {

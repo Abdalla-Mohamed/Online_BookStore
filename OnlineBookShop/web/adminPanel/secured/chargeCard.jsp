@@ -36,6 +36,7 @@
 
                                 <form method="POST" action='../../ChargingCardController' class="form-horizontal col-sm-10 switch-right-grid" style="padding: 15px;padding-left:  0">
                                     <div class="box-body col-sm-12 " >
+                                        Add Cards to Database:<br><br>
                                         <div class="form-group col-sm-12 " style="padding: 0px" >
 
                                             <label for="inputEmail3" class="col-sm-4 control-label">Card Value:</label>
@@ -45,7 +46,15 @@
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-usd"></i>
                                                     </span>
-                                                    <input name="cardValue" class="form-control1"  type="text" placeholder="Card Value">
+                                                    <select name="cardValue">
+                                                        <option>5</option>
+                                                        <option>10</option>
+                                                        <option>25</option>
+                                                        <option>50</option>
+                                                        <option>100</option>
+                                                        <option>200</option>
+                                                    </select>
+                                                   
                                                 </div>
                                             </div>
 
@@ -54,6 +63,7 @@
 
                                         <div class="form-group col-sm-12 " style="padding: 0px" >
 
+                                            
                                             <label for="inputEmail3" class="col-sm-4 control-label">Count:</label>
 
                                             <div class="col-sm-8" >
@@ -61,7 +71,20 @@
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-clone"></i>
                                                     </span>
-                                                    <input name="cardCount" class="form-control1"  type="text" placeholder="Card Count ">
+                                                    <select name="cardCount">
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                        <option>9</option>
+                                                        <option>10</option>
+                                                        
+
+                                                    </select>
                                                 </div>
                                             </div>
 
@@ -85,10 +108,12 @@
 
                                 <form action="#" method="GET">
                                     <div class="input-group input-group-ind">
-                                        <input type="text" name="search" class="form-control1 input-search" placeholder="Search...">
+<!--                                        <input type="text" name="search" class="form-control1 input-search" placeholder="Search...">
                                         <span class="input-group-btn">
                                             <button class="btn btn-success" type="submit"><i class="fa fa-search icon-ser"></i></button>
-                                        </span>
+                                        </span>-->
+
+                                    Card Numbers<br>
                                     </div><!-- Input Group -->
                                 </form>
                                 <div class="clearfix"> </div>
@@ -116,14 +141,121 @@
                             <!-- <a href="#" class="bt_green"><span class="bt_green_lft"></span><strong>Add new item</strong><span class="bt_green_r"></span></a> -->
                         </div>
 
+                    <div class="col-md-5">
+                        <div >
 
+                                <form method="POST" action='../../ChargingCardController' class="form-horizontal col-sm-10 switch-right-grid" style="padding: 15px;padding-left:  0">
+                                    <div class="box-body col-sm-12 " >
+                                        <div class="form-group col-sm-12 " style="padding: 0px" >
+
+                                            Show your Card Numbers for selling:<br><br>
+                                            <label for="inputEmail3" class="col-sm-4 control-label">Card Value:</label>
+
+                                            <div class="col-sm-8" >
+                                                <div class=" input-group  col-sm-12" style="margin-left: 0em;width: 100%">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-usd"></i>
+                                                    </span>
+                                                    <select name="selectCardValue">
+                                                        <option>5</option>
+                                                        <option>10</option>
+                                                        <option>25</option>
+                                                        <option>50</option>
+                                                        <option>100</option>
+                                                        <option>200</option>
+                                                    </select>
+                                                   
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+                                        <div class="form-group col-sm-12 " style="padding: 0px" >
+
+                                            <label for="inputEmail3" class="col-sm-4 control-label">Count:</label>
+
+                                            <div class="col-sm-8" >
+                                                <div class=" input-group  col-sm-12" style="margin-left: 0em;width: 100%">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-clone"></i>
+                                                    </span>
+                                                    <select name="selectCardCount">
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                        <option>6</option>
+                                                        <option>7</option>
+                                                        <option>8</option>
+                                                        <option>9</option>
+                                                        <option>10</option>
+                                                        
+
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+
+
+                                    </div >
+                                    <div class="col-sm-12 " >
+                                        <button type="submit" class="btn btn-info pull-right">Select</button>
+
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                        <div class="bs-example4 col-md-6" data-example-id="contextual-table">
+                            <div class="form-group">
+
+                                <form action="#" method="GET">
+                                    <div class="input-group input-group-ind">
+<!--                                        <span class="input-group-btn">
+                                            <button class="btn btn-success" type="submit"><i class="fa fa-search icon-ser"></i></button>
+                                        </span>-->
+
+                                    Card Numbers<br>
+                                    </div><!-- Input Group -->
+                                </form>
+                                <div class="clearfix"> </div>
+                            </div>
+                            <table class="table table table-striped">
+                                <thead class="alert alert-info">
+                                    <tr >
+                                        <th>#</th>
+                                        <th>Number</th>
+                                        
+                                
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <c:forEach items="${sessionScope.charger}" var="change" varStatus="loopCounter">
+                                    <tr >
+                                        <th scope="row">${loopCounter.count}</th>
+                                        <td><c:out value="${change.getCardNumber()}"/></td>
+                                    </tr>
+                                    </c:forEach>
+                                </tbody>
+                            </table>
+                            <!--<button class="btn-success btn centerBtn">Add new Book</button>-->
+                            <!-- <a href="#" class="bt_green"><span class="bt_green_lft"></span><strong>Add new item</strong><span class="bt_green_r"></span></a> -->
+                        </div>
+
+                        
                     </div>
 
                 </div>
 
 
-            </div>
-            <!--footer section start-->
+            </div>            <!--footer section start-->
             <%@include file='footer.jsp'%>
             <!--footer section end-->
         </section>

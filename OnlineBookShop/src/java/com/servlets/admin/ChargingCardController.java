@@ -10,11 +10,13 @@ import com.beans.ChargingCardList;
 import com.daos.ChargingCard_Dao;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.apache.commons.lang.RandomStringUtils;
 
 /**
@@ -49,16 +51,20 @@ public class ChargingCardController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+List<ChargingCard> allCardNumber=new ArrayList();
+        
+        if(request.getParameter("cardValue")!=null || request.getParameter("cardCount")!=null){
         int amount = Integer.parseInt(request.getParameter("cardValue"));
         int cardCount = Integer.parseInt(request.getParameter("cardCount"));
         int counter = 0;
+        
         while(counter < cardCount ){
             
             try {
                 String result = RandomStringUtils.randomNumeric(15);
                 
                 chargingCard_Dao = new ChargingCard_Dao();
-                chargingCard = new ChargingCard(result, amount, ChargingCard.NOTCHARGED);
+                chargingCard = new ChargingCard(result, amount, ChargingCard.NOTCHARGED, ChargingCard.NOTPRINTED);
                 boolean addChargingCard = chargingCard_Dao.addChargingCard(chargingCard);
                 
                 if(addChargingCard == true){
@@ -70,7 +76,29 @@ public class ChargingCardController extends HttpServlet {
             }
             
         }
+        }else{
+            
+             
+        int values = Integer.parseInt(request.getParameter("selectCardValue"));
+        int counts = Integer.parseInt(request.getParameter("selectCardCount"));
+        
+        int counters = counts;
+        for(int i=0; i<counters; i++){
+            try {
+                chargingCard_Dao = new ChargingCard_Dao();
+              allCardNumber  = chargingCard_Dao.getAllCardNumber(values);
+                System.out.println("ehh"+allCardNumber);
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+        }
+        
+        HttpSession session=request.getSession(true);
+                   
+        session.setAttribute("charger",allCardNumber);
         response.sendRedirect("adminPanel/secured/chargeCard.jsp");
+        
         
 
     }

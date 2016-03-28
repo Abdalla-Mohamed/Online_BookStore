@@ -7,6 +7,7 @@ package com.daos;
 
 import com.beans.ChargingCard;
 import com.beans.ChargingCardList;
+import com.beans.Customer;
 import com.utilts.DbConnctor;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,6 +16,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -144,6 +147,107 @@ public class ChargingCard_Dao {
         }
 
         return chargingCardList;
+    }
+    
+    public List<ChargingCard> getAllCardNumber(int amount) throws SQLException {
+        
+        List<ChargingCard> chargingCardList = new ArrayList<ChargingCard>();
+        try {
+            connection = DbConnctor.openConnection();
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery("SELECT CARD_NUMBER FROM CHARGING_CARD WHERE CARD_PRINTED = 'F' AND CARD_AMOUNT = '"+amount+"'");
+            while (resultSet.next()) {
+                ChargingCard card = new ChargingCard();
+                
+                card.setCardNumber(resultSet.getString("CARD_NUMBER"));
+                               
+                chargingCardList.add(card);
+            }
+            
+        //    resultSet = statement.executeQuery("UPDATE CHARGING_CARD SET CARD_PRINTED = 'T'");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally{
+            DbConnctor.closeConnection();
+        }
+
+        return chargingCardList;
+    }
+    
+    public int charge(String num){
+        int i = 0;
+        try {
+            
+                    connection = DbConnctor.openConnection();
+                    statement = connection.createStatement();
+                    
+                    resultSet = statement.executeQuery("select CARD_AMOUNT from  CHARGING_CARD where CARD_NUMBER = '"+num+"'");
+      
+                    
+                     while (resultSet.next()) { 
+                         i = resultSet.getInt("CARD_AMOUNT");
+                     }
+                    return i;
+        } catch (SQLException ex) {
+            Logger.getLogger(ChargingCard_Dao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+//        resultSet = statement.executeQuery("SELECT C_CREDIT FROM CUSTOMER WHERE C_ID = '"+c.getCId()+"'");
+
+        try {
+            while (resultSet.next()) {
+                try {
+                    int cridet = resultSet.getInt("C_CREDIT");
+                } catch (SQLException ex) {
+                    Logger.getLogger(ChargingCard_Dao.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ChargingCard_Dao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+            
+//            statement = connection.createStatement();
+//            resultSet = statement.executeQuery("UPDATE CUSTOMER SET C_CREDIT WHERE C_ID = '"+c.getCId()+"'");
+
+//            while (resultSet.next()) {                
+//                int i = Integer.parseInt(resultSet.getString("C_CREDIT"));
+//                               
+//            }
+        return i;
+          
+    }
+    
+    public boolean update (Customer c) throws SQLException{
+                
+        boolean updated;              
+        try {
+            
+            connection = DbConnctor.openConnection();
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery("SELECT C_CREDIT FROM CUSTOMER WHERE C_ID = '"+c.getCId()+"'");
+
+            while (resultSet.next()) {                
+                int i = resultSet.getInt("C_CREDIT");
+                               
+            }
+            
+            
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery("UPDATE CUSTOMER SET C_CREDIT WHERE C_ID = '"+c.getCId()+"'");
+
+            while (resultSet.next()) {                
+                int i = Integer.parseInt(resultSet.getString("C_CREDIT"));
+                               
+            }
+            
+            updated=true;
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Customer_Dao.class.getName()).log(Level.SEVERE, null, ex);
+            updated=false;
+        }
+        return updated;
     }
     
 }
